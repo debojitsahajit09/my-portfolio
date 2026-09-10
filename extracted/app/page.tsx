@@ -1,1 +1,81 @@
-import Link from "next/link"; import {ArrowRight,Download,MapPin} from "lucide-react"; import {site} from "@/data/site"; export default function Home(){return <><section className="hero"><div className="wrap"><div className="eyebrow">{site.home.eyebrow}</div><div className="portrait"><span className="portrait-ring"/><img src={site.photo} alt={site.name}/></div><h1>{site.name}</h1><div className="role">{site.role.toUpperCase()}</div><p className="lead">{site.home.intro}</p><div className="buttons"><Link className="btn primary" href="/projects">Explore my work <ArrowRight size={14}/></Link><Link className="btn" href={site.resume}><Download size={14}/> Résumé</Link></div><p className="muted" style={{marginTop:28,fontSize:12}}><MapPin size={13} style={{display:"inline"}}/> {site.location}</p></div></section><div className="stats wrap">{site.stats.map(([v,l])=><div className="stat" key={l}><b>{v}</b><span>{l}</span></div>)}</div><section className="section"><div className="wrap two"><div><div className="eyebrow">The idea</div><h2 className="title">This is my archive.</h2></div><div><p className="text">{site.about.text}</p><p className="quote">{site.about.quote}</p><Link className="btn" href="/about">Read my story <ArrowRight size={14}/></Link></div></div></section></>}
+import Link from "next/link";
+import { ArrowRight, Download, MapPin } from "lucide-react";
+import { site } from "@/data/site";
+
+export default function Home() {
+  return (
+    <>
+      <section className="hero">
+        <div className="wrap">
+          <div className="eyebrow">{site.home.eyebrow}</div>
+
+         
+          <div 
+            className="portrait" 
+            style={{ 
+              width: "160px", 
+              height: "160px", 
+              margin: "0 auto 24px auto", 
+              position: "relative" 
+            }}
+          >
+            <span className="portrait-ring" />
+            <img 
+              src={site.photo} 
+              alt={site.name} 
+              style={{ 
+                width: "100%", 
+                height: "100%", 
+                objectFit: "cover", 
+                borderRadius: "50%",
+                border: "2px solid #10b981" // সবুজ রঙের বর্ডার
+              }} 
+            />
+          </div>
+
+          <h1>{site.name}</h1>
+          <div className="role">{site.role.toUpperCase()}</div>
+          <p className="lead">{site.home.intro}</p>
+
+          <div className="buttons">
+            <Link className="btn primary" href="/projects">
+              Explore my work <ArrowRight size={14} />
+            </Link>
+            <Link className="btn" href={site.resume}>
+              <Download size={14} /> Résumé
+            </Link>
+          </div>
+
+          <p className="muted" style={{ marginTop: 28, fontSize: 12 }}>
+            <MapPin size={13} style={{ display: "inline" }} /> {site.location}
+          </p>
+        </div>
+      </section>
+
+      <div className="stats wrap">
+        {site.stats.map(([v, l]) => (
+          <div className="stat" key={l}>
+            <b>{v}</b>
+            <span>{l}</span>
+          </div>
+        ))}
+      </div>
+
+      <section className="section">
+        <div className="wrap two">
+          <div>
+            <div className="eyebrow">The idea</div>
+            <h2 className="title">This is my archive.</h2>
+          </div>
+          <div>
+            <p className="text">{site.about.text}</p>
+            <p className="quote">{site.about.quote}</p>
+            <Link className="btn" href="/about">
+              Read my story <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
