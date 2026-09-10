@@ -5,51 +5,51 @@ import { site } from "@/data/site";
 export default function Home() {
   return (
     <>
+      {/* ডান পাশে স্টাইলিশ সার্কেল-স্টাইল স্ক্রোল ইনডিকেটর */}
+      <div 
+        style={{
+          position: "fixed",
+          right: "24px",
+          bottom: "32px",
+          zIndex: 50,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "8px",
+          pointerEvents: "none"
+        }}
+      >
+        <span style={{ fontSize: "10px", fontFamily: "monospace", letterSpacing: "2px", color: "#10b981", textTransform: "uppercase" }}>
+          Scroll
+        </span>
+        <div style={{ position: "relative", width: "24px", height: "24px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <span style={{ position: "absolute", width: "100%", height: "100%", borderRadius: "50%", backgroundColor: "#10b981", opacity: 0.25, animation: "ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite" }} />
+          <span style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: "#10b981", border: "2px solid #000" }} />
+        </div>
+      </div>
+
       <section className="hero">
         <div className="wrap">
-          {/* ছবির কন্টেইনার - সাইজ বাড়িয়ে ২২০px করা হয়েছে এবং ঘূর্ণায়মান ড্যাশড রিং যোগ করা হয়েছে */}
+          {/* বড় সাইজের পরিষ্কার প্রোফাইল ছবি */}
           <div 
             className="portrait" 
             style={{ 
-              width: "220px", 
-              height: "220px", 
+              width: "260px", 
+              height: "260px", 
               margin: "0 auto 28px auto", 
-              position: "relative",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center"
+              position: "relative"
             }}
           >
-            {/* অনবরত ঘূর্ণায়মান সুক্ষ্ম আউটলাইন রিং */}
-            <svg
-              className="absolute inset-0 w-full h-full animate-spin"
-              style={{ animationDuration: "12s", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-              viewBox="0 0 100 100"
-            >
-              <circle
-                cx="50"
-                cy="50"
-                r="48"
-                fill="none"
-                stroke="#10b981"
-                strokeWidth="1.5"
-                strokeDasharray="6 8"
-                strokeLinecap="round"
-                opacity="0.75"
-              />
-            </svg>
-
-            {/* মূল প্রোফাইল পিকচার এবং ভেতরের সবুজ বর্ডার */}
             <img 
               src={site.photo} 
               alt={site.name} 
               style={{ 
-                width: "88%", 
-                height: "88%", 
+                width: "100%", 
+                height: "100%", 
                 objectFit: "cover", 
                 borderRadius: "50%",
-                border: "2px solid #10b981",
-                zIndex: 2
+                border: "3px solid #10b981",
+                boxShadow: "0 0 20px rgba(16, 185, 129, 0.25)"
               }} 
             />
           </div>
