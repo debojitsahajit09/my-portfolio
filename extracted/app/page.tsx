@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="wrap">
-          {/* ছবির কন্টেইনার - সাইজ বাড়িয়ে ২২০px করা হয়েছে এবং ঘূর্ণায়মান ড্যাশড রিং যোগ করা হয়েছে */}
+          {/* ছবির কন্টেইনার - বাইরের রিং সরিয়ে ছবি পরিষ্কার রাখা হয়েছে */}
           <div 
             className="portrait" 
             style={{ 
@@ -20,35 +20,16 @@ export default function Home() {
               justifyContent: "center"
             }}
           >
-            {/* অনবরত ঘূর্ণায়মান সুক্ষ্ম আউটলাইন রিং */}
-            <svg
-              className="absolute inset-0 w-full h-full animate-spin"
-              style={{ animationDuration: "12s", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-              viewBox="0 0 100 100"
-            >
-              <circle
-                cx="50"
-                cy="50"
-                r="48"
-                fill="none"
-                stroke="#10b981"
-                strokeWidth="1.5"
-                strokeDasharray="6 8"
-                strokeLinecap="round"
-                opacity="0.75"
-              />
-            </svg>
-
             {/* মূল প্রোফাইল পিকচার এবং ভেতরের সবুজ বর্ডার */}
             <img 
               src={site.photo} 
               alt={site.name} 
               style={{ 
-                width: "88%", 
-                height: "88%", 
+                width: "100%", 
+                height: "100%", 
                 objectFit: "cover", 
                 borderRadius: "50%",
-                border: "2px solid #10b981",
+                border: "3px solid #10b981",
                 zIndex: 2
               }} 
             />
@@ -70,6 +51,31 @@ export default function Home() {
           <p className="muted" style={{ marginTop: 28, fontSize: 12 }}>
             <MapPin size={13} style={{ display: "inline" }} /> {site.location}
           </p>
+
+          {/* স্ক্রিনশটের মতো মাউস-পিল স্ক্রোল অ্যানিমেশন */}
+          <div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}>
+            <div 
+              style={{
+                width: "26px",
+                height: "44px",
+                borderRadius: "20px",
+                border: "2px solid #10b981",
+                display: "flex",
+                justifyContent: "center",
+                paddingTop: "8px"
+              }}
+            >
+              <div 
+                style={{
+                  width: "4px",
+                  height: "8px",
+                  borderRadius: "2px",
+                  backgroundColor: "#10b981",
+                  animation: "bounce 1.5s infinite"
+                }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
