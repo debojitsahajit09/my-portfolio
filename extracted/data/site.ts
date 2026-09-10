@@ -91,7 +91,7 @@ export const site = {
       result: "Gold Medalist",
       year: "2026",
       org: "WRO Bangladesh",
-      image: "/images/achievements/wro-gold.jpg",
+      image: "/images/achievements/wro-gold.jpeg",
       certificate: "/documents/wro-cert.pdf",
       text: "Secured 1st place / Gold Medal in national robotics championship."
     },
