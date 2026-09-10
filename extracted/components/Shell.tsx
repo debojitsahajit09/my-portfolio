@@ -7,7 +7,7 @@ export default function Shell({children}:{children:React.ReactNode}){
   function theme(){const d=!dark;setDark(d);document.documentElement.classList.toggle("dark",d);localStorage.setItem("theme",d?"dark":"light")}
   return <>
     <header className="nav"><div className="wrap navin">
-      <Link href="/" className="logo">DSJ<span>.</span></Link>
+      <Link href="/" className="logo">Debojit<span>.</span></Link>
       <div className="navtools">
         <button onClick={theme} aria-label="theme">{dark?<Sun size={16}/>:<Moon size={16}/>}</button>
         <button onClick={()=>setOpen(true)} aria-label="menu"><Menu size={16}/></button>
@@ -16,7 +16,7 @@ export default function Shell({children}:{children:React.ReactNode}){
     <AnimatePresence>{open&&<>
       <motion.div className="scrim" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} onClick={()=>setOpen(false)}/>
       <motion.div className="navpanel" initial={{x:"100%"}} animate={{x:0}} exit={{x:"100%"}} transition={{duration:.32,ease:[0.22,1,0.36,1]}}>
-        <div className="navpanel-head"><span className="logo">DSJ<span>.</span></span><button onClick={()=>setOpen(false)} aria-label="close" style={{border:"1px solid var(--line)",borderRadius:"50%",width:40,height:40,display:"grid",placeItems:"center",background:"var(--card)"}}><X size={16}/></button></div>
+        <div className="navpanel-head"><span className="logo">Debojit<span>.</span></span><button onClick={()=>setOpen(false)} aria-label="close" style={{border:"1px solid var(--line)",borderRadius:"50%",width:40,height:40,display:"grid",placeItems:"center",background:"var(--card)"}}><X size={16}/></button></div>
         {links.map(([href,label])=><Link onClick={()=>setOpen(false)} key={href} className={path===href?"active":""} href={href}>{label}<ArrowRight size={16}/></Link>)}
       </motion.div>
     </>}</AnimatePresence>
