@@ -3,7 +3,7 @@ export const site = {
   role: "Independent Researcher • Assistive Technology • Notre Dame College",
   location: "Dhaka, Bangladesh",
   email: "debojitsahajit09@gmail.com",
-  photo: "/images/profile.jpeg",
+  photo: "/images/profile.jpg",
   resume: "/documents/resume.pdf",
 
   social: {
