@@ -11,8 +11,8 @@ export default function Home() {
           <div 
             className="portrait" 
             style={{ 
-              width: "300px", 
-              height: "300px", 
+              width: "280px", 
+              height: "280px", 
               margin: "0 auto 28px auto", 
               position: "relative",
               display: "flex",
