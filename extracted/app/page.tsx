@@ -7,28 +7,49 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="wrap">
-          <div className="eyebrow">{site.home.eyebrow}</div>
-
-         
+          {/* ছবির কন্টেইনার - সাইজ বাড়িয়ে ২২০px করা হয়েছে এবং ঘূর্ণায়মান ড্যাশড রিং যোগ করা হয়েছে */}
           <div 
             className="portrait" 
             style={{ 
-              width: "160px", 
-              height: "160px", 
-              margin: "0 auto 24px auto", 
-              position: "relative" 
+              width: "220px", 
+              height: "220px", 
+              margin: "0 auto 28px auto", 
+              position: "relative",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
             }}
           >
-            <span className="portrait-ring" />
+            {/* অনবরত ঘূর্ণায়মান সুক্ষ্ম আউটলাইন রিং */}
+            <svg
+              className="absolute inset-0 w-full h-full animate-spin"
+              style={{ animationDuration: "12s", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="48"
+                fill="none"
+                stroke="#10b981"
+                strokeWidth="1.5"
+                strokeDasharray="6 8"
+                strokeLinecap="round"
+                opacity="0.75"
+              />
+            </svg>
+
+            {/* মূল প্রোফাইল পিকচার এবং ভেতরের সবুজ বর্ডার */}
             <img 
               src={site.photo} 
               alt={site.name} 
               style={{ 
-                width: "100%", 
-                height: "100%", 
+                width: "88%", 
+                height: "88%", 
                 objectFit: "cover", 
                 borderRadius: "50%",
-                border: "2px solid #10b981" // সবুজ রঙের বর্ডার
+                border: "2px solid #10b981",
+                zIndex: 2
               }} 
             />
           </div>
@@ -68,9 +89,8 @@ export default function Home() {
             <h2 className="title">This is my archive.</h2>
           </div>
           <div>
-            <p className="text">{site.about.text}</p>
             <p className="quote">{site.about.quote}</p>
-            <Link className="btn" href="/about">
+            <Link className="btn primary" href="/about" style={{ marginTop: 16 }}>
               Read my story <ArrowRight size={14} />
             </Link>
           </div>
