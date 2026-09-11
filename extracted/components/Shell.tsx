@@ -114,7 +114,8 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                   if (item.isDropdown) {
                     return (
                       <div key={item.href} style={{ width: "100%" }}>
-                        <div
+                        <button
+                          type="button"
                           onClick={() => setAboutOpen(!aboutOpen)}
                           className={isActive ? "active" : ""}
                           style={{
@@ -123,6 +124,12 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                             justifyContent: "space-between",
                             cursor: "pointer",
                             width: "100%",
+                            background: "transparent",
+                            border: "none",
+                            font: "inherit",
+                            color: "inherit",
+                            padding: 0,
+                            textAlign: "left",
                           }}
                         >
                           <span>{item.label}</span>
@@ -136,7 +143,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                             />
                             <ArrowRight size={16} />
                           </div>
-                        </div>
+                        </button>
 
                         {/* About-এর ড্রপডাউন সাব-সেকশন */}
                         {aboutOpen && (
