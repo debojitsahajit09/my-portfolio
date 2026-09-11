@@ -79,6 +79,12 @@ export default function Shell({ children }: { children: React.ReactNode }) {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+              style={{
+                maxHeight: "100vh",
+                overflowY: "auto",
+                display: "flex",
+                flexDirection: "column",
+              }}
             >
               <div className="navpanel-head">
                 <span className="logo">
@@ -103,7 +109,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
 
               <div style={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "16px" }}>
                 {navLinks.map((item) => {
-                  const isActive = path === item.href;
+                  const isActive = path === item.href || path.startsWith("/about");
 
                   if (item.isDropdown) {
                     return (
@@ -116,8 +122,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                             alignItems: "center",
                             justifyContent: "space-between",
                             cursor: "pointer",
-                            padding: "10px 0",
-                            fontSize: "1.05rem",
+                            width: "100%",
                           }}
                         >
                           <span>{item.label}</span>
