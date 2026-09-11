@@ -64,9 +64,12 @@ export const site = {
   projects: [
     {
       id: "care",
+      n: "02",
       title: "C.A.R.E Wheelchair",
+      result: "Controlled Assistive Responsive Equipment",
       year: "2026",
       type: "Robotics / Assistive Technology",
+      org: "Team C.A.R.E.",
       image: "/images/care-wheelchair.jpg",
       description: "Controlled Assistive Responsive Equipment — a smart, low-cost assistive mobility system.",
       details: "Gesture-based mobility control, IoT health monitoring, emergency alerts, home automation, caregiver monitoring and an offline AI voice assistant concept.",
@@ -74,9 +77,12 @@ export const site = {
     },
     {
       id: "orion",
+      n: "01",
       title: "ORION",
+      result: "Offline Voice AI Assistant",
       year: "2026",
       type: "AI / Voice",
+      org: "Independent Research",
       image: "/images/orion-ai.jpg",
       description: "An accessibility-focused offline AI voice assistant concept.",
       details: "Designed around natural Bengali and English interaction and voice-first control for assistive technology.",
@@ -86,7 +92,7 @@ export const site = {
 
   achievements: [
     {
-      n: "01",
+      n: "14",
       title: "World Robot Olympiad (WRO) Bangladesh",
       result: "Gold Medalist",
       year: "2026",
@@ -96,7 +102,7 @@ export const site = {
       text: "Secured 1st place / Gold Medal in national robotics championship."
     },
     {
-      n: "02",
+      n: "13",
       title: "Fibonacci International Robot and STEM Olympiad",
       result: "Gold Medalist",
       year: "2026",
@@ -106,7 +112,7 @@ export const site = {
       text: "Gold Medalist in international STEM & robotics competition."
     },
     {
-      n: "03",
+      n: "12",
       title: "Asia Pacific ICT Alliance (APICTA) Awards",
       result: "Top 6 Finalist",
       year: "2025",
@@ -116,7 +122,7 @@ export const site = {
       text: "Represented Bangladesh among the top 6 international finalists in Taiwan."
     },
     {
-      n: "04",
+      n: "11",
       title: "World Invention Competition and Exhibition (WICE)",
       result: "Silver Medal",
       year: "2026",
@@ -126,7 +132,7 @@ export const site = {
       text: "Awarded Silver Medal in international innovation competition."
     },
     {
-      n: "05",
+      n: "10",
       title: "Global Robotics and Innovation Championship (GRIC)",
       result: "Honorable Mention",
       year: "2026",
@@ -136,7 +142,7 @@ export const site = {
       text: "International recognition for innovation and robotics development."
     },
     {
-      n: "06",
+      n: "09",
       title: "Notre Dame USA Educational Tour",
       result: "Selected Representative Delegate",
       year: "2025",
@@ -146,7 +152,7 @@ export const site = {
       text: "Selected student representative visiting MIT, Harvard, NASA, Orlando, and UN HQ."
     },
     {
-      n: "07",
+      n: "08",
       title: "John Locke Institute Summer Program",
       result: "$500 Scholarship Winner",
       year: "2025",
@@ -156,7 +162,7 @@ export const site = {
       text: "Awarded $500 academic scholarship."
     },
     {
-      n: "08",
+      n: "07",
       title: "Bangladesh National Science and Technology Fest",
       result: "3rd Position Nationwide",
       year: "2025",
@@ -166,7 +172,7 @@ export const site = {
       text: "Ranked 3rd nationally across science display innovations."
     },
     {
-      n: "09",
+      n: "06",
       title: "16th DRMC National Science Carnival",
       result: "Champion",
       year: "2025",
@@ -176,7 +182,7 @@ export const site = {
       text: "National Champion in Project Presentation segment."
     },
     {
-      n: "10",
+      n: "05",
       title: "DRMC Math Carnival",
       result: "1st Runner-Up",
       year: "2025",
@@ -186,7 +192,7 @@ export const site = {
       text: "1st Runner-Up in National Math Competition."
     },
     {
-      n: "11",
+      n: "04",
       title: "DRMC International Tech Carnival",
       result: "1st Runner-Up",
       year: "2025",
@@ -196,7 +202,7 @@ export const site = {
       text: "1st Runner-Up in International Tech Carnival."
     },
     {
-      n: "12",
+      n: "03",
       title: "Bangladesh Startup Competition",
       result: "Top 4 Innovator",
       year: "2026",
@@ -206,7 +212,7 @@ export const site = {
       text: "Top 4 finalist in national startup innovation challenge."
     },
     {
-      n: "13",
+      n: "02",
       title: "Best Student Award",
       result: "Recipient",
       year: "2024",
@@ -216,7 +222,7 @@ export const site = {
       text: "Awarded best overall student for academic and extracurricular excellence."
     },
     {
-      n: "14",
+      n: "01",
       title: "National Literary & Arts Competitions",
       result: "Champion (Multiple)",
       year: "2023–2024",
@@ -229,7 +235,7 @@ export const site = {
 
   publications: [
     {
-      n: "01",
+      n: "03",
       title: "A Journey into the DNA, from Nitrogen to Grandson",
       status: "Published (E-Book & DOI)",
       year: "2026",
@@ -247,7 +253,7 @@ export const site = {
       text: "Studies Generative AI adoption in Bangladeshi electronics-retail SMEs using a combined TOE/UTAUT/RBV framework with PLS-SEM."
     },
     {
-      n: "03",
+      n: "01",
       title: "Jute-Polyester Hybrid Fabrics & AI-Based Microplastic Quantification",
       status: "In progress",
       year: "2026",
