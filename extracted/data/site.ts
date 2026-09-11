@@ -344,6 +344,15 @@ export const site = {
     }
   ],
 
+  competitions: [
+    ["2026", "World Robot Olympiad Bangladesh", "Gold Medalist", "Bangladesh"],
+    ["2026", "Fibonacci International STEM Olympiad", "Gold Medalist", "International"],
+    ["2025", "APICTA Awards", "Top 6 Finalist", "Kaohsiung, Taiwan"],
+    ["2026", "WICE", "Silver Medal", "Malaysia"],
+    ["2026", "GRIC", "Honorable Mention", "International"],
+    ["2025", "DRMC Science Carnival", "National Champion", "Dhaka"]
+  ],
+
   skills: {
     "Research & Interests": ["Assistive Technology", "Biomedical Devices", "Environmental Research", "RF Energy Harvesting", "Technical Writing"],
     "Robotics & Hardware": ["Arduino", "ESP32", "ESP8266", "Raspberry Pi", "MPU6050", "GSM/GPS", "Sensors & Actuators"],
