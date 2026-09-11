@@ -5,8 +5,8 @@ import { Menu, X, Sun, Moon, ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-// নতুন সিকোয়েন্স ও স্ট্রাকচার
-const navItems = [
+// নতুন সিকোয়েন্স
+const navLinks = [
   { href: "/", label: "Home" },
   {
     href: "/about",
@@ -101,8 +101,8 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 </button>
               </div>
 
-              <div className="navpanel-links" style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "20px" }}>
-                {navItems.map((item) => {
+              <div style={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "16px" }}>
+                {navLinks.map((item) => {
                   const isActive = path === item.href;
 
                   if (item.isDropdown) {
@@ -116,7 +116,8 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                             alignItems: "center",
                             justifyContent: "space-between",
                             cursor: "pointer",
-                            padding: "12px 0",
+                            padding: "10px 0",
+                            fontSize: "1.05rem",
                           }}
                         >
                           <span>{item.label}</span>
@@ -132,13 +133,13 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                           </div>
                         </div>
 
-                        {/* About সাব-সেকশন */}
+                        {/* About-এর ড্রপডাউন সাব-সেকশন */}
                         {aboutOpen && (
                           <div
                             style={{
                               paddingLeft: "16px",
                               borderLeft: "2px solid var(--line)",
-                              margin: "4px 0 12px 8px",
+                              margin: "4px 0 10px 8px",
                               display: "flex",
                               flexDirection: "column",
                               gap: "8px",
@@ -155,7 +156,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                                   justifyContent: "space-between",
                                   fontSize: "0.9rem",
                                   opacity: 0.8,
-                                  padding: "6px 0",
+                                  padding: "4px 0",
                                 }}
                               >
                                 <span>{sub.label}</span>
@@ -172,7 +173,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                     <Link
                       onClick={() => setOpen(false)}
                       key={item.href}
-                      className={isActive ? "active" : ""}
+                      className={path === item.href ? "active" : ""}
                       href={item.href}
                     >
                       {item.label}
