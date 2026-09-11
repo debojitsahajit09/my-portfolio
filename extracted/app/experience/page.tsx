@@ -41,13 +41,17 @@ export default function Experience() {
 
   return (
     <main className="section">
-      <div className="wrap two">
-        <div>
-          <div className="eyebrow">04 / Experience</div>
-          <h1 className="title">Where I learned to lead.</h1>
+      <div className="wrap" style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 1rem" }}>
+        {/* হেডার অংশটি এখন সবার উপরে ফুল-উইডথে থাকবে */}
+        <div style={{ marginBottom: "3rem" }}>
+          <div className="eyebrow">04 / EXPERIENCE</div>
+          <h1 className="title" style={{ fontSize: "2.8rem", fontWeight: "800", marginTop: "0.5rem" }}>
+            Where I learned to lead.
+          </h1>
         </div>
 
-        <div className="rows" style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+        {/* এক্সপেরিয়েন্স কার্ডসমূহ হেডার এর নিচে সিরিয়ালে থাকবে */}
+        <div className="rows" style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
           {experiences.map((e, i) => {
             const currentImgIndex = imageIndices[i] || 0;
             const hasImages = e.images && e.images.length > 0;
@@ -57,8 +61,8 @@ export default function Experience() {
                 className="row"
                 key={i}
                 style={{
-                  borderBottom: "1px solid var(--line, #333)",
-                  paddingBottom: "2rem",
+                  borderBottom: "1px solid var(--line, rgba(255,255,255,0.1))",
+                  paddingBottom: "2.5rem",
                   display: "flex",
                   gap: "1.5rem",
                 }}
@@ -70,6 +74,7 @@ export default function Experience() {
                     fontWeight: "bold",
                     color: "#10b981",
                     minWidth: "45px",
+                    paddingTop: "2px",
                   }}
                 >
                   {String(i + 1).padStart(2, "0")}
@@ -77,7 +82,7 @@ export default function Experience() {
 
                 <div style={{ flex: 1 }}>
                   {/* পজিশন/রোল */}
-                  <h2 style={{ margin: 0, fontSize: "1.6rem", fontWeight: "700" }}>{e.role}</h2>
+                  <h2 style={{ margin: 0, fontSize: "1.75rem", fontWeight: "700" }}>{e.role}</h2>
 
                   {/* অর্গানাইজেশন ও পিরিয়ড */}
                   <div
@@ -85,8 +90,8 @@ export default function Experience() {
                       color: "#10b981",
                       fontWeight: "600",
                       marginTop: "4px",
-                      marginBottom: "12px",
-                      fontSize: "1rem",
+                      marginBottom: "16px",
+                      fontSize: "1.05rem",
                     }}
                   >
                     {e.org} {e.period && <span style={{ opacity: 0.8, color: "inherit" }}>• {e.period}</span>}
@@ -98,10 +103,10 @@ export default function Experience() {
                       style={{
                         position: "relative",
                         width: "100%",
-                        maxHeight: "350px",
+                        maxHeight: "420px",
                         overflow: "hidden",
-                        borderRadius: "8px",
-                        marginBottom: "1rem",
+                        borderRadius: "12px",
+                        marginBottom: "1.25rem",
                         background: "#111",
                       }}
                     >
@@ -110,7 +115,7 @@ export default function Experience() {
                         alt={`${e.role} preview`}
                         style={{
                           width: "100%",
-                          height: "350px",
+                          height: "420px",
                           objectFit: "cover",
                           display: "block",
                         }}
@@ -124,46 +129,52 @@ export default function Experience() {
                             onClick={() => prevImage(i, e.images!.length)}
                             style={{
                               position: "absolute",
-                              left: "10px",
+                              left: "12px",
                               top: "50%",
                               transform: "translateY(-50%)",
-                              background: "rgba(0,0,0,0.6)",
+                              background: "rgba(0,0,0,0.65)",
                               color: "#fff",
                               border: "none",
                               borderRadius: "50%",
-                              padding: "6px",
+                              padding: "8px",
                               cursor: "pointer",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
                             }}
                           >
-                            <ChevronLeft size={20} />
+                            <ChevronLeft size={22} />
                           </button>
                           <button
                             type="button"
                             onClick={() => nextImage(i, e.images!.length)}
                             style={{
                               position: "absolute",
-                              right: "10px",
+                              right: "12px",
                               top: "50%",
                               transform: "translateY(-50%)",
-                              background: "rgba(0,0,0,0.6)",
+                              background: "rgba(0,0,0,0.65)",
                               color: "#fff",
                               border: "none",
                               borderRadius: "50%",
-                              padding: "6px",
+                              padding: "8px",
                               cursor: "pointer",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
                             }}
                           >
-                            <ChevronRight size={20} />
+                            <ChevronRight size={22} />
                           </button>
                           <div
                             style={{
                               position: "absolute",
-                              bottom: "8px",
-                              right: "12px",
-                              background: "rgba(0,0,0,0.7)",
+                              bottom: "12px",
+                              right: "14px",
+                              background: "rgba(0,0,0,0.75)",
                               color: "#fff",
-                              fontSize: "0.75rem",
-                              padding: "2px 8px",
+                              fontSize: "0.8rem",
+                              padding: "3px 10px",
                               borderRadius: "12px",
                             }}
                           >
@@ -175,7 +186,7 @@ export default function Experience() {
                   )}
 
                   {/* শর্ট ডেসক্রিপশন */}
-                  <p className="text" style={{ margin: "0 0 8px 0" }}>
+                  <p className="text" style={{ margin: "0 0 10px 0", fontSize: "1.05rem", lineHeight: "1.6" }}>
                     {e.summary || e.text}
                   </p>
 
@@ -196,6 +207,7 @@ export default function Experience() {
                           gap: "4px",
                           padding: 0,
                           marginTop: "4px",
+                          fontSize: "0.95rem",
                         }}
                       >
                         {expanded[i] ? "Hide details" : "See details"}
@@ -205,12 +217,13 @@ export default function Experience() {
                       {expanded[i] && (
                         <div
                           style={{
-                            marginTop: "10px",
-                            padding: "12px",
+                            marginTop: "12px",
+                            padding: "16px",
                             background: "rgba(255,255,255,0.03)",
-                            borderRadius: "6px",
-                            fontSize: "0.95rem",
-                            lineHeight: "1.5",
+                            borderRadius: "8px",
+                            fontSize: "0.98rem",
+                            lineHeight: "1.6",
+                            borderLeft: "3px solid #10b981",
                           }}
                         >
                           {e.details}
