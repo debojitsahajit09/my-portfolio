@@ -18,26 +18,26 @@ export default function AwardCard({
   const [open, setOpen] = useState(false);
 
   return (
-    <article className="award flex flex-col gap-3 font-mono mb-16 text-black dark:text-white">
-      {/* ১. সিরিয়াল নম্বর (সংখ্যা হোয়াইট/ডার্ক মোড টেক্সট, আর ডট '.' সবুজ) */}
-      <div className="text-5xl md:text-6xl font-extrabold tracking-tight">
+    <article className="award flex flex-col gap-3 font-mono mb-16 text-neutral-900 dark:text-neutral-100">
+      {/* ১. সিরিয়াল নম্বর: লাইট মোডে ডার্ক ধূসর/কালো এবং ডার্ক মোডে সাদা */}
+      <div className="text-5xl md:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
         {a.n}<span className="text-[#10b981]">.</span>
       </div>
 
       {/* ২. ইস্যু ডেট / বছর */}
-      <div className="text-gray-500 dark:text-gray-400 text-sm font-semibold">
+      <div className="text-neutral-500 dark:text-neutral-400 text-sm font-semibold">
         Issued: {a.year}
       </div>
 
-      {/* ৩. পিকচার (ছবি) */}
+      {/* ৩. পিকচার */}
       {a.image && (
         <div className="award-img my-2 overflow-hidden rounded-lg w-full max-h-[450px]">
           <img src={a.image} alt={a.title} className="w-full h-full object-cover" />
         </div>
       )}
 
-      {/* ৪. ছবির নিচে বোরো করে লেখা (Result - Title) */}
-      <h2 className="text-2xl md:text-4xl font-extrabold leading-tight tracking-tight mt-1">
+      {/* ৪. বড় শিরোনাম: লাইট মোডে স্পষ্ট কালো/ডার্ক আর ডার্ক মোডে স্পষ্ট সাদা */}
+      <h2 className="text-2xl md:text-4xl font-extrabold leading-tight tracking-tight mt-1 text-neutral-900 dark:text-white">
         {a.result} - {a.title}
       </h2>
 
@@ -63,14 +63,14 @@ export default function AwardCard({
           </button>
           <div className="award-modal" onClick={(e) => e.stopPropagation()}>
             {a.image && <img src={a.image} alt={a.title} />}
-            <div className="text-4xl font-extrabold my-2">
+            <div className="text-4xl font-extrabold my-2 text-neutral-900 dark:text-white">
               {a.n}<span className="text-[#10b981]">.</span>
             </div>
-            <h2>{a.result} - {a.title}</h2>
+            <h2 className="text-neutral-900 dark:text-white">{a.result} - {a.title}</h2>
             <div className="text-[#10b981] font-semibold my-1">
               Issued By: {a.org} · {a.year}
             </div>
-            <p className="text">{a.text}</p>
+            <p className="text text-neutral-700 dark:text-neutral-300">{a.text}</p>
           </div>
         </div>
       )}
