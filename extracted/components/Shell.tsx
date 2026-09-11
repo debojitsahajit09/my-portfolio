@@ -5,7 +5,7 @@ import { Menu, X, Sun, Moon, ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-// নতুন সিকোয়েন্স
+// নতুন সিকোয়েন্স ও আলাদা সাব-পেজ রুট পাথ
 const navLinks = [
   { href: "/", label: "Home" },
   {
@@ -13,9 +13,9 @@ const navLinks = [
     label: "About",
     isDropdown: true,
     subItems: [
-      { href: "/about#bio", label: "Bio" },
-      { href: "/about#education", label: "Education" },
-      { href: "/about#skills", label: "Skills" },
+      { href: "/about/bio", label: "Bio" },
+      { href: "/about/education", label: "Education" },
+      { href: "/about/skills", label: "Skills" },
     ],
   },
   { href: "/experience", label: "Experience" },
