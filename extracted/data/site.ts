@@ -10,8 +10,8 @@ export const site = {
   social: {
     github: "https://github.com/debojitsahajit09",
     linkedin: "https://www.linkedin.com/in/debojit-saha-jit",
-    facebook: "",
-    instagram: "",
+    facebook: "https://www.facebook.com/share/1NJNLzCz3o/?mibextid=wwXIfr",
+    instagram: "https://www.instagram.com/a_virtuoso_cl?stkn=MTQ4dXIydGloam1udA%3D%3D&utm_source=qr",
     youtube: ""
   },
 
@@ -35,10 +35,10 @@ export const site = {
   },
 
   stats: [
-    ["26+", "National achievements"],
+    ["30+", "National achievements"],
     ["4+", "International prizes"],
     ["2026", "HSC batch"],
-    ["01", "Flagship assistive system"]
+    ["04", "Flagship assistive system"]
   ],
 
   timeline: [
@@ -49,13 +49,13 @@ export const site = {
       text: "Completing HSC at Notre Dame College while preparing for higher studies and expanding independent research."
     },
     {
-      date: "2026",
+      date: "2025",
       title: "C.A.R.E Wheelchair & Assistive Tech",
       type: "Flagship Project",
       text: "Developed low-cost assistive mobility integration featuring gesture control, IoT monitoring, and offline voice AI."
     },
     {
-      date: "2025–26",
+      date: "2024–26",
       title: "International Competitions & Global Exposure",
       type: "Global Impact",
       text: "Representing Bangladesh internationally at APICTA, WICE, and GRIC while mentoring over 3,000 young minds."
@@ -92,9 +92,9 @@ export const site = {
     {
       id: "smart-helmet",
       n: "03",
-      title: "3 in 1 Smart Helmet",
+      title: "3 in 1 Smart Helmet for Accident Prevention",
       result: "Rider Safety & Hazard Prevention System",
-      year: "2025",
+      year: "2023",
       type: "Embedded Systems / Safety Tech",
       org: "Independent Project",
       image: "/images/smart-helmet.jpg",
@@ -107,7 +107,7 @@ export const site = {
       n: "04",
       title: "RF Energy Harvesting for Pacemakers",
       result: "Biomedical Wireless Power Transmission",
-      year: "2026",
+      year: "2025",
       type: "Biomedical / Energy Harvesting",
       org: "Independent Research",
       image: "/images/rf-pacemaker.jpg",
@@ -126,17 +126,17 @@ export const site = {
       org: "WRO Bangladesh",
       image: "/images/wro-gold.jpeg",
       certificate: "/documents/wro-cert.pdf",
-      text: "Secured 1st place / Gold Medal in national robotics championship."
+      text: "Secured 1st place / Gold Medal in Future Innovator Senior Category at United International University and Officially selected to represent Bangladesh in the USA."
     },
     {
       n: "13",
       title: "Fibonacci International Robot and STEM Olympiad",
       result: "Gold Medalist",
       year: "2026",
-      org: "FIRST Olympiad",
+      org: "Fibonacci Bangladesh",
       image: "/images/achievements/fibonacci-gold.jpg",
       certificate: "/documents/fibonacci-cert.pdf",
-      text: "Gold Medalist in international STEM & robotics competition."
+      text: "Gold Medalist in Fibonacci international STEM & robotics competition held in United International University competing against 150+ projects around Bangladesh."
     },
     {
       n: "12",
