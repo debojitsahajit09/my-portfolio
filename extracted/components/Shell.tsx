@@ -114,26 +114,24 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                   if (item.isDropdown) {
                     return (
                       <div key={item.href} style={{ width: "100%" }}>
-                        <button
-                          type="button"
-                          onClick={() => setAboutOpen(!aboutOpen)}
-                          className={isActive ? "active" : ""}
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "space-between",
-                            cursor: "pointer",
-                            width: "100%",
-                            background: "transparent",
-                            border: "none",
-                            font: "inherit",
-                            color: "inherit",
-                            padding: 0,
-                            textAlign: "left",
-                          }}
-                        >
-                          <span>{item.label}</span>
-                          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                        <div style={{ display: "flex", alignItems: "center", width: "100%" }}>
+                          <Link
+                            href={item.href}
+                            onClick={() => setOpen(false)}
+                            className={isActive ? "active" : ""}
+                            style={{ flex: 1 }}
+                          >
+                            {item.label}
+                          </Link>
+                          <div
+                            onClick={() => setAboutOpen(!aboutOpen)}
+                            style={{
+                              cursor: "pointer",
+                              padding: "8px",
+                              display: "flex",
+                              alignItems: "center",
+                            }}
+                          >
                             <ChevronDown
                               size={16}
                               style={{
@@ -141,9 +139,8 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                                 transition: "transform 0.2s ease",
                               }}
                             />
-                            <ArrowRight size={16} />
                           </div>
-                        </button>
+                        </div>
 
                         {/* About-এর ড্রপডাউন সাব-সেকশন */}
                         {aboutOpen && (
