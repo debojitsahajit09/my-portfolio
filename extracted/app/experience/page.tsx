@@ -42,15 +42,13 @@ export default function Experience() {
   return (
     <main className="section">
       <div className="wrap" style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 1rem" }}>
-        {/* হেডার অংশটি এখন সবার উপরে ফুল-উইডথে থাকবে */}
+        {/* হেডার অংশ: সাইজ মূল স্টাইলেই রাখা হয়েছে */}
         <div style={{ marginBottom: "3rem" }}>
           <div className="eyebrow">04 / EXPERIENCE</div>
-          <h1 className="title" style={{ fontSize: "2.8rem", fontWeight: "800", marginTop: "0.5rem" }}>
-            Where I learned to lead.
-          </h1>
+          <h1 className="title">Where I learned to lead.</h1>
         </div>
 
-        {/* এক্সপেরিয়েন্স কার্ডসমূহ হেডার এর নিচে সিরিয়ালে থাকবে */}
+        {/* এক্সপেরিয়েন্স কার্ডসমূহ */}
         <div className="rows" style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
           {experiences.map((e, i) => {
             const currentImgIndex = imageIndices[i] || 0;
@@ -67,7 +65,7 @@ export default function Experience() {
                   gap: "1.5rem",
                 }}
               >
-                {/* সবুজ সিরিয়াল নাম্বার */}
+                {/* রোবোটিক্স/টেক টাইপ স্টাইলের সিরিয়াল নাম্বার */}
                 <div
                   style={{
                     fontSize: "1.5rem",
@@ -75,6 +73,8 @@ export default function Experience() {
                     color: "#10b981",
                     minWidth: "45px",
                     paddingTop: "2px",
+                    fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+                    letterSpacing: "-0.5px",
                   }}
                 >
                   {String(i + 1).padStart(2, "0")}
@@ -176,6 +176,7 @@ export default function Experience() {
                               fontSize: "0.8rem",
                               padding: "3px 10px",
                               borderRadius: "12px",
+                              fontFamily: "monospace",
                             }}
                           >
                             {currentImgIndex + 1} / {e.images.length}
