@@ -18,40 +18,40 @@ export default function AwardCard({
   const [open, setOpen] = useState(false);
 
   return (
-    <article className="award flex flex-col gap-3 font-mono mb-16 text-neutral-900 dark:text-neutral-100">
-      {/* ১. সিরিয়াল নম্বর: লাইট মোডে ডার্ক ধূসর/কালো এবং ডার্ক মোডে সাদা */}
-      <div className="text-5xl md:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
+    <article className="award flex flex-col gap-2.5 font-mono mb-10 text-neutral-900 dark:text-neutral-100 p-5 rounded-xl border border-[#10b981] bg-transparent">
+      {/* ১. সিরিয়াল নম্বর: লাইট মোডে ডার্ক এবং ডার্ক মোডে সাদা */}
+      <div className="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
         {a.n}<span className="text-[#10b981]">.</span>
       </div>
 
-      {/* ২. ইস্যু ডেট / বছর */}
-      <div className="text-neutral-500 dark:text-neutral-400 text-sm font-semibold">
+      {/* ২. ইস্যু ডেট / বছর: সবুজ রঙে */}
+      <div className="text-[#10b981] text-xs md:text-sm font-semibold">
         Issued: {a.year}
       </div>
 
       {/* ৩. পিকচার */}
       {a.image && (
-        <div className="award-img my-2 overflow-hidden rounded-lg w-full max-h-[450px]">
+        <div className="award-img my-1.5 overflow-hidden rounded-lg w-full max-h-[350px]">
           <img src={a.image} alt={a.title} className="w-full h-full object-cover" />
         </div>
       )}
 
-      {/* ৪. বড় শিরোনাম: লাইট মোডে স্পষ্ট কালো/ডার্ক আর ডার্ক মোডে স্পষ্ট সাদা */}
-      <h2 className="text-2xl md:text-4xl font-extrabold leading-tight tracking-tight mt-1 text-neutral-900 dark:text-white">
-        {a.result} - {a.title}
+      {/* ৪. শিরোনাম: ফন্ট সাইজ ছোট করা হয়েছে (text-lg md:text-xl) এবং মোড অনুযায়ী ডাইনামিক কালার */}
+      <h2 className="text-lg md:text-xl font-bold leading-snug tracking-tight mt-0.5 text-neutral-900 dark:text-white">
+        <span className="text-[#10b981]">{a.result}</span> - {a.title}
       </h2>
 
       {/* ৫. নিচে ইস্যুকারী সংস্থা এবং পাশে সি ডিটেইলস বাটন */}
-      <div className="flex items-center justify-between flex-wrap gap-4 mt-1">
-        <div className="text-[#10b981] font-semibold text-base md:text-lg">
+      <div className="flex items-center justify-between flex-wrap gap-3 mt-1 pt-2 border-t border-[#10b981]/20">
+        <div className="text-[#10b981] font-semibold text-sm md:text-base">
           Issued By: {a.org}
         </div>
 
         <button
-          className="btn flex items-center gap-1.5 text-sm md:text-base text-[#10b981] font-bold hover:underline"
+          className="btn flex items-center gap-1 text-xs md:text-sm text-[#10b981] font-bold hover:underline"
           onClick={() => setOpen(true)}
         >
-          See details <ArrowUpRight size={16} />
+          See details <ArrowUpRight size={15} />
         </button>
       </div>
 
@@ -63,14 +63,16 @@ export default function AwardCard({
           </button>
           <div className="award-modal" onClick={(e) => e.stopPropagation()}>
             {a.image && <img src={a.image} alt={a.title} />}
-            <div className="text-4xl font-extrabold my-2 text-neutral-900 dark:text-white">
+            <div className="text-2xl font-extrabold my-2 text-neutral-900 dark:text-white">
               {a.n}<span className="text-[#10b981]">.</span>
             </div>
-            <h2 className="text-neutral-900 dark:text-white">{a.result} - {a.title}</h2>
-            <div className="text-[#10b981] font-semibold my-1">
+            <h2 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white">
+              <span className="text-[#10b981]">{a.result}</span> - {a.title}
+            </h2>
+            <div className="text-[#10b981] font-semibold text-sm my-1">
               Issued By: {a.org} · {a.year}
             </div>
-            <p className="text text-neutral-700 dark:text-neutral-300">{a.text}</p>
+            <p className="text text-sm text-neutral-700 dark:text-neutral-300">{a.text}</p>
           </div>
         </div>
       )}
