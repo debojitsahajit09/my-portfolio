@@ -3,6 +3,7 @@ export const site = {
   role: "Independent Researcher • Assistive Technology • Notre Dame College",
   location: "Dhaka, Bangladesh",
   email: "debojitsahajit09@gmail.com",
+  phone: "+880 1774074009",
   photo: "/images/profile.jpg",
   resume: "/documents/resume.pdf",
 
@@ -26,10 +27,10 @@ export const site = {
     quote: "Curiosity starts it. Engineering makes it real.",
     researchInterests: [
       "Assistive Technology",
-      "Biomedical Devices",
-      "Environmental Research",
+      "Biomedical Devices & Implants",
+      "Environmental & Renewable Energy Research",
       "Embedded Systems & Robotics",
-      "Applied AI & Voice Assistants"
+      "Applied AI & Offline Voice Assistants"
     ]
   },
 
@@ -64,7 +65,7 @@ export const site = {
   projects: [
     {
       id: "care",
-      n: "02",
+      n: "01",
       title: "C.A.R.E Wheelchair",
       result: "Controlled Assistive Responsive Equipment",
       year: "2026",
@@ -77,7 +78,7 @@ export const site = {
     },
     {
       id: "orion",
-      n: "01",
+      n: "02",
       title: "ORION",
       result: "Offline Voice AI Assistant",
       year: "2026",
@@ -87,6 +88,32 @@ export const site = {
       description: "An accessibility-focused offline AI voice assistant concept.",
       details: "Designed around natural Bengali and English interaction and voice-first control for assistive technology.",
       tags: ["AI", "Voice", "Edge", "Python"]
+    },
+    {
+      id: "smart-helmet",
+      n: "03",
+      title: "3 in 1 Smart Helmet",
+      result: "Rider Safety & Hazard Prevention System",
+      year: "2025",
+      type: "Embedded Systems / Safety Tech",
+      org: "Independent Project",
+      image: "/images/smart-helmet.jpg",
+      description: "An intelligent multi-functional helmet designed for road and industrial rider protection.",
+      details: "Integrates automatic alcohol-detection ignition lock, accident detection with instant location SMS alerts, and smart overspeed & helmet removal warning system.",
+      tags: ["Arduino", "GSM/GPS", "Alcohol Sensor", "Accelerometer", "RF Module"]
+    },
+    {
+      id: "rf-pacemaker",
+      n: "04",
+      title: "RF Energy Harvesting for Pacemakers",
+      result: "Biomedical Wireless Power Transmission",
+      year: "2026",
+      type: "Biomedical / Energy Harvesting",
+      org: "Independent Research",
+      image: "/images/rf-pacemaker.jpg",
+      description: "Wireless micro-power harvesting system for cardiac pacemaker batteries.",
+      details: "Harvests ambient RF signals to continuously trickle-charge implantable cardiac devices, reducing surgical battery replacement risks for heart patients.",
+      tags: ["Biomedical", "RF Harvesting", "Rectenna Circuit", "Ultra-Low Power", "MATLAB"]
     }
   ],
 
@@ -295,39 +322,42 @@ export const site = {
     {
       year: "2024 – 2026",
       place: "Notre Dame College, Dhaka",
-      degree: "Higher Secondary Certificate (HSC) — Science",
-      gpa: "Appearing (Group 3)",
+      degree: "Higher Secondary Certificate (HSC) — Science Group",
+      gpa: "GPA 5.00 (Expected)",
       text: "Intermediate Science Student engaged in research, robotics projects, and national/international olympiads."
     },
     {
       year: "2022 – 2024",
       place: "Rajbari Govt. High School, Rajbari",
-      degree: "Secondary School Certificate (SSC) — Science",
+      degree: "Secondary School Certificate (SSC) — Science Group",
       gpa: "GPA 5.00",
-      text: "Achieved highest academic marks in the district with GPA 5.00."
+      scholarship: "Talentpool Scholarship (District 1st Rank, 2024)",
+      text: "Achieved District 1st Rank with GPA 5.00 and Talentpool Scholarship in Science stream."
+    },
+    {
+      year: "2018",
+      place: "Cambridge School and College, Barishal",
+      degree: "Primary Education Completion (PEC)",
+      gpa: "GPA 5.00",
+      scholarship: "General Scholarship",
+      text: "Achieved perfect GPA 5.00 with General Primary Scholarship."
     }
   ],
 
-  competitions: [
-    ["2026", "World Robot Olympiad Bangladesh", "Gold Medalist", "Bangladesh"],
-    ["2026", "Fibonacci International STEM Olympiad", "Gold Medalist", "International"],
-    ["2025", "APICTA Awards", "Top 6 Finalist", "Kaohsiung, Taiwan"],
-    ["2026", "WICE", "Silver Medal", "Malaysia"],
-    ["2026", "GRIC", "Honorable Mention", "International"],
-    ["2025", "DRMC Science Carnival", "National Champion", "Dhaka"]
-  ],
-
   skills: {
-    "Research & Research Interests": ["Assistive Technology", "Biomedical Devices", "Environmental Research", "Technical Writing", "Data Analysis"],
-    "Robotics & Hardware": ["Arduino", "ESP32", "ESP8266", "Raspberry Pi", "MPU6050", "Motor Control", "Sensors"],
-    "Programming": ["C/C++", "Python", "JavaScript", "TypeScript"],
+    "Research & Interests": ["Assistive Technology", "Biomedical Devices", "Environmental Research", "RF Energy Harvesting", "Technical Writing"],
+    "Robotics & Hardware": ["Arduino", "ESP32", "ESP8266", "Raspberry Pi", "MPU6050", "GSM/GPS", "Sensors & Actuators"],
+    "Programming": ["C/C++", "Python", "JavaScript", "TypeScript", "MATLAB"],
     "Web Development": ["React", "Next.js", "Tailwind CSS", "Firebase"],
-    "Engineering & Workflow": ["IoT Integration", "Prototyping", "Embedded Systems", "Git/GitHub", "Leadership & Mentorship"]
+    "Engineering & Leadership": ["IoT Systems", "Hardware Prototyping", "Embedded Firmware", "Git/GitHub", "Mentorship & Team Leadership"]
   },
 
   contact: {
     title: "Let's build something.",
-    text: "For collaboration, engineering projects, competitions, technology and meaningful opportunities."
+    text: "For collaboration, engineering projects, competitions, technology and meaningful opportunities.",
+    email: "debojitsahajit09@gmail.com",
+    phone: "+880 1774074009",
+    location: "Dhaka, Bangladesh"
   },
 
   footer: {
