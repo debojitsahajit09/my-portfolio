@@ -3,6 +3,17 @@ import { site } from "@/data/site";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
 
+// Experience item structure type definition
+interface ExperienceItem {
+  role: string;
+  org: string;
+  period?: string;
+  text?: string;
+  summary?: string;
+  details?: string;
+  images?: string[];
+}
+
 export default function Experience() {
   const [expanded, setExpanded] = useState<{ [key: number]: boolean }>({});
   const [imageIndices, setImageIndices] = useState<{ [key: number]: number }>({});
@@ -25,6 +36,9 @@ export default function Experience() {
     }));
   };
 
+  // Safe cast for experience items
+  const experiences = (site.experience || []) as ExperienceItem[];
+
   return (
     <main className="section">
       <div className="wrap two">
@@ -34,7 +48,7 @@ export default function Experience() {
         </div>
 
         <div className="rows" style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-          {site.experience.map((e, i) => {
+          {experiences.map((e, i) => {
             const currentImgIndex = imageIndices[i] || 0;
             const hasImages = e.images && e.images.length > 0;
 
@@ -49,12 +63,12 @@ export default function Experience() {
                   gap: "1.5rem",
                 }}
               >
-                {/* সবুজ সিরিয়াল নাম্বার */}
+                {/* সবুজ সিরিয়াল নাম্বার */}
                 <div
                   style={{
                     fontSize: "1.5rem",
                     fontWeight: "bold",
-                    color: "#10b981", // সবুজ কালার
+                    color: "#10b981",
                     minWidth: "45px",
                   }}
                 >
@@ -62,10 +76,10 @@ export default function Experience() {
                 </div>
 
                 <div style={{ flex: 1 }}>
-                  {/* বড় রোল বা পজিশন */}
+                  {/* পজিশন/রোল */}
                   <h2 style={{ margin: 0, fontSize: "1.6rem", fontWeight: "700" }}>{e.role}</h2>
 
-                  {/* সবুজ অর্গানাইজেশন ও পিরিয়ড */}
+                  {/* অর্গানাইজেশন ও পিরিয়ড */}
                   <div
                     style={{
                       color: "#10b981",
@@ -78,8 +92,8 @@ export default function Experience() {
                     {e.org} {e.period && <span style={{ opacity: 0.8, color: "inherit" }}>• {e.period}</span>}
                   </div>
 
-                  {/* ইমেজ সোয়াইপার / ক্যারোসেল */}
-                  {hasImages && (
+                  {/* ইমেজ সোয়াইপার / ক্যারোসেল */}
+                  {hasImages && e.images && (
                     <div
                       style={{
                         position: "relative",
@@ -102,11 +116,12 @@ export default function Experience() {
                         }}
                       />
 
-                      {/* একাধিক ছবি থাকলে নেভিগেশন বাটনে সোয়াইপ করার সুবিধা */}
+                      {/* নেভিগেশন বাটন */}
                       {e.images.length > 1 && (
                         <>
                           <button
-                            onClick={() => prevImage(i, e.images.length)}
+                            type="button"
+                            onClick={() => prevImage(i, e.images!.length)}
                             style={{
                               position: "absolute",
                               left: "10px",
@@ -123,7 +138,8 @@ export default function Experience() {
                             <ChevronLeft size={20} />
                           </button>
                           <button
-                            onClick={() => nextImage(i, e.images.length)}
+                            type="button"
+                            onClick={() => nextImage(i, e.images!.length)}
                             style={{
                               position: "absolute",
                               right: "10px",
@@ -158,7 +174,7 @@ export default function Experience() {
                     </div>
                   )}
 
-                  {/* এক লাইনের শট ডেসক্রিপশন */}
+                  {/* শর্ট ডেসক্রিপশন */}
                   <p className="text" style={{ margin: "0 0 8px 0" }}>
                     {e.summary || e.text}
                   </p>
@@ -167,6 +183,7 @@ export default function Experience() {
                   {e.details && (
                     <div>
                       <button
+                        type="button"
                         onClick={() => toggleDetails(i)}
                         style={{
                           background: "none",
