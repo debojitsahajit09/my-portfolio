@@ -300,9 +300,9 @@ export const site = {
       summary: "Built low-cost AI/IoT smart wheelchair with gesture control & health monitor for disabled users; won national awards, ranked 6th at APICTA 2025.",
       details: "Spearheaded hardware-software integration for assistive technology. Implemented offline AI voice processing, ESP-NOW micro-controller networking, multi-sensor gesture tracking, and real-time biometric IoT dashboards.",
       images: [
-        "/images/experience/care-1.jpg",
-        "/images/experience/care-2.jpg",
-        "/images/experience/care-3.jpg"
+        "/images/experience/care-1.jpeg",
+        "/images/experience/care-2.jpeg",
+        "/images/experience/care-3.jpeg"
       ]
     },
     {
@@ -312,8 +312,8 @@ export const site = {
       summary: "Applied research on RF-driven assistive tech & water solutions. Conducted lab testing & data analysis; research selected for SJWPBD presentation.",
       details: "Engineered low-cost micro-power RF harvesting systems for implantable medical devices. Modeled electromagnetic field behavior in MATLAB and completed experimental prototypes for renewable energy harvesting.",
       images: [
-        "/images/experience/research-1.jpg",
-        "/images/experience/research-2.jpg"
+        "/images/experience/research-1.jpeg",
+        "/images/experience/research-2.jpeg"
       ]
     },
     {
@@ -323,8 +323,8 @@ export const site = {
       summary: "Co-authored ISBN/DOI genetics book simplifying DNA for high schoolers; distributed 500+ copies, currently writing 2nd book on assistive robotics.",
       details: "Authored and interactive-designed 'A Journey into the DNA, from Nitrogen to Grandson' registered on Zenodo (DOI). Managed distribution of 500+ print and digital copies.",
       images: [
-        "/images/experience/publishing-1.jpg",
-        "/images/experience/publishing-2.jpg"
+        "/images/experience/publishing-1.jpeg",
+        "/images/experience/publishing-2.jpeg"
       ]
     },
     {
@@ -334,7 +334,7 @@ export const site = {
       summary: "Led R&D dept for 500+ members; mentored 60+ executives in STEM projects, organized 10+ research workshops & national science competitions.",
       details: "Structured project incubation programs, trained youth developers in IoT micro-controllers, and evaluated STEM innovations across regional and national platforms.",
       images: [
-        "/images/experience/sciencespark-1.jpg"
+        "/images/experience/sciencespark-1.jpeg"
       ]
     },
     {
@@ -355,7 +355,7 @@ export const site = {
       summary: "Trained 3,000+ students in WRO, IRO, & IMO over 4 yrs; organized regional STEM fests, mentored 50+ award-winning junior robotics projects.",
       details: "Coached high school teams in algorithmic problem solving, mechanical assembly, line-following robotics, and mathematical Olympiads.",
       images: [
-        "/images/experience/aryabhata-1.jpg"
+        "/images/experience/aryabhata-1.jpeg"
       ]
     },
     {
@@ -365,7 +365,7 @@ export const site = {
       summary: "Founded tech store providing low-cost components to 500+ student innovators, bridging hardware access gaps in non-metro science clubs.",
       details: "Sourced and distributed affordable microcontrollers, sensors, and electronic components for rural innovators who lacked local hardware supply chains.",
       images: [
-        "/images/experience/deshtechshop-1.jpg"
+        "/images/experience/deshtechshop-1.jpeg"
       ]
     },
     {
@@ -375,7 +375,7 @@ export const site = {
       summary: "Built custom DBMS & e-commerce portal for father's shop; reduced manual inventory tracking time by 40% & boosted digital sales by 25%.",
       details: "Designed custom inventory management database and local sales tracking application. Streamlined order processing and automated digital stock tracking.",
       images: [
-        "/images/experience/familyshop-1.jpg"
+        "/images/experience/familyshop-1.jpeg"
       ]
     },
     {
@@ -385,7 +385,7 @@ export const site = {
       summary: "Co-managed NDITC Tech Fest 2026 serving 4,000+ participants; led IT logistics, hands-on tech sessions, and project evaluation rounds.",
       details: "Managed event logistics, evaluated youth robotics display entries, and directed technical stage operations during national IT events.",
       images: [
-        "/images/experience/nditc-1.jpg"
+        "/images/experience/nditc-1.jpeg"
       ]
     },
     {
@@ -395,8 +395,8 @@ export const site = {
       summary: "Designed pro-bono graphics & branding for 10+ emerging clubs; classic musician (Guitar, Harmonium, Tabla - 7+ yrs), won 5+ regional art awards.",
       details: "Over 7 years of formal classical vocal and instrumental training (Guitar, Harmonium, Tabla). Created brand identities, poster arts, and digital assets for regional clubs and science festivals.",
       images: [
-        "/images/experience/creative-1.jpg",
-        "/images/experience/creative-2.jpg"
+        "/images/experience/creative-1.jpeg",
+        "/images/experience/creative-2.jpeg"
       ]
     }
   ],
