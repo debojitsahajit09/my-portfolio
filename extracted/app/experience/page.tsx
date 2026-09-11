@@ -42,7 +42,7 @@ export default function Experience() {
   return (
     <main className="section">
       <div className="wrap two">
-        {/* বাম দিকের হেডার অংশ (Achievements পেজের মতোই) */}
+        {/* বাম দিকের হেডার অংশ */}
         <div>
           <div className="eyebrow">04 / EXPERIENCE</div>
           <h1 className="title">Where I learned to lead.</h1>
@@ -56,7 +56,7 @@ export default function Experience() {
 
             return (
               <article className="row" key={i}>
-                {/* সিরিয়াল নাম্বার (Achievements পেজের মতো লেআউট ও কালার) */}
+                {/* সিরিয়াল নাম্বার */}
                 <div className="num" style={{ color: "var(--accent, #10b981)", fontWeight: "bold" }}>
                   {String(i + 1).padStart(2, "0")}
                 </div>
@@ -79,15 +79,15 @@ export default function Experience() {
                     {e.org} {e.period && <span style={{ opacity: 0.8, color: "inherit" }}>• {e.period}</span>}
                   </div>
 
-                  {/* ইমেজ সোয়াইপার / ক্যারোসেল */}
+                  {/* ইমেজ সোয়াইপার / ক্যারোসেল (Projects পেজের মতো ফুল-উইডথ রেশিও) */}
                   {hasImages && e.images && (
                     <div
                       style={{
                         position: "relative",
                         width: "100%",
-                        maxHeight: "380px",
+                        aspectRatio: "16 / 9",
                         overflow: "hidden",
-                        borderRadius: "12px",
+                        borderRadius: "16px",
                         marginBottom: "1rem",
                         background: "#111",
                       }}
@@ -97,7 +97,7 @@ export default function Experience() {
                         alt={`${e.role} preview`}
                         style={{
                           width: "100%",
-                          height: "380px",
+                          height: "100%",
                           objectFit: "cover",
                           display: "block",
                         }}
@@ -111,18 +111,19 @@ export default function Experience() {
                             onClick={() => prevImage(i, e.images!.length)}
                             style={{
                               position: "absolute",
-                              left: "10px",
+                              left: "12px",
                               top: "50%",
                               transform: "translateY(-50%)",
                               background: "rgba(0,0,0,0.6)",
                               color: "#fff",
                               border: "none",
                               borderRadius: "50%",
-                              padding: "6px",
+                              padding: "8px",
                               cursor: "pointer",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
+                              zIndex: 2,
                             }}
                           >
                             <ChevronLeft size={20} />
@@ -132,18 +133,19 @@ export default function Experience() {
                             onClick={() => nextImage(i, e.images!.length)}
                             style={{
                               position: "absolute",
-                              right: "10px",
+                              right: "12px",
                               top: "50%",
                               transform: "translateY(-50%)",
                               background: "rgba(0,0,0,0.6)",
                               color: "#fff",
                               border: "none",
                               borderRadius: "50%",
-                              padding: "6px",
+                              padding: "8px",
                               cursor: "pointer",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
+                              zIndex: 2,
                             }}
                           >
                             <ChevronRight size={20} />
@@ -151,14 +153,15 @@ export default function Experience() {
                           <div
                             style={{
                               position: "absolute",
-                              bottom: "10px",
+                              bottom: "12px",
                               right: "12px",
                               background: "rgba(0,0,0,0.75)",
                               color: "#fff",
                               fontSize: "0.75rem",
-                              padding: "2px 8px",
+                              padding: "3px 10px",
                               borderRadius: "12px",
                               fontFamily: "monospace",
+                              zIndex: 2,
                             }}
                           >
                             {currentImgIndex + 1} / {e.images.length}
