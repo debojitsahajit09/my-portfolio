@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="wrap">
-          {/* ছবির কন্টেইনার - বাইরের রিং সরিয়ে ছবি পরিষ্কার রাখা হয়েছে */}
+          
           <div 
             className="portrait" 
             style={{ 
@@ -20,7 +20,7 @@ export default function Home() {
               justifyContent: "center"
             }}
           >
-            {/* মূল প্রোফাইল পিকচার এবং ভেতরের সবুজ বর্ডার */}
+
             <img 
               src={site.photo} 
               alt={site.name} 
@@ -29,7 +29,7 @@ export default function Home() {
                 height: "100%", 
                 objectFit: "cover", 
                 borderRadius: "50%",
-                border: "3px solid #10b981",
+                border: "2px solid #10b981",
                 zIndex: 2
               }} 
             />
