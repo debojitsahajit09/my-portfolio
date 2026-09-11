@@ -41,57 +41,39 @@ export default function Experience() {
 
   return (
     <main className="section">
-      <div className="wrap" style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 1rem" }}>
-        {/* হেডার অংশ: সাইজ মূল স্টাইলেই রাখা হয়েছে */}
-        <div style={{ marginBottom: "3rem" }}>
+      <div className="wrap two">
+        {/* বাম দিকের হেডার অংশ (Achievements পেজের মতোই) */}
+        <div>
           <div className="eyebrow">04 / EXPERIENCE</div>
           <h1 className="title">Where I learned to lead.</h1>
         </div>
 
-        {/* এক্সপেরিয়েন্স কার্ডসমূহ */}
-        <div className="rows" style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
+        {/* ডান দিকের কনটেন্ট অংশ */}
+        <div className="rows">
           {experiences.map((e, i) => {
             const currentImgIndex = imageIndices[i] || 0;
             const hasImages = e.images && e.images.length > 0;
 
             return (
-              <article
-                className="row"
-                key={i}
-                style={{
-                  borderBottom: "1px solid var(--line, rgba(255,255,255,0.1))",
-                  paddingBottom: "2.5rem",
-                  display: "flex",
-                  gap: "1.5rem",
-                }}
-              >
-                {/* রোবোটিক্স/টেক টাইপ স্টাইলের সিরিয়াল নাম্বার */}
-                <div
-                  style={{
-                    fontSize: "1.5rem",
-                    fontWeight: "bold",
-                    color: "#10b981",
-                    minWidth: "45px",
-                    paddingTop: "2px",
-                    fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
-                    letterSpacing: "-0.5px",
-                  }}
-                >
+              <article className="row" key={i}>
+                {/* সিরিয়াল নাম্বার (Achievements পেজের মতো লেআউট ও কালার) */}
+                <div className="num" style={{ color: "var(--accent, #10b981)", fontWeight: "bold" }}>
                   {String(i + 1).padStart(2, "0")}
                 </div>
 
-                <div style={{ flex: 1 }}>
+                <div>
                   {/* পজিশন/রোল */}
-                  <h2 style={{ margin: 0, fontSize: "1.75rem", fontWeight: "700" }}>{e.role}</h2>
+                  <h2 className="item-title">{e.role}</h2>
 
                   {/* অর্গানাইজেশন ও পিরিয়ড */}
                   <div
+                    className="meta"
                     style={{
-                      color: "#10b981",
+                      color: "var(--accent, #10b981)",
                       fontWeight: "600",
                       marginTop: "4px",
                       marginBottom: "16px",
-                      fontSize: "1.05rem",
+                      fontSize: "0.95rem",
                     }}
                   >
                     {e.org} {e.period && <span style={{ opacity: 0.8, color: "inherit" }}>• {e.period}</span>}
@@ -103,10 +85,10 @@ export default function Experience() {
                       style={{
                         position: "relative",
                         width: "100%",
-                        maxHeight: "420px",
+                        maxHeight: "380px",
                         overflow: "hidden",
                         borderRadius: "12px",
-                        marginBottom: "1.25rem",
+                        marginBottom: "1rem",
                         background: "#111",
                       }}
                     >
@@ -115,7 +97,7 @@ export default function Experience() {
                         alt={`${e.role} preview`}
                         style={{
                           width: "100%",
-                          height: "420px",
+                          height: "380px",
                           objectFit: "cover",
                           display: "block",
                         }}
@@ -129,52 +111,52 @@ export default function Experience() {
                             onClick={() => prevImage(i, e.images!.length)}
                             style={{
                               position: "absolute",
-                              left: "12px",
+                              left: "10px",
                               top: "50%",
                               transform: "translateY(-50%)",
-                              background: "rgba(0,0,0,0.65)",
+                              background: "rgba(0,0,0,0.6)",
                               color: "#fff",
                               border: "none",
                               borderRadius: "50%",
-                              padding: "8px",
+                              padding: "6px",
                               cursor: "pointer",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
                             }}
                           >
-                            <ChevronLeft size={22} />
+                            <ChevronLeft size={20} />
                           </button>
                           <button
                             type="button"
                             onClick={() => nextImage(i, e.images!.length)}
                             style={{
                               position: "absolute",
-                              right: "12px",
+                              right: "10px",
                               top: "50%",
                               transform: "translateY(-50%)",
-                              background: "rgba(0,0,0,0.65)",
+                              background: "rgba(0,0,0,0.6)",
                               color: "#fff",
                               border: "none",
                               borderRadius: "50%",
-                              padding: "8px",
+                              padding: "6px",
                               cursor: "pointer",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
                             }}
                           >
-                            <ChevronRight size={22} />
+                            <ChevronRight size={20} />
                           </button>
                           <div
                             style={{
                               position: "absolute",
-                              bottom: "12px",
-                              right: "14px",
+                              bottom: "10px",
+                              right: "12px",
                               background: "rgba(0,0,0,0.75)",
                               color: "#fff",
-                              fontSize: "0.8rem",
-                              padding: "3px 10px",
+                              fontSize: "0.75rem",
+                              padding: "2px 8px",
                               borderRadius: "12px",
                               fontFamily: "monospace",
                             }}
@@ -187,27 +169,24 @@ export default function Experience() {
                   )}
 
                   {/* শর্ট ডেসক্রিপশন */}
-                  <p className="text" style={{ margin: "0 0 10px 0", fontSize: "1.05rem", lineHeight: "1.6" }}>
-                    {e.summary || e.text}
-                  </p>
+                  <p className="text">{e.summary || e.text}</p>
 
                   {/* See details টগল বাটন */}
                   {e.details && (
-                    <div>
+                    <div style={{ marginTop: "8px" }}>
                       <button
                         type="button"
                         onClick={() => toggleDetails(i)}
                         style={{
                           background: "none",
                           border: "none",
-                          color: "#10b981",
+                          color: "var(--accent, #10b981)",
                           cursor: "pointer",
                           fontWeight: "600",
                           display: "inline-flex",
                           alignItems: "center",
                           gap: "4px",
                           padding: 0,
-                          marginTop: "4px",
                           fontSize: "0.95rem",
                         }}
                       >
@@ -219,12 +198,12 @@ export default function Experience() {
                         <div
                           style={{
                             marginTop: "12px",
-                            padding: "16px",
+                            padding: "14px",
                             background: "rgba(255,255,255,0.03)",
                             borderRadius: "8px",
-                            fontSize: "0.98rem",
+                            fontSize: "0.95rem",
                             lineHeight: "1.6",
-                            borderLeft: "3px solid #10b981",
+                            borderLeft: "3px solid var(--accent, #10b981)",
                           }}
                         >
                           {e.details}
