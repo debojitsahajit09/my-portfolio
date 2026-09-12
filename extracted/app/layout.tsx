@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     "Debojit portfolio",
   ],
   authors: [{ name: "Debojit Saha Jit" }],
+  verification: {
+    google: "Ykhx6sq43wap5nhsVwEgHkaqs-8gz1Yx2bj731Dahto",
+  },
   openGraph: {
     title: "Debojit Saha Jit — Portfolio",
     description: "Personal archive and portfolio of Debojit Saha Jit.",
