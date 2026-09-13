@@ -289,7 +289,7 @@ export const site = {
     {
       n: "01",
       title: "A Journey into the DNA, from Nitrogen to Grandson",
-      status: "PUBLISHED (E-BOOK & DOI)",
+      status: "PUBLISHED",
       year: "2026",
       authors: "Debojit Saha Jit, Md Washiun Alim",
       publisher: "Tukro Publication",
@@ -299,7 +299,7 @@ export const site = {
       doiUrl: "https://doi.org/10.5281/zenodo.19597716",
       zenodoUrl: "https://doi.org/10.5281/zenodo.19597716",
       readUrl: "https://dna-grandson-book.vercel.app/",
-      coverImage: "/images/publications/dna-book-cover.jpg",
+      coverImage: "/images/publications/dna-book-cover.jpeg",
       text: "A biology manuscript and digital interactive book simplifying core concepts of DNA, genetics, and molecular biology for high school students.",
       summary: "This book is primarily written for Class 9–12 students to make their academic studies extremely simple and engaging. Complex concepts of biology and DNA are presented in plain language so that students remain genuinely passionate about learning biology and retain their scientific curiosity.",
       targetJournal: "",
