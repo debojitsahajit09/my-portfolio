@@ -6,12 +6,11 @@ import { site } from "@/data/site";
 import { 
   BookOpen, 
   ExternalLink, 
-  CheckCircle2, 
   ChevronDown, 
   ChevronUp, 
   ShieldCheck, 
   FileText, 
-  Award 
+  Award
 } from "lucide-react";
 
 export default function Publications() {
@@ -26,11 +25,11 @@ export default function Publications() {
     if (s.includes("published")) {
       return "bg-emerald-500/10 text-emerald-500 border-emerald-500/20";
     } else if (s.includes("review")) {
-      return "bg-amber-500/10 text-amber-500 border-amber-500/20";
+      return "bg-emerald-500/10 text-emerald-500 border-emerald-500/20";
     } else if (s.includes("submitted")) {
-      return "bg-blue-500/10 text-blue-500 border-blue-500/20";
+      return "bg-emerald-500/10 text-emerald-500 border-emerald-500/20";
     } else {
-      return "bg-zinc-500/10 text-zinc-400 border-zinc-500/20";
+      return "bg-emerald-500/10 text-emerald-500 border-emerald-500/20";
     }
   };
 
@@ -55,42 +54,50 @@ export default function Publications() {
           </p>
         </div>
 
-        {/* Academic Summary Statistics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+        {/* Academic Summary Statistics (All Icons & Numbers Green) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           <div className="p-4 rounded-xl border bg-card text-card-foreground shadow-sm flex items-center gap-3">
             <BookOpen className="text-emerald-500" size={24} />
             <div>
-              <div className="text-2xl font-bold">{publishedCount}</div>
+              <div className="text-2xl font-bold text-emerald-500">{publishedCount}</div>
               <div className="text-xs text-muted-foreground uppercase font-medium">Published Work</div>
             </div>
           </div>
           <div className="p-4 rounded-xl border bg-card text-card-foreground shadow-sm flex items-center gap-3">
-            <FileText className="text-blue-500" size={24} />
+            <FileText className="text-emerald-500" size={24} />
             <div>
-              <div className="text-2xl font-bold">{inProgressCount}</div>
+              <div className="text-2xl font-bold text-emerald-500">{inProgressCount}</div>
               <div className="text-xs text-muted-foreground uppercase font-medium">Manuscripts in Progress</div>
             </div>
           </div>
           <div className="p-4 rounded-xl border bg-card text-card-foreground shadow-sm flex items-center gap-3">
             <ShieldCheck className="text-emerald-500" size={24} />
             <div>
-              <div className="text-2xl font-bold">{doiCount}</div>
+              <div className="text-2xl font-bold text-emerald-500">{doiCount}</div>
               <div className="text-xs text-muted-foreground uppercase font-medium">DOI-Registered</div>
             </div>
           </div>
           <div className="p-4 rounded-xl border bg-card text-card-foreground shadow-sm flex items-center gap-3">
-            <Award className="text-amber-500" size={24} />
+            <Award className="text-emerald-500" size={24} />
             <div>
-              <div className="text-2xl font-bold">{site.publications.length}</div>
+              <div className="text-2xl font-bold text-emerald-500">{site.publications.length}</div>
               <div className="text-xs text-muted-foreground uppercase font-medium">Total Scholarly Works</div>
             </div>
           </div>
         </div>
 
+        {/* Golden Animated Scroll Indicator */}
+        <div className="flex flex-col items-center justify-center mb-14 text-amber-500 animate-bounce">
+          <span className="text-xs font-semibold uppercase tracking-widest mb-1 text-amber-500">
+            Scroll Down
+          </span>
+          <ChevronDown size={20} className="text-amber-500" />
+        </div>
+
         {/* Publications List */}
         <div className="space-y-12">
           {site.publications.map((item) => {
-            const p = item as any; // Safe type cast to prevent TypeScript strict interface mismatch
+            const p = item as any;
             const isExpanded = !!expandedItems[p.n];
 
             return (
@@ -100,7 +107,7 @@ export default function Publications() {
               >
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                   
-                  {/* Book Cover / Visual Card (If Cover Image Exists) */}
+                  {/* Book Cover / Visual Card */}
                   {p.coverImage && (
                     <div className="w-full md:w-48 h-64 relative rounded-xl overflow-hidden border shadow-sm flex-shrink-0 bg-muted">
                       <Image
@@ -115,9 +122,9 @@ export default function Publications() {
                   {/* Publication Core Metadata */}
                   <div className="flex-1 space-y-4 w-full">
                     
-                    {/* Header Row: Item Number & Status Badge */}
+                    {/* Header Row: Item Number (Green) & Status Badge */}
                     <div className="flex items-center justify-between gap-4 flex-wrap">
-                      <span className="text-sm font-mono font-semibold px-2.5 py-1 rounded bg-muted text-muted-foreground">
+                      <span className="text-sm font-mono font-bold px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-500">
                         #{p.n}
                       </span>
                       <span className={`text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full border ${getStatusBadge(p.status)}`}>
@@ -130,10 +137,11 @@ export default function Publications() {
                       {p.title}
                     </h2>
 
-                    {/* Authors & Organization */}
+                    {/* Authors & Year */}
                     <div className="text-sm text-muted-foreground font-medium">
-                      <span className="text-foreground font-semibold">{p.authors || "Debojit Saha Jit"}</span>
-                      {p.org && <span> • {p.org}</span>}
+                      <span className="text-foreground font-semibold">
+                        {p.authors || "Debojit Saha Jit, Sabit Islam Efty"}
+                      </span>
                       {p.year && <span> ({p.year})</span>}
                     </div>
 
@@ -152,36 +160,16 @@ export default function Publications() {
                       </div>
                     )}
 
-                    {/* Action Verification CTA Buttons */}
+                    {/* Buttons: Only Read E-Book & Zenodo Record */}
                     <div className="flex flex-wrap gap-3 pt-3">
                       {p.readUrl && (
                         <a
                           href={p.readUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-4 py-2 bg-emerald-500 text-black font-semibold rounded-lg text-sm hover:bg-emerald-400 transition-colors flex items-center gap-1.5"
+                          className="px-4 py-2 bg-emerald-500 text-black font-semibold rounded-lg text-sm hover:bg-emerald-400 transition-colors flex items-center gap-1.5 shadow-sm"
                         >
                           Read E-Book <ExternalLink size={14} />
-                        </a>
-                      )}
-                      {p.doiUrl && (
-                        <a
-                          href={p.doiUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 border rounded-lg text-sm font-medium hover:border-emerald-500 hover:text-emerald-500 transition-colors flex items-center gap-1.5"
-                        >
-                          Verify DOI <CheckCircle2 size={14} className="text-emerald-500" />
-                        </a>
-                      )}
-                      {p.publisherUrl && (
-                        <a
-                          href={p.publisherUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 border rounded-lg text-sm font-medium hover:border-emerald-500 hover:text-emerald-500 transition-colors flex items-center gap-1.5"
-                        >
-                          Publisher Record <ExternalLink size={14} />
                         </a>
                       )}
                       {p.zenodoUrl && (
@@ -189,33 +177,40 @@ export default function Publications() {
                           href={p.zenodoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-4 py-2 border rounded-lg text-sm font-medium hover:border-emerald-500 hover:text-emerald-500 transition-colors flex items-center gap-1.5 font-mono text-xs"
+                          className="px-4 py-2 border rounded-lg text-sm font-medium hover:border-emerald-500 hover:text-emerald-500 transition-colors flex items-center gap-1.5 font-mono text-xs bg-card"
                         >
-                          Zenodo Record
+                          Zenodo Record <ExternalLink size={14} />
                         </a>
                       )}
                     </div>
 
-                    {/* Expandable "Publication Details" Trigger */}
+                    {/* Expandable "Book Details" Trigger */}
                     {p.details && (
                       <div className="pt-2">
                         <button
                           onClick={() => toggleExpand(p.n)}
                           className="text-xs font-semibold uppercase tracking-wider text-emerald-500 flex items-center gap-1 hover:underline"
                         >
-                          {isExpanded ? "Hide Details" : "Publication Details"}
+                          {isExpanded ? "Hide Book Details" : "Book Details"}
                           {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                         </button>
 
                         {/* Collapsible Content */}
                         {isExpanded && (
-                          <div className="mt-4 p-4 rounded-xl bg-muted/50 border text-xs font-mono space-y-2 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
-                            {p.details.type && <div><span className="text-muted-foreground">TYPE:</span> {p.details.type}</div>}
-                            {p.details.language && <div><span className="text-muted-foreground">LANGUAGE:</span> {p.details.language}</div>}
-                            {p.details.pages && <div><span className="text-muted-foreground">PAGES:</span> {p.details.pages}</div>}
-                            {p.details.license && <div><span className="text-muted-foreground">LICENSE:</span> {p.details.license}</div>}
-                            {p.details.repository && <div><span className="text-muted-foreground">REPOSITORY:</span> {p.details.repository}</div>}
-                            {p.details.researchArea && <div><span className="text-muted-foreground">FIELD:</span> {p.details.researchArea}</div>}
+                          <div className="mt-4 p-4 rounded-xl bg-muted/50 border text-xs space-y-3">
+                            {p.summary && (
+                              <p className="text-sm leading-relaxed text-muted-foreground border-b pb-3 border-border/50 font-sans">
+                                {p.summary}
+                              </p>
+                            )}
+                            <div className="font-mono space-y-2 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+                              {p.details.type && <div><span className="text-muted-foreground">TYPE:</span> {p.details.type}</div>}
+                              {p.details.language && <div><span className="text-muted-foreground">LANGUAGE:</span> {p.details.language}</div>}
+                              {p.details.pages && <div><span className="text-muted-foreground">PAGES:</span> {p.details.pages}</div>}
+                              {p.details.license && <div><span className="text-muted-foreground">LICENSE:</span> {p.details.license}</div>}
+                              {p.details.repository && <div><span className="text-muted-foreground">REPOSITORY:</span> {p.details.repository}</div>}
+                              {p.details.researchArea && <div><span className="text-muted-foreground">FIELD:</span> {p.details.researchArea}</div>}
+                            </div>
                           </div>
                         )}
                       </div>
