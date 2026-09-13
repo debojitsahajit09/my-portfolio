@@ -21,7 +21,6 @@ export default function Publications() {
     setExpandedItems((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
-  // Status Badge Colors & Styling
   const getStatusBadge = (status: string) => {
     const s = status?.toLowerCase() || "";
     if (s.includes("published")) {
@@ -35,10 +34,9 @@ export default function Publications() {
     }
   };
 
-  // Academic Summary Counters
   const publishedCount = site.publications.filter((p) => p.status?.toLowerCase().includes("published")).length;
   const inProgressCount = site.publications.filter((p) => !p.status?.toLowerCase().includes("published")).length;
-  const doiCount = site.publications.filter((p) => p.doi).length;
+  const doiCount = site.publications.filter((p: any) => p.doi).length;
 
   return (
     <main className="section py-12 px-4 md:px-8 max-w-6xl mx-auto">
@@ -53,7 +51,7 @@ export default function Publications() {
             Research, Writing & Scholarly Work
           </h1>
           <p className="text text-lg text-muted-foreground max-w-2xl">
-            Selected publications, manuscripts, and ongoing research projects with persistent persistent digital identifiers.
+            Selected publications, manuscripts, and ongoing research projects with persistent digital identifiers.
           </p>
         </div>
 
@@ -91,7 +89,8 @@ export default function Publications() {
 
         {/* Publications List */}
         <div className="space-y-12">
-          {site.publications.map((p) => {
+          {site.publications.map((item) => {
+            const p = item as any; // Safe type cast to prevent TypeScript strict interface mismatch
             const isExpanded = !!expandedItems[p.n];
 
             return (
@@ -144,7 +143,7 @@ export default function Publications() {
                     </p>
 
                     {/* Persistent Identifiers Metadata Strip */}
-                    {(p.isbn || p.doi || p.publisher) && (
+                    {(p.isbn || p.doi || p.publisher || p.targetJournal) && (
                       <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-mono text-muted-foreground pt-2 border-t border-border/50">
                         {p.publisher && <div><strong className="text-foreground">PUBLISHER:</strong> {p.publisher}</div>}
                         {p.isbn && <div><strong className="text-foreground">ISBN:</strong> {p.isbn}</div>}
