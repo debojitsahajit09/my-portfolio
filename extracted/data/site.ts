@@ -301,10 +301,12 @@ export const site = {
       readUrl: "https://dna-grandson-book.vercel.app/",
       coverImage: "/images/publications/dna-book-cover.jpg",
       text: "A biology manuscript and digital interactive book simplifying core concepts of DNA, genetics, and molecular biology for high school students.",
-      summary: "বইটি মূলত ৯ম থেকে ১২ম শ্রেণির (Class 9–12) শিক্ষার্থীদের জন্য তাদের প্রাতিষ্ঠানিক একাডেমিক পড়ালেখা অত্যন্ত সহজ ও আকর্ষণীয় করে তোলার উদ্দেশ্যে রচিত। জটিল বায়োলজি ও ডিএনএ বিষয়গুলোকে সহজ ভাষায় এমনভাবে উপস্থাপন করা হয়েছে যেন শিক্ষার্থীদের জীববিজ্ঞান শেখার আগ্রহ ও মেধা সবসময় ধরে থাকে।",
+      summary: "This book presents a comprehensive journey through the fundamental principles of molecular biology and genetics — beginning from the smallest chemical components of life and ascending to the complex mechanisms of inheritance and variation.
+Starting with nitrogenous bases and nucleotides, the journey moves through DNA and RNA structure, transcription, translation, protein function, chromosomal packaging, cell division, and ultimately Mendelian genetics.
+Written with precision and accessibility, it is designed for students stepping into the world of molecular biology — or anyone who wants to understand how life writes and reads its own code",
       details: {
         type: "Educational Book / Interactive E-Book",
-        language: "English & Bengali",
+        language: "English",
         pages: "180+",
         license: "CC BY 4.0 International",
         repository: "Zenodo Digital Repository",
