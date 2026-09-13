@@ -11,8 +11,7 @@ import {
   Users, 
   HeartHandshake, 
   Briefcase, 
-  Rocket, 
-  Mouse 
+  Rocket 
 } from "lucide-react";
 
 interface ExperienceItem {
@@ -24,6 +23,7 @@ interface ExperienceItem {
   details?: string;
   images?: string[];
   website?: string;
+  category?: string; // e.g. "Community Work", "Volunteer", "Founder", "Entrepreneur"
 }
 
 export default function Experience() {
@@ -50,12 +50,21 @@ export default function Experience() {
 
   const experiences = (site.experience || []) as ExperienceItem[];
 
-  // Top summary categories
+  // Helper function to count items based on category or predefined logic
+  const getCategoryCount = (label: string) => {
+    const count = experiences.filter((e) => 
+      e.category?.toLowerCase() === label.toLowerCase() || 
+      e.role?.toLowerCase().includes(label.toLowerCase())
+    ).length;
+    return count > 0 ? String(count).padStart(2, "0") : "01"; 
+  };
+
+  // Top summary categories with counts
   const categories = [
-    { label: "Community Work", icon: <Users className="text-emerald-500" size={24} /> },
-    { label: "Volunteer", icon: <HeartHandshake className="text-emerald-500" size={24} /> },
-    { label: "Founder", icon: <Briefcase className="text-emerald-500" size={24} /> },
-    { label: "Entrepreneur", icon: <Rocket className="text-emerald-500" size={24} /> },
+    { label: "Community Work", count: getCategoryCount("Community Work"), icon: <Users className="text-emerald-500" size={24} /> },
+    { label: "Volunteer", count: getCategoryCount("Volunteer"), icon: <HeartHandshake className="text-emerald-500" size={24} /> },
+    { label: "Founder", count: getCategoryCount("Founder"), icon: <Briefcase className="text-emerald-500" size={24} /> },
+    { label: "Entrepreneur", count: getCategoryCount("Entrepreneur"), icon: <Rocket className="text-emerald-500" size={24} /> },
   ];
 
   return (
@@ -64,24 +73,29 @@ export default function Experience() {
         
         {/* Header Section */}
         <div className="mb-8">
-          <div className="eyebrow text-xs md:text-sm font-semibold tracking-widest uppercase mb-2">
-            04 / <span className="text-emerald-500">EXPERIENCE</span>
+          <div className="eyebrow text-xs md:text-sm font-semibold tracking-widest uppercase mb-2 text-emerald-500">
+            EXPERIENCE
           </div>
           <h1 className="title text-3xl md:text-5xl font-bold tracking-tight">
             Where I learned to lead.
           </h1>
         </div>
 
-        {/* 4 Category Cards in 1 Row */}
-        <div className="w-full overflow-x-auto pb-4 mb-8 scrollbar-none">
-          <div className="grid grid-flow-col auto-cols-[minmax(180px,1fr)] md:grid-cols-4 gap-4 min-w-full">
+        {/* 4 Category Cards Grid (No horizontal swipe) */}
+        <div className="w-full mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {categories.map((cat, idx) => (
               <div 
                 key={idx} 
-                className="p-5 rounded-2xl border bg-card text-card-foreground shadow-sm flex flex-col items-start justify-center gap-3 hover:border-emerald-500 transition-all"
+                className="p-5 rounded-2xl border bg-card text-card-foreground shadow-sm flex flex-col items-start justify-between gap-4 hover:border-emerald-500 transition-all min-h-[120px]"
               >
-                <div>{cat.icon}</div>
-                <span className="font-semibold text-sm md:text-base uppercase tracking-wider">
+                <div className="flex items-center justify-between w-full">
+                  <div>{cat.icon}</div>
+                  <span className="text-emerald-500 font-mono font-bold text-lg md:text-xl">
+                    {cat.count}
+                  </span>
+                </div>
+                <span className="font-semibold text-xs md:text-sm uppercase tracking-wider">
                   {cat.label}
                 </span>
               </div>
@@ -89,11 +103,29 @@ export default function Experience() {
           </div>
         </div>
 
-        {/* Scroll Indicator with Animation */}
-        <div className="flex flex-col items-center justify-center my-8 text-emerald-500 animate-bounce">
-          <Mouse size={28} />
-          <span className="text-xs font-mono mt-1 opacity-80">Scroll down</span>
+        {/* Custom Mouse Scroll Animation without text (Fade up dot inside mouse) */}
+        <div className="flex items-center justify-center my-10">
+          <div className="w-6 h-10 border-2 border-emerald-500 rounded-full flex justify-center p-1 relative">
+            <div className="w-1.5 h-2.5 bg-emerald-500 rounded-full animate-[fadeUp_1.5s_infinite]" />
+          </div>
         </div>
+
+        {/* Tailwind Custom Keyframes Style for Bottom-to-Top Fade Animation */}
+        <style jsx>{`
+          @keyframes fadeUp {
+            0% {
+              opacity: 0;
+              transform: translateY(12px);
+            }
+            50% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 0;
+              transform: translateY(0px);
+            }
+          }
+        `}</style>
 
         {/* Experience List */}
         <div className="space-y-16 mt-12">
@@ -104,14 +136,17 @@ export default function Experience() {
             return (
               <article key={i} className="border-b pb-12 last:border-b-0">
                 
-                {/* Meta Header Info */}
-                <div className="flex flex-wrap items-baseline gap-2 md:gap-4 mb-3">
-                  <span className="text-lg md:text-xl font-bold text-emerald-500 font-mono">
-                    {String(i + 1).padStart(2, "0")}.
+                {/* Serial matching Achievements Page style (14.) */}
+                <div className="mb-2">
+                  <span className="text-4xl md:text-5xl font-black text-foreground font-mono">
+                    {String(i + 1).padStart(2, "0")}
+                    <span className="text-emerald-500">.</span>
                   </span>
-                  <span className="text-emerald-500 font-semibold text-sm md:text-base">
-                    {e.period || "2025 – Present"}
-                  </span>
+                </div>
+
+                {/* Period */}
+                <div className="text-emerald-500 font-semibold text-xs md:text-sm uppercase tracking-wider mb-3">
+                  {e.period || "2025 – Present"}
                 </div>
 
                 {/* Role & Org */}
@@ -122,7 +157,7 @@ export default function Experience() {
                   {e.org}
                 </div>
 
-                {/* Image Carousel - Centered & Full Responsive */}
+                {/* Image Carousel */}
                 {hasImages && e.images && (
                   <div className="w-full flex justify-center mb-6">
                     <div className="relative w-full max-w-3xl aspectRatio-[16/9] overflow-hidden rounded-2xl bg-black/40 border border-emerald-500/20 shadow-md">
@@ -163,7 +198,7 @@ export default function Experience() {
                   {e.summary || e.text}
                 </p>
 
-                {/* Action Buttons: Website Link + See Details Toggle */}
+                {/* Action Buttons */}
                 <div className="flex flex-wrap items-center gap-4">
                   {e.website && (
                     <a
