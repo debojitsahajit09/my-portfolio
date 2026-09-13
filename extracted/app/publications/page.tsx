@@ -8,9 +8,7 @@ import {
   ExternalLink, 
   ChevronDown, 
   ChevronUp, 
-  ShieldCheck, 
-  FileText, 
-  Award
+  FileText
 } from "lucide-react";
 
 export default function Publications() {
@@ -35,7 +33,6 @@ export default function Publications() {
 
   const publishedCount = site.publications.filter((p) => p.status?.toLowerCase().includes("published")).length;
   const inProgressCount = site.publications.filter((p) => !p.status?.toLowerCase().includes("published")).length;
-  const doiCount = site.publications.filter((p: any) => p.doi).length;
 
   return (
     <main className="section py-12 px-4 md:px-8 max-w-6xl mx-auto">
@@ -54,8 +51,8 @@ export default function Publications() {
           </p>
         </div>
 
-        {/* Academic Summary Statistics (All Icons & Numbers Green) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        {/* Academic Summary Statistics (2 Boxes Only) */}
+        <div className="grid grid-cols-2 gap-4 mb-10 max-w-2xl">
           <div className="p-4 rounded-xl border bg-card text-card-foreground shadow-sm flex items-center gap-3">
             <BookOpen className="text-emerald-500" size={24} />
             <div>
@@ -70,29 +67,31 @@ export default function Publications() {
               <div className="text-xs text-muted-foreground uppercase font-medium">Manuscripts in Progress</div>
             </div>
           </div>
-          <div className="p-4 rounded-xl border bg-card text-card-foreground shadow-sm flex items-center gap-3">
-            <ShieldCheck className="text-emerald-500" size={24} />
-            <div>
-              <div className="text-2xl font-bold text-emerald-500">{doiCount}</div>
-              <div className="text-xs text-muted-foreground uppercase font-medium">DOI-Registered</div>
-            </div>
-          </div>
-          <div className="p-4 rounded-xl border bg-card text-card-foreground shadow-sm flex items-center gap-3">
-            <Award className="text-emerald-500" size={24} />
-            <div>
-              <div className="text-2xl font-bold text-emerald-500">{site.publications.length}</div>
-              <div className="text-xs text-muted-foreground uppercase font-medium">Total Scholarly Works</div>
-            </div>
+        </div>
+
+        {/* Custom Mouse Scroll Indicator Animation (Dot moving bottom to top) */}
+        <div className="flex justify-center items-center mb-14">
+          <div className="w-6 h-10 rounded-full border-2 border-emerald-500 flex justify-center p-1">
+            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-[scrollUp_1.5s_infinite]" />
           </div>
         </div>
 
-        {/* Golden Animated Scroll Indicator */}
-        <div className="flex flex-col items-center justify-center mb-14 text-amber-500 animate-bounce">
-          <span className="text-xs font-semibold uppercase tracking-widest mb-1 text-amber-500">
-            Scroll Down
-          </span>
-          <ChevronDown size={20} className="text-amber-500" />
-        </div>
+        {/* CSS Keyframes for Bottom to Top Dot Animation */}
+        <style jsx>{`
+          @keyframes scrollUp {
+            0% {
+              transform: translateY(16px);
+              opacity: 0;
+            }
+            50% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(0px);
+              opacity: 0;
+            }
+          }
+        `}</style>
 
         {/* Publications List */}
         <div className="space-y-12">
