@@ -3,16 +3,41 @@ export const site = {
   role: "Independent Researcher • Assistive Technology • Notre Dame College",
   location: "Dhaka, Bangladesh",
   email: "debojitsahajit09@gmail.com",
+  secondaryEmail: "debojitsahajit@gmail.com",
   phone: "+880 1774074009",
+  whatsapp: "8801774074009",
   photo: "/images/profile.jpg",
   resume: "/documents/resume.pdf",
+
+  // Navigation menu items based on your sidebar design
+  nav: [
+    { label: "Home", href: "/" },
+    { 
+      label: "About", 
+      href: "/about",
+      children: [
+        { label: "Bio", href: "/about#bio" },
+        { label: "Education", href: "/about#education" },
+        { label: "Skills", href: "/about#skills" }
+      ]
+    },
+    { label: "Experience", href: "/experience" },
+    { label: "Projects", href: "/projects" },
+    { label: "Achievements", href: "/achievements" },
+    { label: "Publications", href: "/publications" },
+    { label: "Certifications", href: "/certifications" },
+    { label: "Contact", href: "/contact" }
+  ],
 
   social: {
     github: "https://github.com/debojitsahajit09",
     linkedin: "https://www.linkedin.com/in/debojit-saha-jit",
     facebook: "https://www.facebook.com/share/1NJNLzCz3o/?mibextid=wwXIfr",
     instagram: "https://www.instagram.com/a_virtuoso_cl?stkn=MTQ4dXIydGloam1udA%3D%3D&utm_source=qr",
-    youtube: ""
+    youtube: "",
+    orcid: "https://orcid.org",
+    researchgate: "https://researchgate.net",
+    whatsapp: "https://wa.me/8801774074009"
   },
 
   home: {
@@ -262,36 +287,66 @@ export const site = {
 
   publications: [
     {
-      n: "03",
+      n: "01",
       title: "A Journey into the DNA, from Nitrogen to Grandson",
-      status: "Published (E-Book & DOI)",
+      status: "PUBLISHED (E-BOOK & DOI)",
       year: "2026",
-      org: "Zenodo / ISBN Registered",
-      text: "A biology manuscript and digital interactive book simplifying core concepts of DNA for students.",
-      doi: "https://doi.org/10.5281/zenodo.19597716",
-      link: "https://dna-grandson-book.vercel.app/"
+      authors: "Debojit Saha Jit, Sabit Islam Efty",
+      org: "Tukro Publication • Zenodo",
+      publisher: "Tukro Publication",
+      publisherUrl: "https://doi.org/10.5281/zenodo.19597716",
+      isbn: "978-984-93881-2-1",
+      doi: "10.5281/zenodo.19597716",
+      doiUrl: "https://doi.org/10.5281/zenodo.19597716",
+      zenodoUrl: "https://doi.org/10.5281/zenodo.19597716",
+      readUrl: "Https://dna-grandson-book.vercel.app/",
+      coverImage: "/images/publications/dna-book-cover.jpg",
+      text: "A biology manuscript and digital interactive book simplifying core concepts of DNA, genetics, and molecular biology for high school students.",
+      details: {
+        type: "Educational Book / Interactive E-Book",
+        language: "English & Bengali",
+        pages: "180+",
+        license: "CC BY 4.0 International",
+        repository: "Zenodo Digital Repository",
+        researchArea: "Molecular Biology & Genetics Education"
+      }
     },
     {
       n: "02",
       title: "GenAI Adoption Among Bangladeshi SMEs",
-      status: "In progress",
+      status: "IN PROGRESS",
       year: "2026",
-      org: "Target: Technology in Society (Q1)",
-      text: "Studies Generative AI adoption in Bangladeshi electronics-retail SMEs using a combined TOE/UTAUT/RBV framework with PLS-SEM."
+      authors: "Debojit Saha Jit",
+      org: "Independent Research",
+      targetJournal: "Technology in Society (Elsevier Q1)",
+      text: "Studies Generative AI adoption dynamics in Bangladeshi electronics-retail SMEs using a combined TOE/UTAUT/RBV theoretical framework with Empirical PLS-SEM analysis.",
+      details: {
+        type: "Original Research Article",
+        language: "English",
+        researchArea: "Applied AI, Information Systems & SME Technology Adoption",
+        repository: "Manuscript in Preparation"
+      }
     },
     {
-      n: "01",
+      n: "03",
       title: "Jute-Polyester Hybrid Fabrics & AI-Based Microplastic Quantification",
-      status: "In progress",
+      status: "IN PROGRESS",
       year: "2026",
-      org: "Target: Journal of Cleaner Production (Q1)",
-      text: "Examines jute-polyester hybrid fabrics alongside an AI-based method for quantifying microplastic shedding."
+      authors: "Debojit Saha Jit",
+      org: "Independent Research",
+      targetJournal: "Journal of Cleaner Production (Elsevier Q1)",
+      text: "Examines sustainable jute-polyester hybrid fabric durability alongside an AI/Computer Vision method for real-time microplastic shedding quantification.",
+      details: {
+        type: "Empirical Research Article",
+        language: "English",
+        researchArea: "Sustainable Materials, Environmental Engineering & Computer Vision",
+        repository: "Experimental Testing & Data Analysis Phase"
+      }
     }
   ],
 
   certifications: [],
 
-  // ==================== EXPERIENCE SECTION UPDATED ====================
   experience: [
     {
       period: "2025 – Present",
@@ -445,10 +500,12 @@ export const site = {
   },
 
   contact: {
-    title: "Let's build something.",
-    text: "For collaboration, engineering projects, competitions, technology and meaningful opportunities.",
+    title: "Get In Touch.",
+    text: "Feel free to reach out for collaborations, research inquiries, or just a friendly chat.",
     email: "debojitsahajit09@gmail.com",
+    secondaryEmail: "debojitcare30@gmail.com",
     phone: "+880 1774074009",
+    whatsappPhone: "+880 1774074009",
     location: "Dhaka, Bangladesh"
   },
 
