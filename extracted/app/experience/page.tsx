@@ -7,11 +7,7 @@ import {
   ChevronRight, 
   ChevronDown, 
   ChevronUp, 
-  ExternalLink, 
-  Users, 
-  HeartHandshake, 
-  Briefcase, 
-  Rocket 
+  ExternalLink 
 } from "lucide-react";
 
 interface ExperienceItem {
@@ -23,7 +19,7 @@ interface ExperienceItem {
   details?: string;
   images?: string[];
   website?: string;
-  category?: string; // e.g. "Community Work", "Volunteer", "Founder", "Entrepreneur"
+  category?: string;
 }
 
 export default function Experience() {
@@ -50,7 +46,7 @@ export default function Experience() {
 
   const experiences = (site.experience || []) as ExperienceItem[];
 
-  // Helper function to count items based on category or predefined logic
+  // Helper function to count items based on category
   const getCategoryCount = (label: string) => {
     const count = experiences.filter((e) => 
       e.category?.toLowerCase() === label.toLowerCase() || 
@@ -59,12 +55,12 @@ export default function Experience() {
     return count > 0 ? String(count).padStart(2, "0") : "01"; 
   };
 
-  // Top summary categories with counts
+  // Top summary categories with counts (Icons removed)
   const categories = [
-    { label: "Community Work", count: getCategoryCount("Community Work"), icon: <Users className="text-emerald-500" size={24} /> },
-    { label: "Volunteer", count: getCategoryCount("Volunteer"), icon: <HeartHandshake className="text-emerald-500" size={24} /> },
-    { label: "Founder", count: getCategoryCount("Founder"), icon: <Briefcase className="text-emerald-500" size={24} /> },
-    { label: "Entrepreneur", count: getCategoryCount("Entrepreneur"), icon: <Rocket className="text-emerald-500" size={24} /> },
+    { label: "Community Work", count: getCategoryCount("Community Work") },
+    { label: "Volunteer", count: getCategoryCount("Volunteer") },
+    { label: "Founder", count: getCategoryCount("Founder") },
+    { label: "Entrepreneur", count: getCategoryCount("Entrepreneur") },
   ];
 
   return (
@@ -81,21 +77,18 @@ export default function Experience() {
           </h1>
         </div>
 
-        {/* 4 Category Cards Grid (No horizontal swipe) */}
+        {/* 4 Compact Category Cards Grid (Centered text & count, no icons) */}
         <div className="w-full mb-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {categories.map((cat, idx) => (
               <div 
                 key={idx} 
-                className="p-5 rounded-2xl border bg-card text-card-foreground shadow-sm flex flex-col items-start justify-between gap-4 hover:border-emerald-500 transition-all min-h-[120px]"
+                className="py-3.5 px-3 rounded-2xl border bg-card text-card-foreground shadow-sm flex flex-col items-center justify-center gap-1 hover:border-emerald-500 transition-all"
               >
-                <div className="flex items-center justify-between w-full">
-                  <div>{cat.icon}</div>
-                  <span className="text-emerald-500 font-mono font-bold text-lg md:text-xl">
-                    {cat.count}
-                  </span>
-                </div>
-                <span className="font-semibold text-xs md:text-sm uppercase tracking-wider">
+                <span className="text-emerald-500 font-mono font-bold text-lg md:text-xl">
+                  {cat.count}
+                </span>
+                <span className="font-semibold text-[11px] md:text-xs uppercase tracking-wider text-center">
                   {cat.label}
                 </span>
               </div>
@@ -103,7 +96,7 @@ export default function Experience() {
           </div>
         </div>
 
-        {/* Custom Mouse Scroll Animation without text (Fade up dot inside mouse) */}
+        {/* Custom Mouse Scroll Animation (Fade up dot inside mouse) */}
         <div className="flex items-center justify-center my-10">
           <div className="w-6 h-10 border-2 border-emerald-500 rounded-full flex justify-center p-1 relative">
             <div className="w-1.5 h-2.5 bg-emerald-500 rounded-full animate-[fadeUp_1.5s_infinite]" />
@@ -136,16 +129,16 @@ export default function Experience() {
             return (
               <article key={i} className="border-b pb-12 last:border-b-0">
                 
-                {/* Serial matching Achievements Page style (14.) */}
-                <div className="mb-2">
+                {/* Serial matching Achievements Page style centered */}
+                <div className="mb-1 text-center">
                   <span className="text-4xl md:text-5xl font-black text-foreground font-mono">
                     {String(i + 1).padStart(2, "0")}
                     <span className="text-emerald-500">.</span>
                   </span>
                 </div>
 
-                {/* Period */}
-                <div className="text-emerald-500 font-semibold text-xs md:text-sm uppercase tracking-wider mb-3">
+                {/* Period Centered */}
+                <div className="text-emerald-500 font-semibold text-xs md:text-sm uppercase tracking-wider mb-6 text-center">
                   {e.period || "2025 – Present"}
                 </div>
 
