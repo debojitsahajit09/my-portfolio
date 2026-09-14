@@ -47,7 +47,7 @@ export const site = {
   },
 
   about: {
-    title: "More than a portfolio.",
+    title: "Engineering Technology for Real-World Impact.",
     text: "Passionate about robotics and systems design from early childhood. After achieving GPA 5.00 in SSC from Rajbari Govt. High School (District 1st Position), I joined Notre Dame College, Dhaka. Inspired deeply by personal experiences with mobility limitations, I founded Team C.A.R.E. and built the C.A.R.E. Smart Wheelchair. Alongside hardware engineering, I work extensively on full-stack web development, custom DBMS portals, UI/UX, and graphic design for 10+ emerging organizations. I also founded the Rajbari Robotics Association, mentoring over 3,000 students across national and international Olympiads (WRO, IRO, IMO, IPhO). My journey has taken me globally—visiting the USA, Taiwan, and Dubai—including milestones like MIT, Harvard University, NASA Kennedy Space Center, and attending the UN HQ as a guest delegate.",
     quote: "Curiosity starts it. Engineering & Design make it real.",
     researchInterests: [
@@ -523,7 +523,7 @@ export const site = {
     title: "Get In Touch.",
     text: "Feel free to reach out for research collaborations, engineering projects, design inquiries, or just a friendly chat.",
     email: "debojitsahajit09@gmail.com",
-    secondaryEmail: "debojitcare30@gmail.com",
+    secondaryEmail: "debojitsahajit@gmail.com",
     phone: "+880 1774074009",
     whatsappPhone: "+880 1774074009",
     location: "Dhaka, Bangladesh"
