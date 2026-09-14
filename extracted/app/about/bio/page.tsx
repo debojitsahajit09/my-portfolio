@@ -33,20 +33,20 @@ export default function BioPage() {
       <div style={{ marginBottom: "2.5rem" }}>
         <p style={{ 
           color: "#52A885", 
-          fontSize: "0.85rem", 
+          fontSize: "0.8rem", 
           fontWeight: 700, 
-          letterSpacing: "0.15em", 
+          letterSpacing: "0.2em", 
           textTransform: "uppercase", 
-          marginBottom: "0.5rem" 
+          marginBottom: "0.6rem" 
         }}>
           ABOUT ME
         </p>
         <h1 style={{ 
           fontSize: "clamp(2.4rem, 6vw, 3.6rem)", 
           fontWeight: 800, 
-          lineHeight: 1.08, 
+          lineHeight: 1.05, 
           margin: 0,
-          letterSpacing: "-0.03em",
+          letterSpacing: "-0.04em",
           color: "#111827"
         }}>
           More than a portfolio.
