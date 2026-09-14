@@ -1,19 +1,19 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { 
-  Menu, X, Sun, Moon, ArrowRight, ChevronDown, 
+  Menu, X, Sun, Moon, ArrowRight, ChevronDown, ChevronUp,
   Mail, Phone, Linkedin, Facebook, Instagram, Github, MessageCircle 
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { site } from "@/data/site";
 
-// নতুন সিকোয়েন্স ও আলাদা সাব-পেজ রুট পাথ
+// নতুন সিকোয়েন্স ও আলাদা সাব-পেজ রুট পাথ (Gallery সহ)
 const navLinks = [
   { href: "/", label: "Home" },
   {
-    href: "/about",
+    href: "#", // About-এ ক্লিক করলে কোনো পেজে যাবে না
     label: "About",
     isDropdown: true,
     subItems: [
@@ -27,14 +27,17 @@ const navLinks = [
   { href: "/achievements", label: "Achievements" },
   { href: "/publications", label: "Publications" },
   { href: "/certifications", label: "Certifications" },
+  { href: "/gallery", label: "Gallery" }, // নতুন গ্যালারি অপশন
   { href: "/contact", label: "Contact" },
 ];
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   const path = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
+  // ডিফল্টভাবে About সাব-মেনু খোলা রাখতে চাইলে true দিন, নতুবা false
+  const [aboutOpen, setAboutOpen] = useState(true);
 
   useEffect(() => {
     const d = localStorage.getItem("theme") === "dark";
@@ -117,11 +120,12 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 overflowY: "auto",
                 display: "flex",
                 flexDirection: "column",
+                padding: "24px",
               }}
             >
-              <div className="navpanel-head">
-                <span className="logo">
-                  Debojit<span>.</span>
+              <div className="navpanel-head" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "32px" }}>
+                <span className="logo" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+                  Debojit<span style={{ color: "#10b981" }}>.</span>
                 </span>
                 <button
                   onClick={() => setOpen(false)}
@@ -140,72 +144,68 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 </button>
               </div>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "16px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                 {navLinks.map((item) => {
-                  const isActive = path === item.href || path.startsWith("/about");
+                  const isActive = path === item.href || (item.isDropdown && path.startsWith("/about"));
 
                   if (item.isDropdown) {
                     return (
-                      <div key={item.href} style={{ width: "100%" }}>
-                        <div style={{ display: "flex", alignItems: "center", width: "100%" }}>
-                          <Link
-                            href={item.href}
-                            onClick={() => setOpen(false)}
-                            className={isActive ? "active" : ""}
-                            style={{ flex: 1 }}
-                          >
+                      <div key={item.label} style={{ width: "100%", borderBottom: "1px solid var(--line)", paddingBottom: "12px" }}>
+                        <div 
+                          style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", cursor: "pointer" }}
+                          onClick={() => setAboutOpen(!aboutOpen)}
+                        >
+                          <span style={{ fontSize: "1.1rem", fontWeight: isActive ? 600 : 400, color: isActive ? "var(--fg)" : "inherit" }}>
                             {item.label}
-                          </Link>
-                          <div
-                            onClick={() => setAboutOpen(!aboutOpen)}
-                            style={{
-                              cursor: "pointer",
-                              padding: "8px",
-                              display: "flex",
-                              alignItems: "center",
-                            }}
-                          >
-                            <ChevronDown
-                              size={16}
-                              style={{
-                                transform: aboutOpen ? "rotate(180deg)" : "rotate(0deg)",
-                                transition: "transform 0.2s ease",
-                              }}
-                            />
-                          </div>
+                          </span>
+                          {aboutOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                         </div>
 
-                        {aboutOpen && (
-                          <div
-                            style={{
-                              paddingLeft: "16px",
-                              borderLeft: "2px solid var(--line)",
-                              margin: "4px 0 10px 8px",
-                              display: "flex",
-                              flexDirection: "column",
-                              gap: "8px",
-                            }}
-                          >
-                            {item.subItems?.map((sub) => (
-                              <Link
-                                key={sub.href}
-                                href={sub.href}
-                                onClick={() => setOpen(false)}
+                        {/* About-এর ড্রপডাউন সাব-সেকশন */}
+                        <AnimatePresence>
+                          {aboutOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              style={{ overflow: "hidden" }}
+                            >
+                              <div
                                 style={{
+                                  paddingLeft: "16px",
+                                  borderLeft: "2px solid var(--line)",
+                                  marginTop: "12px",
                                   display: "flex",
-                                  alignItems: "center",
-                                  justifyContent: "space-between",
-                                  fontSize: "0.9rem",
-                                  opacity: 0.8,
-                                  padding: "4px 0",
+                                  flexDirection: "column",
+                                  gap: "12px",
                                 }}
                               >
-                                <span>{sub.label}</span>
-                                <ArrowRight size={14} />
-                              </Link>
-                            ))}
-                          </div>
-                        )}
+                                {item.subItems?.map((sub) => {
+                                  const isSubActive = path === sub.href;
+                                  return (
+                                    <Link
+                                      key={sub.href}
+                                      href={sub.href}
+                                      onClick={() => setOpen(false)}
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "space-between",
+                                        fontSize: "1rem",
+                                        color: isSubActive ? "#10b981" : "var(--fg)",
+                                        opacity: isSubActive ? 1 : 0.8,
+                                        fontWeight: isSubActive ? 500 : 400,
+                                      }}
+                                    >
+                                      <span>{sub.label}</span>
+                                      <ArrowRight size={14} style={{ color: isSubActive ? "#10b981" : "inherit" }} />
+                                    </Link>
+                                  )
+                                })}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     );
                   }
@@ -214,8 +214,17 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                     <Link
                       onClick={() => setOpen(false)}
                       key={item.href}
-                      className={path === item.href ? "active" : ""}
                       href={item.href}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        fontSize: "1.1rem",
+                        paddingBottom: "12px",
+                        borderBottom: "1px solid var(--line)",
+                        color: path === item.href ? "#10b981" : "inherit",
+                        fontWeight: path === item.href ? 600 : 400,
+                      }}
                     >
                       {item.label}
                       <ArrowRight size={16} />
@@ -247,7 +256,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         </motion.div>
       </AnimatePresence>
 
-      {/* নতুন রেসপনসিভ ফুটার */}
+      {/* রেসপনসিভ ফুটার */}
       <footer style={{ borderTop: "1px solid var(--line)", padding: "40px 0 24px 0", marginTop: "60px" }}>
         <div className="wrap foot" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
           
