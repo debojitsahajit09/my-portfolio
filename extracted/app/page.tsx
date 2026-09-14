@@ -36,8 +36,8 @@ export default function Home() {
 
           <h1>{site.name}</h1>
           
-          {/* Green Title Tags */}
-          <div className="role" style={{ color: "#10b981", fontWeight: 700, tracking: "0.05em" }}>
+          {/* Green Title Tags - Fixed tracking to letterSpacing */}
+          <div className="role" style={{ color: "#10b981", fontWeight: 700, letterSpacing: "0.05em" }}>
             RESEARCHER • ENTREPRENEUR • STUDENT
           </div>
 
