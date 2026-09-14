@@ -25,32 +25,8 @@ export default function BioPage() {
           </h1>
         </div>
 
-        {/* Custom Mouse Scroll Animation */}
-        <div className="flex items-center justify-center my-10">
-          <div className="w-6 h-10 border-2 border-emerald-500 rounded-full flex justify-center p-1 relative">
-            <div className="w-1.5 h-2.5 bg-emerald-500 rounded-full animate-[fadeUp_1.5s_infinite]" />
-          </div>
-        </div>
-
-        {/* Styled-JSX Keyframes Animation */}
-        <style jsx>{`
-          @keyframes fadeUp {
-            0% {
-              opacity: 0;
-              transform: translateY(12px);
-            }
-            50% {
-              opacity: 1;
-            }
-            100% {
-              opacity: 0;
-              transform: translateY(0px);
-            }
-          }
-        `}</style>
-
         {/* Main Content List Container matching Experience Layout */}
-        <div className="space-y-16 mt-12">
+        <div className="space-y-16 mt-8">
 
           {/* Intro Paragraphs */}
           <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed max-w-4xl">
@@ -62,6 +38,30 @@ export default function BioPage() {
               As the <strong className="text-emerald-500 font-bold">Founder & Software Lead of Team C.A.R.E.</strong> and founder of the <strong className="text-emerald-500 font-bold">Rajbari Robotics Association</strong>, my core drive is twofold: engineering intelligent hardware systems to build real-world autonomy for disabled individuals, and expanding robotics education to mentor thousands of young innovators across Bangladesh.
             </p>
           </div>
+
+          {/* Custom Mouse Scroll Animation (Moved right after first intro text) */}
+          <div className="flex items-center justify-center my-10">
+            <div className="w-6 h-10 border-2 border-emerald-500 rounded-full flex justify-center p-1 relative">
+              <div className="w-1.5 h-2.5 bg-emerald-500 rounded-full animate-[fadeUp_1.5s_infinite]" />
+            </div>
+          </div>
+
+          {/* Styled-JSX Keyframes Animation */}
+          <style jsx>{`
+            @keyframes fadeUp {
+              0% {
+                opacity: 0;
+                transform: translateY(12px);
+              }
+              50% {
+                opacity: 1;
+              }
+              100% {
+                opacity: 0;
+                transform: translateY(0px);
+              }
+            }
+          `}</style>
 
           <hr className="border-border my-8" />
 
