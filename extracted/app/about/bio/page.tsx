@@ -1,20 +1,18 @@
 import React from 'react';
 import { 
   Award, 
-  BookOpen, 
-  Cpu, 
-  Palette, 
   Code,
   Users,
   Microscope,
-  Bot
+  Bot,
+  Palette
 } from "lucide-react";
 
 export default function BioPage() {
   return (
     <main className="wrap section" style={{ maxWidth: "860px", margin: "0 auto", padding: "2rem 1rem" }}>
       
-      {/* ----------------- CUSTOM ANIMATION CSS ----------------- */}
+      {/* ----------------- CUSTOM SCROLL DOT ANIMATION CSS ----------------- */}
       <style>{`
         @keyframes scrollDotFade {
           0% {
@@ -32,95 +30,45 @@ export default function BioPage() {
       `}</style>
 
       {/* ----------------- SECTION 1: HERO / HEADER ----------------- */}
-      <div style={{ marginBottom: "2rem" }}>
+      <div style={{ marginBottom: "2.5rem" }}>
         <p style={{ 
-          color: "#666", 
+          color: "#52A885", 
           fontSize: "0.85rem", 
           fontWeight: 700, 
           letterSpacing: "0.15em", 
           textTransform: "uppercase", 
-          marginBottom: "0.4rem" 
+          marginBottom: "0.5rem" 
         }}>
-          ABOUT
+          ABOUT ME
         </p>
         <h1 style={{ 
-          fontSize: "clamp(2.2rem, 5vw, 3.2rem)", 
+          fontSize: "clamp(2.4rem, 6vw, 3.6rem)", 
           fontWeight: 800, 
-          lineHeight: 1.1, 
+          lineHeight: 1.08, 
           margin: 0,
-          letterSpacing: "-0.02em"
+          letterSpacing: "-0.03em",
+          color: "#111827"
         }}>
           More than a portfolio.
         </h1>
       </div>
 
-      {/* ----------------- EXPERIENCE STATS BOXES ----------------- */}
-      <div style={{ 
-        display: "grid", 
-        gridTemplateColumns: "repeat(2, 1fr)", 
-        gap: "12px", 
-        marginBottom: "2.5rem" 
-      }}>
-        <div style={{ 
-          border: "1px solid rgba(0,0,0,0.08)", 
-          borderRadius: "16px", 
-          padding: "1.2rem", 
-          textAlign: "center",
-          background: "#fff"
-        }}>
-          <div style={{ color: "#10b981", fontSize: "1.4rem", fontWeight: 800, marginBottom: "4px" }}>04</div>
-          <div style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.05em", color: "#333", textTransform: "uppercase" }}>
-            COMMUNITY WORK
-          </div>
-        </div>
+      {/* ----------------- INTRO PARAGRAPHS ----------------- */}
+      <p style={{ fontSize: "1.1rem", lineHeight: 1.7, opacity: 0.9, marginBottom: "1.5rem" }}>
+        I’m <strong>Debojit Saha Jit</strong>, an independent researcher, robotics innovator, and HSC Science student at <strong>Notre Dame College, Dhaka</strong>. My work bridges <strong>robotics & embedded hardware design, biomedical research, grassroots STEM mentorship, and full-stack engineering</strong>.
+      </p>
 
-        <div style={{ 
-          border: "1px solid rgba(0,0,0,0.08)", 
-          borderRadius: "16px", 
-          padding: "1.2rem", 
-          textAlign: "center",
-          background: "#fff"
-        }}>
-          <div style={{ color: "#10b981", fontSize: "1.4rem", fontWeight: 800, marginBottom: "4px" }}>01</div>
-          <div style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.05em", color: "#333", textTransform: "uppercase" }}>
-            VOLUNTEER
-          </div>
-        </div>
+      <p style={{ fontSize: "1rem", lineHeight: 1.7, opacity: 0.85, marginBottom: "2rem" }}>
+        As the <strong>Founder & Software Lead of Team C.A.R.E.</strong> and founder of the <strong>Rajbari Robotics Association</strong>, my core drive is twofold: engineering intelligent hardware systems to build real-world autonomy for disabled individuals, and expanding robotics education to mentor thousands of young innovators across Bangladesh.
+      </p>
 
-        <div style={{ 
-          border: "1px solid rgba(0,0,0,0.08)", 
-          borderRadius: "16px", 
-          padding: "1.2rem", 
-          textAlign: "center",
-          background: "#fff"
-        }}>
-          <div style={{ color: "#10b981", fontSize: "1.4rem", fontWeight: 800, marginBottom: "4px" }}>03</div>
-          <div style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.05em", color: "#333", textTransform: "uppercase" }}>
-            FOUNDER
-          </div>
-        </div>
-
-        <div style={{ 
-          border: "1px solid rgba(0,0,0,0.08)", 
-          borderRadius: "16px", 
-          padding: "1.2rem", 
-          textAlign: "center",
-          background: "#fff"
-        }}>
-          <div style={{ color: "#10b981", fontSize: "1.4rem", fontWeight: 800, marginBottom: "4px" }}>01</div>
-          <div style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.05em", color: "#333", textTransform: "uppercase" }}>
-            ENTREPRENEUR
-          </div>
-        </div>
-      </div>
-
-      {/* ----------------- SCROLL ANIMATION ICON ----------------- */}
-      <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0 3rem 0" }}>
+      {/* ----------------- SCROLL ANIMATION ICON (PLACED DIRECTLY BELOW TEXT) ----------------- */}
+      <div style={{ display: "flex", justifyContent: "center", margin: "2.5rem 0 3.5rem 0" }}>
         <div style={{ 
           width: "24px", 
           height: "40px", 
           borderRadius: "20px", 
-          border: "2px solid #10b981", 
+          border: "2px solid #52A885", 
           display: "flex", 
           justifyContent: "center", 
           alignItems: "center",
@@ -130,20 +78,12 @@ export default function BioPage() {
             width: "6px", 
             height: "6px", 
             borderRadius: "50%", 
-            background: "#10b981" 
+            background: "#52A885" 
           }} />
         </div>
       </div>
 
-      <p style={{ fontSize: "1.1rem", lineHeight: 1.7, opacity: 0.9, marginBottom: "1.5rem" }}>
-        I’m <strong>Debojit Saha Jit</strong>, an independent researcher, robotics innovator, and HSC Science student at <strong>Notre Dame College, Dhaka</strong>. My work bridges <strong>robotics & embedded hardware design, biomedical research, grassroots STEM mentorship, and full-stack engineering</strong>.
-      </p>
-
-      <p style={{ fontSize: "1rem", lineHeight: 1.7, opacity: 0.85, marginBottom: "2.5rem" }}>
-        As the <strong>Founder & Software Lead of Team C.A.R.E.</strong> and founder of the <strong>Rajbari Robotics Association</strong>, my core drive is twofold: engineering intelligent hardware systems to build real-world autonomy for disabled individuals, and expanding robotics education to mentor thousands of young innovators across Bangladesh.
-      </p>
-
-      <hr style={{ border: "none", borderTop: "1px solid var(--line, #333)", margin: "2.5rem 0" }} />
+      <hr style={{ border: "none", borderTop: "1px solid var(--line, #e5e7eb)", margin: "2.5rem 0" }} />
 
       {/* ----------------- SECTION 2: CORE PHILOSOPHY & PURPOSE ----------------- */}
       <div style={{ marginBottom: "3rem" }}>
@@ -153,8 +93,8 @@ export default function BioPage() {
         
         <div style={{ 
           padding: "1.5rem", 
-          borderLeft: "3px solid #10b981", 
-          background: "var(--card-bg, rgba(255,255,255,0.03))", 
+          borderLeft: "3px solid #52A885", 
+          background: "var(--card-bg, rgba(0,0,0,0.02))", 
           borderRadius: "0 8px 8px 0",
           fontSize: "1rem",
           lineHeight: 1.7,
@@ -175,37 +115,37 @@ export default function BioPage() {
       {/* ----------------- SECTION 3: CORE CAREER HIGHLIGHTS ----------------- */}
       <div style={{ marginBottom: "3.5rem" }}>
         <h2 style={{ fontSize: "1.6rem", fontWeight: 700, marginBottom: "1.5rem", display: "flex", alignItems: "center", gap: "10px" }}>
-          <Award size={22} style={{ color: "#10b981" }} /> Key Accomplishments At a Glance
+          <Award size={22} style={{ color: "#52A885" }} /> Key Accomplishments At a Glance
         </h2>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1.2rem" }}>
           
-          <div style={{ padding: "1.2rem", border: "1px solid var(--line, #333)", borderRadius: "10px", background: "var(--card, transparent)" }}>
-            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#10b981" }}>3,000+</div>
+          <div style={{ padding: "1.2rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "10px", background: "var(--card, transparent)" }}>
+            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#52A885" }}>3,000+</div>
             <div style={{ fontWeight: 600, margin: "4px 0" }}>Students Mentored</div>
             <p style={{ fontSize: "0.85rem", opacity: 0.7, margin: 0 }}>
               Grassroots STEM, WRO, IRO, & Math Olympiad coaching via Rajbari Robotics Association.
             </p>
           </div>
 
-          <div style={{ padding: "1.2rem", border: "1px solid var(--line, #333)", borderRadius: "10px", background: "var(--card, transparent)" }}>
-            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#10b981" }}>6th Rank</div>
+          <div style={{ padding: "1.2rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "10px", background: "var(--card, transparent)" }}>
+            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#52A885" }}>6th Rank</div>
             <div style={{ fontWeight: 600, margin: "4px 0" }}>APICTA 2025 (Taiwan)</div>
             <p style={{ fontSize: "0.85rem", opacity: 0.7, margin: 0 }}>
               Represented Bangladesh internationally among top global finalists with C.A.R.E Wheelchair.
             </p>
           </div>
 
-          <div style={{ padding: "1.2rem", border: "1px solid var(--line, #333)", borderRadius: "10px", background: "var(--card, transparent)" }}>
-            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#10b981" }}>Published</div>
+          <div style={{ padding: "1.2rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "10px", background: "var(--card, transparent)" }}>
+            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#52A885" }}>Published</div>
             <div style={{ fontWeight: 600, margin: "4px 0" }}>Author (Genetics Book)</div>
             <p style={{ fontSize: "0.85rem", opacity: 0.7, margin: 0 }}>
               ISBN & DOI registered DNA manuscript on Zenodo; distributed 500+ print copies.
             </p>
           </div>
 
-          <div style={{ padding: "1.2rem", border: "1px solid var(--line, #333)", borderRadius: "10px", background: "var(--card, transparent)" }}>
-            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#10b981" }}>36+</div>
+          <div style={{ padding: "1.2rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "10px", background: "var(--card, transparent)" }}>
+            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#52A885" }}>36+</div>
             <div style={{ fontWeight: 600, margin: "4px 0" }}>National & Intl. Awards</div>
             <p style={{ fontSize: "0.85rem", opacity: 0.7, margin: 0 }}>
               Across Robotics displays, Science Carnivals, Math Summits, & Web competitions.
@@ -215,7 +155,7 @@ export default function BioPage() {
         </div>
       </div>
 
-      {/* ----------------- SECTION 4: AREAS OF FOCUS (5 SEPARATE CARDS) ----------------- */}
+      {/* ----------------- SECTION 4: AREAS OF FOCUS (5 CARDS) ----------------- */}
       <div style={{ marginBottom: "3.5rem" }}>
         <h2 style={{ fontSize: "1.6rem", fontWeight: 700, marginBottom: "1.5rem" }}>
           Areas of Focus & Expertise
@@ -224,9 +164,9 @@ export default function BioPage() {
         <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
           
           {/* 01: Robotics & Hardware */}
-          <div style={{ padding: "1.5rem", border: "1px solid var(--line, #333)", borderRadius: "12px" }}>
+          <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
-              <Bot style={{ color: "#10b981" }} size={20} />
+              <Bot style={{ color: "#52A885" }} size={20} />
               <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>01 — Robotics & Intelligent Systems</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
@@ -238,9 +178,9 @@ export default function BioPage() {
           </div>
 
           {/* 02: Independent Applied Research */}
-          <div style={{ padding: "1.5rem", border: "1px solid var(--line, #333)", borderRadius: "12px" }}>
+          <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
-              <Microscope style={{ color: "#10b981" }} size={20} />
+              <Microscope style={{ color: "#52A885" }} size={20} />
               <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>02 — Independent Applied Research</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
@@ -252,9 +192,9 @@ export default function BioPage() {
           </div>
 
           {/* 03: Mentorship & Leadership */}
-          <div style={{ padding: "1.5rem", border: "1px solid var(--line, #333)", borderRadius: "12px" }}>
+          <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
-              <Users style={{ color: "#10b981" }} size={20} />
+              <Users style={{ color: "#52A885" }} size={20} />
               <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>03 — STEM Mentorship & Community Leadership</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
@@ -263,9 +203,9 @@ export default function BioPage() {
           </div>
 
           {/* 04: Full-Stack Web Development */}
-          <div style={{ padding: "1.5rem", border: "1px solid var(--line, #333)", borderRadius: "12px" }}>
+          <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
-              <Code style={{ color: "#10b981" }} size={20} />
+              <Code style={{ color: "#52A885" }} size={20} />
               <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>04 — Full-Stack Web Development & Software</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
@@ -277,9 +217,9 @@ export default function BioPage() {
           </div>
 
           {/* 05: UI/UX & Graphic Design */}
-          <div style={{ padding: "1.5rem", border: "1px solid var(--line, #333)", borderRadius: "12px" }}>
+          <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
-              <Palette style={{ color: "#10b981" }} size={20} />
+              <Palette style={{ color: "#52A885" }} size={20} />
               <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>05 — UI/UX & Graphic Design</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
