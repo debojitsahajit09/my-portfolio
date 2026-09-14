@@ -183,7 +183,7 @@ export default function BioPage() {
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
               <Microscope style={{ color: "#52A885" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight 700, margin: 0 }}>02 — Independent Applied Research</h3>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>02 — Independent Applied Research</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
               Conducting empirical modeling and simulation research in bio-inspired adaptive water purification models, wireless RF energy harvesting for cardiac pacemakers, and published genetics education literature.
