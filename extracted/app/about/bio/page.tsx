@@ -5,7 +5,10 @@ import {
   Cpu, 
   Heart, 
   Palette, 
-  Code 
+  Code,
+  Users,
+  Microscope,
+  Bot
 } from "lucide-react";
 
 export default function BioPage() {
@@ -13,30 +16,44 @@ export default function BioPage() {
     <main className="wrap section" style={{ maxWidth: "860px", margin: "0 auto", padding: "2rem 1rem" }}>
       
       {/* ----------------- SECTION 1: HERO / HEADER ----------------- */}
-      <div className="eyebrow" style={{ color: "#10b981", fontWeight: 600, letterSpacing: "1px" }}>
-        ABOUT ME • DEBOJIT SAHA JIT
+      <div style={{ marginBottom: "2.5rem" }}>
+        <p style={{ 
+          color: "var(--muted, #666)", 
+          fontSize: "0.85rem", 
+          fontWeight: 700, 
+          letterSpacing: "0.15em", 
+          textTransform: "uppercase", 
+          marginBottom: "0.4rem" 
+        }}>
+          ABOUT
+        </p>
+        <h1 style={{ 
+          fontSize: " clamp(2.2rem, 5vw, 3.2rem)", 
+          fontWeight: 800, 
+          lineHeight: 1.1, 
+          margin: 0,
+          letterSpacing: "-0.02em"
+        }}>
+          More than a portfolio.
+        </h1>
       </div>
-      
-      <h1 className="title" style={{ fontSize: "2.2rem", fontWeight: 800, margin: "0.5rem 0 1.5rem 0", lineHeight: 1.2 }}>
-        Engineering Technology for Real-World Impact
-      </h1>
 
       <p style={{ fontSize: "1.1rem", lineHeight: 1.7, opacity: 0.9, marginBottom: "1.5rem" }}>
-        I’m <strong>Debojit Saha Jit</strong>, an HSC Science student at <strong>Notre Dame College, Dhaka</strong>, and an independent researcher and aspiring Biomedical / Computer Science Engineer from Bangladesh. My work sits at the intersection of <strong>assistive technology, embedded IoT systems, full-stack web development, and visual design</strong>.
+        I’m <strong>Debojit Saha Jit</strong>, an independent researcher, robotics innovator, and HSC Science student at <strong>Notre Dame College, Dhaka</strong>. My work bridges <strong>robotics & embedded hardware design, biomedical research, grassroots STEM mentorship, and full-stack engineering</strong>.
       </p>
 
       <p style={{ fontSize: "1rem", lineHeight: 1.7, opacity: 0.85, marginBottom: "2rem" }}>
-        As the <strong>Founder & Software Lead of Team C.A.R.E.</strong>, I build low-cost smart mobility solutions for disabled individuals. Beyond hardware and circuits, I engineer complete digital web systems and design visual identities—turning complex ideas into functional, beautifully engineered tools.
+        As the <strong>Founder & Software Lead of Team C.A.R.E.</strong> and founder of the <strong>Rajbari Robotics Association</strong>, my core drive is twofold: engineering intelligent hardware systems to build real-world autonomy for disabled individuals, and expanding robotics education to mentor thousands of young innovators across Bangladesh.
       </p>
 
       {/* Quick Focus Pills */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "3rem" }}>
         {[
-          "Biomedical & Assistive Tech", 
-          "Robotics & Embedded Systems (ESP32/IoT)", 
-          "Independent Research",
-          "Full-Stack Web Development", 
-          "UI/UX & Graphic Design"
+          "Robotics & Hardware Systems", 
+          "Assistive Tech & Bio-Engineering", 
+          "Independent Applied Research",
+          "STEM Mentorship & Leadership", 
+          "Full-Stack Web & Software"
         ].map((tag, i) => (
           <span key={i} style={{ 
             padding: "6px 14px", 
@@ -54,10 +71,10 @@ export default function BioPage() {
 
       <hr style={{ border: "none", borderTop: "1px solid var(--line, #333)", margin: "2.5rem 0" }} />
 
-      {/* ----------------- SECTION 2: WHY I BUILD ----------------- */}
+      {/* ----------------- SECTION 2: WHY I BUILD & RESEARCH ----------------- */}
       <div style={{ marginBottom: "3rem" }}>
         <h2 style={{ fontSize: "1.6rem", fontWeight: 700, marginBottom: "1rem", display: "flex", alignItems: "center", gap: "10px" }}>
-          <Heart size={22} style={{ color: "#10b981" }} /> Why I Build
+          <Heart size={22} style={{ color: "#10b981" }} /> Core Philosophy & Purpose
         </h2>
         
         <div style={{ 
@@ -70,13 +87,13 @@ export default function BioPage() {
           opacity: 0.9 
         }}>
           <p style={{ marginBottom: "1rem" }}>
-            My interest in assistive technology became personal when I witnessed how paralysis impacts something as fundamental as human mobility and independence.
+            Passionate about circuits and mechanics since early childhood, my engineering focus shifted deeply into <strong>assistive technology and research</strong> when I observed firsthand the life-altering impacts of physical paralysis and mobility restriction.
           </p>
           <p style={{ marginBottom: "1rem" }}>
-            That experience forced me to ask: <em>Could technology do more than just provide movement? Could it understand its user, communicate health metrics to caregivers, and rebuild daily autonomy?</em> That single vision launched <strong>Team C.A.R.E.</strong>
+            This led to founding <strong>Team C.A.R.E.</strong> to prove that cutting-edge robotics—featuring gesture controls, IoT health monitoring, and offline AI voice interaction—can be engineered locally at a fraction of standard commercial costs.
           </p>
           <p style={{ margin: 0 }}>
-            Whether through embedded hardware, web interfaces, or published scientific research, my goal is to push technology beyond competition demos into tools that are genuinely useful, practical, and visually intuitive.
+            Parallel to hardware creation, I believe true impact requires knowledge sharing. Through research publications, mentorship initiatives, and open-access STEM workshops, I aim to inspire and train the next generation of problem solvers.
           </p>
         </div>
       </div>
@@ -90,10 +107,10 @@ export default function BioPage() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1.2rem" }}>
           
           <div style={{ padding: "1.2rem", border: "1px solid var(--line, #333)", borderRadius: "10px", background: "var(--card, transparent)" }}>
-            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#10b981" }}>36+</div>
-            <div style={{ fontWeight: 600, margin: "4px 0" }}>National & Intl. Awards</div>
+            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#10b981" }}>3,000+</div>
+            <div style={{ fontWeight: 600, margin: "4px 0" }}>Students Mentored</div>
             <p style={{ fontSize: "0.85rem", opacity: 0.7, margin: 0 }}>
-              Across Robotics, Math Summits, ICT Carnivals, & Research Displays.
+              Grassroots STEM, WRO, IRO, & Math Olympiad coaching via Rajbari Robotics Association.
             </p>
           </div>
 
@@ -101,7 +118,7 @@ export default function BioPage() {
             <div style={{ fontSize: "2rem", fontWeight: 800, color: "#10b981" }}>6th Rank</div>
             <div style={{ fontWeight: 600, margin: "4px 0" }}>APICTA 2025 (Taiwan)</div>
             <p style={{ fontSize: "0.85rem", opacity: 0.7, margin: 0 }}>
-              Represented Bangladesh internationally among 32 projects from 16 countries.
+              Represented Bangladesh internationally among top global finalists with C.A.R.E Wheelchair.
             </p>
           </div>
 
@@ -109,79 +126,79 @@ export default function BioPage() {
             <div style={{ fontSize: "2rem", fontWeight: 800, color: "#10b981" }}>Published</div>
             <div style={{ fontWeight: 600, margin: "4px 0" }}>Author (Genetics Book)</div>
             <p style={{ fontSize: "0.85rem", opacity: 0.7, margin: 0 }}>
-              ISBN & DOI registered DNA book; distributed 500+ copies.
+              ISBN & DOI registered DNA manuscript on Zenodo; distributed 500+ print copies.
             </p>
           </div>
 
           <div style={{ padding: "1.2rem", border: "1px solid var(--line, #333)", borderRadius: "10px", background: "var(--card, transparent)" }}>
-            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#10b981" }}>3,000+</div>
-            <div style={{ fontWeight: 600, margin: "4px 0" }}>Students Mentored</div>
+            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#10b981" }}>36+</div>
+            <div style={{ fontWeight: 600, margin: "4px 0" }}>National & Intl. Awards</div>
             <p style={{ fontSize: "0.85rem", opacity: 0.7, margin: 0 }}>
-              Grassroots STEM & Robotics training via Rajbari Robotics Association.
+              Across Robotics displays, Science Carnivals, Math Summits, & Web competitions.
             </p>
           </div>
 
         </div>
       </div>
 
-      {/* ----------------- SECTION 4: AREAS OF EXPERTISE ----------------- */}
+      {/* ----------------- SECTION 4: AREAS OF FOCUS ----------------- */}
       <div style={{ marginBottom: "3.5rem" }}>
         <h2 style={{ fontSize: "1.6rem", fontWeight: 700, marginBottom: "1.5rem" }}>
-          Areas of Focus & Capabilities
+          Areas of Focus & Expertise
         </h2>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
           
-          {/* 01: Assistive & Biomedical Tech */}
+          {/* 01: Robotics & Embedded Hardware */}
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #333)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
-              <Cpu style={{ color: "#10b981" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>01 — Assistive & Biomedical Engineering</h3>
+              <Bot style={{ color: "#10b981" }} size={20} />
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>01 — Robotics & Intelligent Systems</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
-              Architecting IoT hardware, gesture-controlled mobility systems, dynamic water filtration models (immune-inspired), and RF energy harvesting pacemakers.
+              Designing custom circuit logic, gesture-controlled mobility platforms, multi-sensor integration, ESP-NOW wireless networking, and offline voice AI systems for real-world assistive hardware.
             </p>
             <div style={{ fontSize: "0.85rem", opacity: 0.7 }}>
-              <strong>Tech Stack:</strong> ESP32 · ATmega328p · MATLAB · Simulink · COMSOL · Ansys · Sensors & Actuators
+              <strong>Stack & Tools:</strong> ESP32 · ESP8266 · Arduino · MPU6050 · BTS7960 Motor Drivers · IoT Protocols · Sensors
             </div>
           </div>
 
-          {/* 02: STEM Leadership & Research */}
+          {/* 02: Independent Applied Research */}
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #333)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
-              <BookOpen style={{ color: "#10b981" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>02 — Research & STEM Leadership</h3>
+              <Microscope style={{ color: "#10b981" }} size={20} />
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>02 — Independent Applied Research</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
-              Leading R&D teams, authoring educational science literature, and organizing tech carnivals like NDITC Tech Fest 2026 serving 4,000+ participants.
+              Conducting empirical modeling and simulation research in bio-inspired adaptive water purification models, wireless RF energy harvesting for cardiac pacemakers, and published genetics education literature.
+            </p>
+            <div style={{ fontSize: "0.85rem", opacity: 0.7 }}>
+              <strong>Research Tools:</strong> MATLAB · Simulink · ANSYS · Technical Writing · Zenodo Digital Repository
+            </div>
+          </div>
+
+          {/* 03: Grassroots Mentorship & Leadership */}
+          <div style={{ padding: "1.5rem", border: "1px solid var(--line, #333)", borderRadius: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
+              <Users style={{ color: "#10b981" }} size={20} />
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>03 — Grassroots Mentorship & Community Leadership</h3>
+            </div>
+            <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
+              Founder of Rajbari Robotics Association and R&D President at Science Spark. Host free robotics bootcamps, train rural innovators, and manage events like NDITC Tech Fest 2026 for 4,000+ participants.
             </p>
           </div>
 
-          {/* 03: Web Development & Systems */}
+          {/* 04: Full-Stack Web Dev & UI/UX */}
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #333)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
               <Code style={{ color: "#10b981" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>03 — Web Development & Custom Software</h3>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>04 — Full-Stack Development & Visual Design</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
-              Developing full-stack web platforms, responsive UIs, DBMS for local business automation (reduced 40% manual time), and LLM assistants.
+              Engineering custom DBMS portals, responsive web platforms, and visual brand identities for emerging clubs and enterprises.
             </p>
             <div style={{ fontSize: "0.85rem", opacity: 0.7 }}>
-              <strong>Tech Stack:</strong> HTML/CSS · JavaScript · PHP · SQL · WordPress · REST APIs · Tailwind
-            </div>
-          </div>
-
-          {/* 04: Graphic Design & Digital Media */}
-          <div style={{ padding: "1.5rem", border: "1px solid var(--line, #333)", borderRadius: "12px" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
-              <Palette style={{ color: "#10b981" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>04 — Graphic Design & Media</h3>
-            </div>
-            <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
-              Crafting visual identities, pro-bono branding for 10+ emerging clubs, UI wireframes, and promotional tech carnival graphics.
-            </p>
-            <div style={{ fontSize: "0.85rem", opacity: 0.7 }}>
-              <strong>Tools:</strong> Adobe Photoshop · Adobe Illustrator · Premiere Pro
+              <strong>Technologies:</strong> Next.js · React · HTML/CSS · PHP · SQL · Tailwind CSS · Adobe Creative Suite
             </div>
           </div>
 
