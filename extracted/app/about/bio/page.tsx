@@ -41,19 +41,18 @@ export default function BioPage() {
           fontWeight: 700, 
           letterSpacing: "0.22em", 
           textTransform: "uppercase", 
-          marginBottom: "0.75rem",
-          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif"
+          marginBottom: "0.75rem"
         }}>
           ABOUT ME
         </p>
         <h1 style={{ 
-          fontSize: "clamp(2rem, 4.5vw, 3.2rem)", 
-          fontWeight: 700, 
-          lineHeight: 1.1, 
+          fontSize: "clamp(2.2rem, 5vw, 3.5rem)", 
+          fontWeight: 800, 
+          lineHeight: 1.05, 
           margin: 0,
-          letterSpacing: "-0.02em",
+          letterSpacing: "-0.04em",
           color: "#0a0a0a",
-          fontFamily: "'Plus Jakarta Sans', 'Inter', system-ui, sans-serif"
+          fontFamily: "'Syne', var(--font-syne), sans-serif"
         }}>
           More than a portfolio.
         </h1>
@@ -95,7 +94,13 @@ export default function BioPage() {
 
       {/* ----------------- SECTION 2: CORE PHILOSOPHY & PURPOSE ----------------- */}
       <div style={{ marginBottom: "3rem" }}>
-        <h2 style={{ fontSize: "1.6rem", fontWeight: 700, marginBottom: "1rem" }}>
+        <h2 style={{ 
+          fontSize: "1.6rem", 
+          fontWeight: 700, 
+          marginBottom: "1rem",
+          letterSpacing: "-0.03em",
+          fontFamily: "'Syne', var(--font-syne), sans-serif"
+        }}>
           Core Philosophy & Purpose
         </h2>
         
@@ -122,14 +127,23 @@ export default function BioPage() {
 
       {/* ----------------- SECTION 3: CORE CAREER HIGHLIGHTS ----------------- */}
       <div style={{ marginBottom: "3.5rem" }}>
-        <h2 style={{ fontSize: "1.6rem", fontWeight: 700, marginBottom: "1.5rem", display: "flex", alignItems: "center", gap: "10px" }}>
+        <h2 style={{ 
+          fontSize: "1.6rem", 
+          fontWeight: 700, 
+          marginBottom: "1.5rem", 
+          display: "flex", 
+          alignItems: "center", 
+          gap: "10px",
+          letterSpacing: "-0.03em",
+          fontFamily: "'Syne', var(--font-syne), sans-serif"
+        }}>
           <Award size={22} style={{ color: "#52A885" }} /> Key Accomplishments At a Glance
         </h2>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1.2rem" }}>
           
           <div style={{ padding: "1.2rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "10px", background: "var(--card, transparent)" }}>
-            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#52A885" }}>3,000+</div>
+            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#52A885", fontFamily: "'Syne', var(--font-syne), sans-serif" }}>3,000+</div>
             <div style={{ fontWeight: 600, margin: "4px 0" }}>Students Mentored</div>
             <p style={{ fontSize: "0.85rem", opacity: 0.7, margin: 0 }}>
               Grassroots STEM, WRO, IRO, & Math Olympiad coaching via Rajbari Robotics Association.
@@ -137,7 +151,7 @@ export default function BioPage() {
           </div>
 
           <div style={{ padding: "1.2rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "10px", background: "var(--card, transparent)" }}>
-            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#52A885" }}>6th Rank</div>
+            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#52A885", fontFamily: "'Syne', var(--font-syne), sans-serif" }}>6th Rank</div>
             <div style={{ fontWeight: 600, margin: "4px 0" }}>APICTA 2025 (Taiwan)</div>
             <p style={{ fontSize: "0.85rem", opacity: 0.7, margin: 0 }}>
               Represented Bangladesh internationally among top global finalists with C.A.R.E Wheelchair.
@@ -145,7 +159,7 @@ export default function BioPage() {
           </div>
 
           <div style={{ padding: "1.2rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "10px", background: "var(--card, transparent)" }}>
-            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#52A885" }}>Published</div>
+            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#52A885", fontFamily: "'Syne', var(--font-syne), sans-serif" }}>Published</div>
             <div style={{ fontWeight: 600, margin: "4px 0" }}>Author (Genetics Book)</div>
             <p style={{ fontSize: "0.85rem", opacity: 0.7, margin: 0 }}>
               ISBN & DOI registered DNA manuscript on Zenodo; distributed 500+ print copies.
@@ -153,7 +167,7 @@ export default function BioPage() {
           </div>
 
           <div style={{ padding: "1.2rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "10px", background: "var(--card, transparent)" }}>
-            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#52A885" }}>36+</div>
+            <div style={{ fontSize: "2rem", fontWeight: 800, color: "#52A885", fontFamily: "'Syne', var(--font-syne), sans-serif" }}>36+</div>
             <div style={{ fontWeight: 600, margin: "4px 0" }}>National & Intl. Awards</div>
             <p style={{ fontSize: "0.85rem", opacity: 0.7, margin: 0 }}>
               Across Robotics displays, Science Carnivals, Math Summits, & Web competitions.
@@ -165,7 +179,13 @@ export default function BioPage() {
 
       {/* ----------------- SECTION 4: AREAS OF FOCUS (5 CARDS) ----------------- */}
       <div style={{ marginBottom: "3.5rem" }}>
-        <h2 style={{ fontSize: "1.6rem", fontWeight: 700, marginBottom: "1.5rem" }}>
+        <h2 style={{ 
+          fontSize: "1.6rem", 
+          fontWeight: 700, 
+          marginBottom: "1.5rem",
+          letterSpacing: "-0.03em",
+          fontFamily: "'Syne', var(--font-syne), sans-serif"
+        }}>
           Areas of Focus & Expertise
         </h2>
 
@@ -175,7 +195,7 @@ export default function BioPage() {
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
               <Bot style={{ color: "#52A885" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>01 — Robotics & Intelligent Systems</h3>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0, fontFamily: "'Syne', var(--font-syne), sans-serif" }}>01 — Robotics & Intelligent Systems</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
               Designing custom circuit logic, gesture-controlled mobility platforms, multi-sensor integration, ESP-NOW wireless networking, and offline voice AI systems for real-world assistive hardware.
@@ -189,7 +209,7 @@ export default function BioPage() {
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
               <Microscope style={{ color: "#52A885" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>02 — Independent Applied Research</h3>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0, fontFamily: "'Syne', var(--font-syne), sans-serif" }}>02 — Independent Applied Research</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
               Conducting empirical modeling and simulation research in bio-inspired adaptive water purification models, wireless RF energy harvesting for cardiac pacemakers, and published genetics education literature.
@@ -203,7 +223,7 @@ export default function BioPage() {
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
               <Users style={{ color: "#52A885" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>03 — STEM Mentorship & Community Leadership</h3>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0, fontFamily: "'Syne', var(--font-syne), sans-serif" }}>03 — STEM Mentorship & Community Leadership</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
               Founder of Rajbari Robotics Association and R&D President at Science Spark. Host free robotics bootcamps, train rural innovators, and manage events like NDITC Tech Fest 2026 for 4,000+ participants.
@@ -214,7 +234,7 @@ export default function BioPage() {
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
               <Code style={{ color: "#52A885" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>04 — Full-Stack Web Development & Software</h3>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0, fontFamily: "'Syne', var(--font-syne), sans-serif" }}>04 — Full-Stack Web Development & Software</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
               Engineering responsive full-stack web platforms, custom DBMS inventory portals for local businesses, and dynamic user interfaces for organizations.
@@ -228,7 +248,7 @@ export default function BioPage() {
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
               <Palette style={{ color: "#52A885" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>05 — UI/UX & Graphic Design</h3>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0, fontFamily: "'Syne', var(--font-syne), sans-serif" }}>05 — UI/UX & Graphic Design</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
               Crafting visual brand identities, pro-bono graphic layouts for 10+ emerging clubs, UI wireframing, and promotional tech carnival graphics.
