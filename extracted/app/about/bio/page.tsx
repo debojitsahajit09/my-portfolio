@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { 
   Award, 
@@ -30,7 +32,7 @@ export default function BioPage() {
           </div>
         </div>
 
-        {/* Tailwind Custom Keyframes Style for Bottom-to-Top Fade Animation */}
+        {/* Styled-JSX Keyframes Animation */}
         <style jsx>{`
           @keyframes fadeUp {
             0% {
