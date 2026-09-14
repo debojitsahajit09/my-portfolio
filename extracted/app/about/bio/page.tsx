@@ -11,7 +11,8 @@ import {
 export default function BioPage() {
   return (
     <main className="section">
-      <div className="wrap">
+      {/* maxWidth এবং margin: "0 auto" কন্টেন্টকে সেন্টারে রাখবে */}
+      <div className="wrap" style={{ maxWidth: "860px", margin: "0 auto", padding: "0 1rem" }}>
 
         {/* ----------------- GLOBAL STYLES & ANIMATIONS ----------------- */}
         <style>{`
