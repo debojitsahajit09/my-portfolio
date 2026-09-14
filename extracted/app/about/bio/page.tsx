@@ -203,7 +203,7 @@ export default function BioPage() {
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
               <Users style={{ color: "#52A885" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight 700, margin: 0 }}>03 — STEM Mentorship & Community Leadership</h3>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>03 — STEM Mentorship & Community Leadership</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
               Founder of Rajbari Robotics Association and R&D President at Science Spark. Host free robotics bootcamps, train rural innovators, and manage events like NDITC Tech Fest 2026 for 4,000+ participants.
