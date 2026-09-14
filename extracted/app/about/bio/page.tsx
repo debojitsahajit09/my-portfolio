@@ -32,22 +32,24 @@ export default function BioPage() {
       {/* ----------------- SECTION 1: HERO / HEADER ----------------- */}
       <div style={{ marginBottom: "2.5rem" }}>
         <p style={{ 
-          color: "#52A885", 
+          color: "#52a885", 
           fontSize: "0.8rem", 
           fontWeight: 700, 
-          letterSpacing: "0.2em", 
+          letterSpacing: "0.22em", 
           textTransform: "uppercase", 
-          marginBottom: "0.6rem" 
+          marginBottom: "0.75rem",
+          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif"
         }}>
           ABOUT ME
         </p>
         <h1 style={{ 
-          fontSize: "clamp(2.4rem, 6vw, 3.6rem)", 
+          fontSize: "clamp(2.4rem, 5.5vw, 3.8rem)", 
           fontWeight: 800, 
           lineHeight: 1.05, 
           margin: 0,
           letterSpacing: "-0.04em",
-          color: "#111827"
+          color: "#0a0a0a",
+          fontFamily: "'Syne', 'Plus Jakarta Sans', sans-serif"
         }}>
           More than a portfolio.
         </h1>
@@ -181,7 +183,7 @@ export default function BioPage() {
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
               <Microscope style={{ color: "#52A885" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>02 — Independent Applied Research</h3>
+              <h3 style={{ fontSize: "1.2rem", fontWeight 700, margin: 0 }}>02 — Independent Applied Research</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
               Conducting empirical modeling and simulation research in bio-inspired adaptive water purification models, wireless RF energy harvesting for cardiac pacemakers, and published genetics education literature.
