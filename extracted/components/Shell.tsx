@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { 
   Menu, X, Sun, Moon, ArrowRight, ChevronDown, ChevronUp,
   Mail, Phone, Linkedin, Facebook, Instagram, Github, MessageCircle 
@@ -9,11 +9,10 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { site } from "@/data/site";
 
-// নতুন সিকোয়েন্স ও আলাদা সাব-পেজ রুট পাথ (Gallery সহ)
 const navLinks = [
   { href: "/", label: "Home" },
   {
-    href: "#", // About-এ ক্লিক করলে কোনো পেজে যাবে না
+    href: "#",
     label: "About",
     isDropdown: true,
     subItems: [
@@ -27,16 +26,14 @@ const navLinks = [
   { href: "/achievements", label: "Achievements" },
   { href: "/publications", label: "Publications" },
   { href: "/certifications", label: "Certifications" },
-  { href: "/gallery", label: "Gallery" }, // নতুন গ্যালারি অপশন
+  { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   const path = usePathname();
-  const router = useRouter();
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
-  // ডিফল্টভাবে About সাব-মেনু খোলা রাখতে চাইলে true দিন, নতুবা false
   const [aboutOpen, setAboutOpen] = useState(true);
 
   useEffect(() => {
@@ -52,7 +49,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
     localStorage.setItem("theme", d ? "dark" : "light");
   }
 
-  // সোশ্যাল ও কন্টাক্ট লিঙ্কগুলোর তালিকা
   const socialLinks = [
     { href: `mailto:${site.email || "debojitsahajit@gmail.com"}`, icon: <Mail size={18} />, label: "Email" },
     { href: `tel:${site.phone || "+8801700000000"}`, icon: <Phone size={18} />, label: "Phone" },
@@ -120,12 +116,11 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 overflowY: "auto",
                 display: "flex",
                 flexDirection: "column",
-                padding: "24px",
               }}
             >
-              <div className="navpanel-head" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "32px" }}>
-                <span className="logo" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
-                  Debojit<span style={{ color: "#10b981" }}>.</span>
+              <div className="navpanel-head">
+                <span className="logo">
+                  Debojit<span>.</span>
                 </span>
                 <button
                   onClick={() => setOpen(false)}
@@ -144,24 +139,32 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 </button>
               </div>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              {/* টাইট ও ক্লিন টাইট স্পেসিং */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "16px" }}>
                 {navLinks.map((item) => {
                   const isActive = path === item.href || (item.isDropdown && path.startsWith("/about"));
 
                   if (item.isDropdown) {
                     return (
-                      <div key={item.label} style={{ width: "100%", borderBottom: "1px solid var(--line)", paddingBottom: "12px" }}>
+                      <div key={item.label} style={{ width: "100%" }}>
                         <div 
-                          style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", cursor: "pointer" }}
+                          style={{ 
+                            display: "flex", 
+                            alignItems: "center", 
+                            justifyContent: "space-between", 
+                            width: "100%", 
+                            cursor: "pointer",
+                            padding: "10px 0",
+                            borderBottom: "1px solid var(--line)"
+                          }}
                           onClick={() => setAboutOpen(!aboutOpen)}
                         >
-                          <span style={{ fontSize: "1.1rem", fontWeight: isActive ? 600 : 400, color: isActive ? "var(--fg)" : "inherit" }}>
+                          <span className={isActive ? "active" : ""}>
                             {item.label}
                           </span>
-                          {aboutOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                          {aboutOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                         </div>
 
-                        {/* About-এর ড্রপডাউন সাব-সেকশন */}
                         <AnimatePresence>
                           {aboutOpen && (
                             <motion.div
@@ -174,10 +177,10 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                                 style={{
                                   paddingLeft: "16px",
                                   borderLeft: "2px solid var(--line)",
-                                  marginTop: "12px",
+                                  margin: "8px 0 8px 8px",
                                   display: "flex",
                                   flexDirection: "column",
-                                  gap: "12px",
+                                  gap: "4px",
                                 }}
                               >
                                 {item.subItems?.map((sub) => {
@@ -191,16 +194,17 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                                         display: "flex",
                                         alignItems: "center",
                                         justifyContent: "space-between",
-                                        fontSize: "1rem",
-                                        color: isSubActive ? "#10b981" : "var(--fg)",
+                                        fontSize: "0.95rem",
+                                        padding: "6px 0",
+                                        color: isSubActive ? "#10b981" : "inherit",
                                         opacity: isSubActive ? 1 : 0.8,
-                                        fontWeight: isSubActive ? 500 : 400,
+                                        fontWeight: isSubActive ? 600 : 400,
                                       }}
                                     >
                                       <span>{sub.label}</span>
                                       <ArrowRight size={14} style={{ color: isSubActive ? "#10b981" : "inherit" }} />
                                     </Link>
-                                  )
+                                  );
                                 })}
                               </div>
                             </motion.div>
@@ -214,16 +218,11 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                     <Link
                       onClick={() => setOpen(false)}
                       key={item.href}
+                      className={path === item.href ? "active" : ""}
                       href={item.href}
                       style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        fontSize: "1.1rem",
-                        paddingBottom: "12px",
-                        borderBottom: "1px solid var(--line)",
-                        color: path === item.href ? "#10b981" : "inherit",
-                        fontWeight: path === item.href ? 600 : 400,
+                        padding: "10px 0",
+                        borderBottom: "1px solid var(--line)"
                       }}
                     >
                       {item.label}
@@ -256,7 +255,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         </motion.div>
       </AnimatePresence>
 
-      {/* রেসপনসিভ ফুটার */}
       <footer style={{ borderTop: "1px solid var(--line)", padding: "40px 0 24px 0", marginTop: "60px" }}>
         <div className="wrap foot" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
           
@@ -268,7 +266,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
               </p>
             </div>
 
-            {/* সোশ্যাল আইকন গ্রিড */}
             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", alignItems: "center" }}>
               {socialLinks.map((s, idx) => (
                 <a
