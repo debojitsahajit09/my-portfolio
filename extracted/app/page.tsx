@@ -20,7 +20,6 @@ export default function Home() {
               justifyContent: "center"
             }}
           >
-
             <img 
               src={site.photo} 
               alt={site.name} 
@@ -36,23 +35,41 @@ export default function Home() {
           </div>
 
           <h1>{site.name}</h1>
-          <div className="role">{site.role.toUpperCase()}</div>
-          <p className="lead">{site.home.intro}</p>
+          
+          {/* Green Title Tags */}
+          <div className="role" style={{ color: "#10b981", fontWeight: 700, tracking: "0.05em" }}>
+            RESEARCHER • ENTREPRENEUR • STUDENT
+          </div>
+
+          {/* Institution & Location Tag */}
+          <div className="institution" style={{ marginTop: "6px", fontSize: "14px", fontWeight: 600, opacity: 0.9 }}>
+            Notre Dame College, Dhaka
+          </div>
+
+          <p className="lead" style={{ marginTop: "16px" }}>{site.home.intro}</p>
 
           <div className="buttons">
             <Link className="btn primary" href="/projects">
               Explore my work <ArrowRight size={14} />
             </Link>
-            <Link className="btn" href={site.resume}>
-              <Download size={14} /> Résumé
-            </Link>
+            
+            {/* Direct Download Button for CV */}
+            <a 
+              className="btn" 
+              href={site.resume || "/cv.pdf"} 
+              download="Debojit_Saha_Jit_CV.pdf"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Download size={14} /> Download My CV
+            </a>
           </div>
 
           <p className="muted" style={{ marginTop: 28, fontSize: 12 }}>
             <MapPin size={13} style={{ display: "inline" }} /> {site.location}
           </p>
 
-          {/* স্ক্রিনশটের মতো মাউস-পিল স্ক্রোল অ্যানিমেশন */}
+          {/* Mouse Scroll Pill Animation */}
           <div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}>
             <div 
               style={{
