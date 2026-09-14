@@ -1,6 +1,6 @@
 export const site = {
   name: "Debojit Saha Jit",
-  role: "Independent Researcher • Assistive Technology • Notre Dame College",
+  role: "Independent Researcher • Assistive Tech • Full-Stack Dev & Designer",
   location: "Dhaka, Bangladesh",
   email: "debojitsahajit09@gmail.com",
   secondaryEmail: "debojitsahajit@gmail.com",
@@ -9,7 +9,7 @@ export const site = {
   photo: "/images/profile.jpg",
   resume: "/documents/resume.pdf",
 
-  // Navigation menu items based on your sidebar design
+  // Navigation menu items
   nav: [
     { label: "Home", href: "/" },
     { 
@@ -42,28 +42,29 @@ export const site = {
 
   home: {
     eyebrow: "PORTFOLIO • 2026",
-    headline: "Engineering assistive solutions & intelligent systems for real-world impact.",
-    intro: "Independent Researcher focusing on Assistive Technology and Biomedical Devices. Intermediate Science Student at Notre Dame College, Dhaka."
+    headline: "Engineering assistive solutions, intelligent systems & digital experiences for real-world impact.",
+    intro: "Independent Researcher focusing on Assistive Tech, Biomedical Devices, Full-Stack Web Development, and Visual Design. Intermediate Science Student at Notre Dame College, Dhaka."
   },
 
   about: {
     title: "More than a portfolio.",
-    text: "Passionate about robotics from early childhood. After achieving GPA 5.00 in SSC from Rajbari Govt. High School, I got admitted to Notre Dame College, Dhaka. Inspired deeply by my grandmother, I founded Team C.A.R.E. and built the C.A.R.E. Smart Wheelchair. I also founded the Rajbari Robotics Association, through which I have mentored over 3,000 students for international and national competitions including WRO, IRO, IMO, and IPhO. My journey as a student innovator has taken me across the globe—visiting the USA, Taiwan, and Dubai—including iconic institutions and milestones like MIT, Harvard University, Orlando, Burj Khalifa, World Trade Center, Taipei 101, Google Taiwan, and attending the UN HQ as a guest delegate.",
-    quote: "Curiosity starts it. Engineering makes it real.",
+    text: "Passionate about robotics and systems design from early childhood. After achieving GPA 5.00 in SSC from Rajbari Govt. High School (District 1st Position), I joined Notre Dame College, Dhaka. Inspired deeply by personal experiences with mobility limitations, I founded Team C.A.R.E. and built the C.A.R.E. Smart Wheelchair. Alongside hardware engineering, I work extensively on full-stack web development, custom DBMS portals, UI/UX, and graphic design for 10+ emerging organizations. I also founded the Rajbari Robotics Association, mentoring over 3,000 students across national and international Olympiads (WRO, IRO, IMO, IPhO). My journey has taken me globally—visiting the USA, Taiwan, and Dubai—including milestones like MIT, Harvard University, NASA Kennedy Space Center, and attending the UN HQ as a guest delegate.",
+    quote: "Curiosity starts it. Engineering & Design make it real.",
     researchInterests: [
-      "Assistive Technology",
-      "Biomedical Devices & Implants",
-      "Environmental & Renewable Energy Research",
-      "Embedded Systems & Robotics",
-      "Applied AI & Offline Voice Assistants"
+      "Assistive & Biomedical Engineering",
+      "Embedded Systems, IoT & Robotics",
+      "Full-Stack Web Development & Custom DBMS",
+      "UI/UX & Graphic Design",
+      "Environmental & Renewable RF Energy Harvesting",
+      "Applied AI & Voice Assistants"
     ]
   },
 
   stats: [
-    ["30+", "National achievements"],
-    ["4+", "International prizes"],
-    ["2026", "HSC batch"],
-    ["04", "Flagship assistive system"]
+    ["36+", "National & International achievements"],
+    ["6th", "APICTA International Rank (Taiwan)"],
+    ["2026", "HSC batch • Notre Dame College"],
+    ["3,000+", "Students mentored in STEM & Robotics"]
   ],
 
   timeline: [
@@ -71,19 +72,19 @@ export const site = {
       date: "2026",
       title: "Building the next chapter",
       type: "Education & Future",
-      text: "Completing HSC at Notre Dame College while preparing for higher studies and expanding independent research."
+      text: "Completing HSC at Notre Dame College while expanding independent research, publishing books, and building web/AI technology solutions."
     },
     {
       date: "2025",
       title: "C.A.R.E Wheelchair & Assistive Tech",
       type: "Flagship Project",
-      text: "Developed low-cost assistive mobility integration featuring gesture control, IoT monitoring, and offline voice AI."
+      text: "Developed low-cost assistive mobility integration featuring gesture control, IoT health monitoring, and offline voice AI."
     },
     {
       date: "2024–26",
       title: "International Competitions & Global Exposure",
       type: "Global Impact",
-      text: "Representing Bangladesh internationally at APICTA, WICE, and GRIC while mentoring over 3,000 young minds."
+      text: "Representing Bangladesh internationally at APICTA, WICE, and GRIC while leading grassroots robotics and web projects."
     }
   ],
 
@@ -91,14 +92,14 @@ export const site = {
     {
       id: "care",
       n: "01",
-      title: "C.A.R.E Wheelchair",
+      title: "C.A.R.E Wheelchair (V1 & V2)",
       result: "Controlled Assistive Responsive Equipment",
       year: "2026",
-      type: "Robotics / Assistive Technology",
+      type: "Robotics / Assistive Technology / IoT",
       org: "Team C.A.R.E.",
       image: "/images/care-wheelchair.jpg",
       description: "Controlled Assistive Responsive Equipment — a smart, low-cost assistive mobility system.",
-      details: "Gesture-based mobility control, IoT health monitoring, emergency alerts, home automation, caregiver monitoring and an offline AI voice assistant concept.",
+      details: "Gesture-based mobility control, IoT health monitoring, emergency alerts, home automation, caregiver tracking, and an offline AI voice assistant.",
       tags: ["ESP32", "ESP8266", "ESP-NOW", "MPU6050", "BTS7960", "IoT", "AI", "Next.js"]
     },
     {
@@ -107,38 +108,51 @@ export const site = {
       title: "ORION",
       result: "Offline Voice AI Assistant",
       year: "2026",
-      type: "AI / Voice",
+      type: "AI / Intelligent Systems",
       org: "Independent Research",
       image: "/images/orion-ai.jpg",
       description: "An accessibility-focused offline AI voice assistant concept.",
-      details: "Designed around natural Bengali and English interaction and voice-first control for assistive technology.",
-      tags: ["AI", "Voice", "Edge", "Python"]
+      details: "Built custom AI-powered assistant integrating voice interaction and task automation for smart system control in Bengali and English.",
+      tags: ["AI", "Voice Processing", "Edge AI", "Python", "Automation"]
+    },
+    {
+      id: "blood4people",
+      n: "03",
+      title: "Blood4People & NDITC Website",
+      result: "Responsive Web UI & Systems",
+      year: "2025–2026",
+      type: "Web Development / UI Design",
+      org: "Independent Project",
+      image: "/images/blood4people.jpg",
+      description: "Responsive web portal connecting blood donors and digital demo platform for NDITC.",
+      details: "Designed and engineered dynamic web interfaces, donor matching features, and event management platforms.",
+      tags: ["HTML/CSS", "JavaScript", "PHP", "SQL", "WordPress", "UI/UX"]
+    },
+    {
+      id: "aerovolt-piezopolis",
+      n: "04",
+      title: "AeroVolt & Piezopolis Energy Systems",
+      result: "RF & Piezoelectric Power Harvesting",
+      year: "2024–2025",
+      type: "Biomedical / Energy Harvesting",
+      org: "Independent Research",
+      image: "/images/rf-pacemaker.jpg",
+      description: "Ambient RF energy harvesting for cardiac pacemakers and piezoelectric power grids.",
+      details: "Continuous wireless micro-power harvesting to reduce surgical battery replacement risks for pacemakers and decentralized energy generation modeling.",
+      tags: ["Biomedical", "RF Harvesting", "Piezoelectric", "MATLAB", "Simulink", "Ansys"]
     },
     {
       id: "smart-helmet",
-      n: "03",
-      title: "3 in 1 Smart Helmet for Accident Prevention",
+      n: "05",
+      title: "3-in-1 Smart Helmet for Safety",
       result: "Rider Safety & Hazard Prevention System",
       year: "2023",
       type: "Embedded Systems / Safety Tech",
       org: "Independent Project",
       image: "/images/smart-helmet.jpg",
       description: "An intelligent multi-functional helmet designed for road and industrial rider protection.",
-      details: "Integrates automatic alcohol-detection ignition lock, accident detection with instant location SMS alerts, and smart overspeed & helmet removal warning system.",
+      details: "Integrates automatic alcohol-detection ignition lock, accident detection with instant location SMS alerts, and smart warning systems.",
       tags: ["Arduino", "GSM/GPS", "Alcohol Sensor", "Accelerometer", "RF Module"]
-    },
-    {
-      id: "rf-pacemaker",
-      n: "04",
-      title: "RF Energy Harvesting for Pacemakers",
-      result: "Biomedical Wireless Power Transmission",
-      year: "2025",
-      type: "Biomedical / Energy Harvesting",
-      org: "Independent Research",
-      image: "/images/rf-pacemaker.jpg",
-      description: "Wireless micro-power harvesting system for cardiac pacemaker batteries.",
-      details: "Harvests ambient RF signals to continuously trickle-charge implantable cardiac devices, reducing surgical battery replacement risks for heart patients.",
-      tags: ["Biomedical", "RF Harvesting", "Rectenna Circuit", "Ultra-Low Power", "MATLAB"]
     }
   ],
 
@@ -151,7 +165,7 @@ export const site = {
       org: "WRO Bangladesh",
       image: "/images/wro-gold.jpeg",
       certificate: "/documents/wro-cert.pdf",
-      text: "Secured 1st place / Gold Medal in Future Innovator Senior Category at United International University and Officially selected to represent Bangladesh in the USA."
+      text: "Secured 1st place / Gold Medal in Future Innovator Senior Category at UIU; selected to represent Bangladesh globally."
     },
     {
       n: "13",
@@ -161,17 +175,17 @@ export const site = {
       org: "Fibonacci Bangladesh",
       image: "/images/achievements/fibonacci-gold.jpg",
       certificate: "/documents/fibonacci-cert.pdf",
-      text: "Gold Medalist in Fibonacci international STEM & robotics competition held in United International University competing against 150+ projects around Bangladesh."
+      text: "Gold Medalist in Fibonacci international STEM & robotics competition competing against 150+ projects across Bangladesh."
     },
     {
       n: "12",
       title: "Asia Pacific ICT Alliance (APICTA) Awards",
-      result: "Top 6 Finalist",
+      result: "Top 6 International Finalist",
       year: "2025",
       org: "APICTA (Kaohsiung, Taiwan)",
       image: "/images/achievements/apicta.jpg",
       certificate: "/documents/apicta-cert.pdf",
-      text: "Represented Bangladesh among the top 6 international finalists in Taiwan."
+      text: "Represented Bangladesh among the top 6 international finalists in Taiwan with C.A.R.E Wheelchair."
     },
     {
       n: "11",
@@ -181,7 +195,7 @@ export const site = {
       org: "WICE (Malaysia)",
       image: "/images/achievements/wice-silver.jpg",
       certificate: "/documents/wice-cert.pdf",
-      text: "Awarded Silver Medal in international innovation competition."
+      text: "Awarded Silver Medal in international innovation exhibition."
     },
     {
       n: "10",
@@ -191,7 +205,7 @@ export const site = {
       org: "GRIC",
       image: "/images/achievements/gric.jpg",
       certificate: "/documents/gric-cert.pdf",
-      text: "International recognition for innovation and robotics development."
+      text: "International recognition for assistive robotics development."
     },
     {
       n: "09",
@@ -201,87 +215,87 @@ export const site = {
       org: "Notre Dame College",
       image: "/images/achievements/usa-tour.jpg",
       certificate: "",
-      text: "Selected student representative visiting MIT, Harvard, NASA, Orlando, and UN HQ."
+      text: "Selected student representative visiting MIT, Harvard, NASA Kennedy Space Center, and UN HQ."
     },
     {
       n: "08",
-      title: "John Locke Institute Summer Program",
-      result: "$500 Scholarship Winner",
-      year: "2025",
-      org: "John Locke Institute",
-      image: "/images/achievements/john-locke.jpg",
-      certificate: "/documents/john-locke-cert.pdf",
-      text: "Awarded $500 academic scholarship."
+      title: "Pixel Contest 3.0",
+      result: "Champion — Web Design",
+      year: "2024",
+      org: "Pixel Contest",
+      image: "/images/achievements/pixel-contest.jpg",
+      certificate: "",
+      text: "Secured Champion award in national Web Design category."
     },
     {
       n: "07",
-      title: "Bangladesh National Science and Technology Fest",
-      result: "3rd Position Nationwide",
+      title: "Bangladesh National Science and Technology Week",
+      result: "Special 3rd Place Nationwide",
       year: "2025",
-      org: "National Museum of Science & Technology",
+      org: "National Museum of Science & Technology (NMST)",
       image: "/images/achievements/nstf.jpg",
       certificate: "/documents/nstf-cert.pdf",
-      text: "Ranked 3rd nationally across science display innovations."
+      text: "Ranked 3rd nationally across 64 district finalists in science display innovations."
     },
     {
       n: "06",
       title: "16th DRMC National Science Carnival",
-      result: "Champion",
+      result: "National Champion",
       year: "2025",
       org: "DRMC",
       image: "/images/achievements/drmc-science.jpg",
       certificate: "/documents/drmc-cert.pdf",
-      text: "National Champion in Project Presentation segment."
+      text: "National Champion in Project Presentation segment competing against 110+ college projects."
     },
     {
       n: "05",
-      title: "DRMC Math Carnival",
+      title: "2nd DRMC National Math Summit",
       result: "1st Runner-Up",
       year: "2025",
       org: "DRMC",
       image: "/images/achievements/drmc-math.jpg",
       certificate: "",
-      text: "1st Runner-Up in National Math Competition."
+      text: "1st Runner-Up in National Math Project Presentation Competition."
     },
     {
       n: "04",
-      title: "DRMC International Tech Carnival",
-      result: "1st Runner-Up",
+      title: "8th DRMC International Tech Carnival",
+      result: "2nd Runner-Up",
       year: "2025",
       org: "DRMC",
       image: "/images/achievements/drmc-tech.jpg",
       certificate: "",
-      text: "1st Runner-Up in International Tech Carnival."
+      text: "2nd Runner-Up in International Tech Carnival Project Display."
     },
     {
       n: "03",
-      title: "Bangladesh Startup Competition",
-      result: "Top 4 Innovator",
-      year: "2026",
-      org: "Startup Bangladesh",
-      image: "/images/achievements/startup-bd.jpg",
+      title: "Bangladesh ICT and Innovation Awards",
+      result: "Student Champion",
+      year: "2025",
+      org: "ICT Division Bangladesh",
+      image: "/images/achievements/ict-award.jpg",
       certificate: "",
-      text: "Top 4 finalist in national startup innovation challenge."
+      text: "Won Student Champion award for C.A.R.E Wheelchair initiative."
     },
     {
       n: "02",
-      title: "Best Student Award",
-      result: "Recipient",
+      title: "Best Student Award & Talentpool Scholarship",
+      result: "District 1st Rank",
       year: "2024",
       org: "Rajbari Govt. High School",
       image: "/images/achievements/best-student.jpg",
       certificate: "",
-      text: "Awarded best overall student for academic and extracurricular excellence."
+      text: "Awarded best overall student & secured District 1st Merit Rank in SSC Science."
     },
     {
       n: "01",
-      title: "National Literary & Arts Competitions",
-      result: "Champion (Multiple)",
+      title: "National Literary, Arts & Essay Competitions",
+      result: "District Champion (Multiple)",
       year: "2023–2024",
-      org: "National Cultural Events",
+      org: "District & Cultural Events",
       image: "/images/achievements/literary-arts.jpg",
       certificate: "",
-      text: "Champion in Essay Writing, Children Quiz, and Art Competitions."
+      text: "District Champion in Essay Writing, Regional Art Exhibitions, and Children's Quiz."
     }
   ],
 
@@ -289,22 +303,22 @@ export const site = {
     {
       n: "01",
       title: "A Journey into the DNA, from Nitrogen to Grandson",
-      status: "PUBLISHED",
+      status: "PUBLISHED BOOK",
       year: "2026",
       authors: "Debojit Saha Jit, Md Washiun Alim",
       publisher: "Tukro Publication",
       publisherUrl: "https://doi.org/10.5281/zenodo.19597716",
-      isbn: "978-984-93881-2-1",
+      isbn: "978-984-36-0202-2",
       doi: "10.5281/zenodo.19597716",
       doiUrl: "https://doi.org/10.5281/zenodo.19597716",
       zenodoUrl: "https://doi.org/10.5281/zenodo.19597716",
       readUrl: "https://dna-grandson-book.vercel.app/",
       coverImage: "/images/publications/dna-book-cover.jpeg",
-      text: "A biology manuscript and digital interactive book simplifying core concepts of DNA, genetics, and molecular biology for high school students.",
-      summary: "This book is primarily written for Class 9–12 students to make their academic studies extremely simple and engaging. Complex concepts of biology and DNA are presented in plain language so that students remain genuinely passionate about learning biology and retain their scientific curiosity.",
+      text: "A published biology manuscript simplifying complex concepts of DNA, genetics, and molecular biology for high school students.",
+      summary: "This ISBN-registered & DOI-indexed book makes biology simple and engaging for Class 9–12 students, retaining their scientific curiosity while clarifying complex DNA mechanics.",
       targetJournal: "",
       details: {
-        type: "Educational Book / Interactive E-Book",
+        type: "Published Academic Book",
         language: "English & Bengali",
         pages: "180+",
         license: "CC BY 4.0 International",
@@ -314,39 +328,44 @@ export const site = {
     },
     {
       n: "02",
-      title: "GenAI Adoption Among Bangladeshi SMEs",
+      title: "Immune-Inspired Adaptive Solar Water Purification System",
       status: "IN PROGRESS",
       year: "2026",
       authors: "Debojit Saha Jit",
       org: "Independent Research",
-      targetJournal: "Technology in Society (Elsevier Q1)",
-      text: "Studies Generative AI adoption dynamics in Bangladeshi electronics-retail SMEs using a combined TOE/UTAUT/RBV theoretical framework with Empirical PLS-SEM analysis.",
+      targetJournal: "Journal of Cleaner Production / SJWPBD",
+      text: "Developing a bio-inspired dynamic filtration model based on immune response mechanisms for rural water treatment. Simulation conducted in MATLAB and ANSYS.",
       details: {
         type: "Original Research Article",
         language: "English",
-        researchArea: "Applied AI, Information Systems & SME Technology Adoption",
+        researchArea: "Environmental Engineering & Bio-Inspired Systems",
         repository: "Manuscript in Preparation"
       }
     },
     {
       n: "03",
-      title: "Jute-Polyester Hybrid Fabrics & AI-Based Microplastic Quantification",
+      title: "RF Energy Harvesting Assisted Pacemaker System",
       status: "IN PROGRESS",
       year: "2026",
       authors: "Debojit Saha Jit",
       org: "Independent Research",
-      targetJournal: "Journal of Cleaner Production (Elsevier Q1)",
-      text: "Examines sustainable jute-polyester hybrid fabric durability alongside an AI/Computer Vision method for real-time microplastic shedding quantification.",
+      targetJournal: "Biomedical Signal Processing & Control",
+      text: "Exploring ambient RF energy harvesting to reduce battery dependency in implantable cardiac devices. Circuit simulation and feasibility analysis ongoing.",
       details: {
         type: "Empirical Research Article",
         language: "English",
-        researchArea: "Sustainable Materials, Environmental Engineering & Computer Vision",
-        repository: "Experimental Testing & Data Analysis Phase"
+        researchArea: "Biomedical Engineering & Wireless Power Transfer",
+        repository: "Circuit Simulation Phase"
       }
     }
   ],
 
-  certifications: [],
+  certifications: [
+    { title: "NASA Open Science 101 & Essentials Certification", year: "2026", issuer: "NASA" },
+    { title: "Research Publishing Fundamentals", year: "2026", issuer: "Springer Nature" },
+    { title: "Researcher Academy Certification", year: "2026", issuer: "Elsevier" },
+    { title: "CS50 Computer Science", year: "2025", issuer: "Harvard University" }
+  ],
 
   experience: [
     {
@@ -365,8 +384,8 @@ export const site = {
       period: "2024 – Present",
       role: "Independent Researcher",
       org: "Assistive Tech & Water Solutions Research",
-      summary: "Applied research on RF-driven assistive tech & water solutions. Conducted lab testing & data analysis; research selected for SJWPBD presentation.",
-      details: "Engineered low-cost micro-power RF harvesting systems for implantable medical devices. Modeled electromagnetic field behavior in MATLAB and completed experimental prototypes for renewable energy harvesting.",
+      summary: "Applied research on RF-driven assistive tech & water solutions. Conducted lab testing & simulation in MATLAB/ANSYS; presented at SJWPBD.",
+      details: "Engineered low-cost micro-power RF harvesting systems for implantable medical devices and bio-inspired water purification systems.",
       images: [
         "/images/experience/research-1.jpeg",
         "/images/experience/research-2.jpeg"
@@ -374,7 +393,7 @@ export const site = {
     },
     {
       period: "2025 – Present",
-      role: "Author & Publisher",
+      role: "Independent Author",
       org: "Independent Publishing",
       summary: "Co-authored ISBN/DOI genetics book simplifying DNA for high schoolers; distributed 500+ copies, currently writing 2nd book on assistive robotics.",
       details: "Authored and interactive-designed 'A Journey into the DNA, from Nitrogen to Grandson' registered on Zenodo (DOI). Managed distribution of 500+ print and digital copies.",
@@ -385,10 +404,10 @@ export const site = {
     },
     {
       period: "2025 – Present",
-      role: "President, Research & Development",
+      role: "President (R&D)",
       org: "Science Spark",
       summary: "Led R&D dept for 500+ members; mentored 60+ executives in STEM projects, organized 10+ research workshops & national science competitions.",
-      details: "Structured project incubation programs, trained youth developers in IoT micro-controllers, and evaluated STEM innovations across regional and national platforms.",
+      details: "Structured project incubation programs, trained youth developers in IoT micro-controllers, and evaluated STEM innovations.",
       images: [
         "/images/experience/sciencespark-1.jpeg"
       ]
@@ -398,7 +417,7 @@ export const site = {
       role: "Founder & Lead Mentor",
       org: "Rajbari Robotics Association",
       summary: "Pioneered grassroots STEM education in my district; hosted free robotics camps & trained 300+ rural students in hands-on robotics.",
-      details: "Established district-level STEM infrastructure in Rajbari. Organized free hands-on hardware training camps, hardware donation drives, and ideathons to bridge technical gaps.",
+      details: "Established district-level STEM infrastructure in Rajbari. Organized free hands-on hardware training camps and ideathons to bridge technical gaps.",
       images: [
         "/images/experience/rra-1.jpg",
         "/images/experience/rra-2.jpg"
@@ -419,24 +438,24 @@ export const site = {
       role: "Founder",
       org: "Desh Techshop",
       summary: "Founded tech store providing low-cost components to 500+ student innovators, bridging hardware access gaps in non-metro science clubs.",
-      details: "Sourced and distributed affordable microcontrollers, sensors, and electronic components for rural innovators who lacked local hardware supply chains.",
+      details: "Sourced and distributed affordable microcontrollers, sensors, and electronic components for rural innovators.",
       images: [
         "/images/experience/deshtechshop-1.jpeg"
       ]
     },
     {
       period: "2023 – Present",
-      role: "E-Commerce & Systems Developer",
-      org: "Family Business — Father's Shop",
-      summary: "Built custom DBMS & e-commerce portal for father's shop; reduced manual inventory tracking time by 40% & boosted digital sales by 25%.",
-      details: "Designed custom inventory management database and local sales tracking application. Streamlined order processing and automated digital stock tracking.",
+      role: "Full-Stack Web & DBMS Developer",
+      org: "Family Shop & Freelance UI Design",
+      summary: "Built custom DBMS & e-commerce portal for father's shop (reduced inventory time by 40%); designed websites & branding for 10+ clubs.",
+      details: "Engineered responsive web applications, inventory management systems, and visual graphic branding for local businesses and clubs.",
       images: [
         "/images/experience/familyshop-1.jpeg"
       ]
     },
     {
       period: "2025 – Present",
-      role: "Organizer and Tech Volunteer",
+      role: "Organizer & IT Tech Volunteer",
       org: "Notre Dame Information & Technology Club (NDITC)",
       summary: "Co-managed NDITC Tech Fest 2026 serving 4,000+ participants; led IT logistics, hands-on tech sessions, and project evaluation rounds.",
       details: "Managed event logistics, evaluated youth robotics display entries, and directed technical stage operations during national IT events.",
@@ -448,8 +467,8 @@ export const site = {
       period: "2019 – Present",
       role: "Graphic Designer & Classical Musician",
       org: "Independent Creative & Performing Arts",
-      summary: "Designed pro-bono graphics & branding for 10+ emerging clubs; classic musician (Guitar, Harmonium, Tabla - 7+ yrs), won 5+ regional art awards.",
-      details: "Over 7 years of formal classical vocal and instrumental training (Guitar, Harmonium, Tabla). Created brand identities, poster arts, and digital assets for regional clubs and science festivals.",
+      summary: "Designed pro-bono graphics & branding for 10+ emerging clubs; classical musician (Guitar, Harmonium, Tabla - 7+ yrs), won 5+ regional art awards.",
+      details: "Over 7 years of formal classical vocal and instrumental training (Guitar, Harmonium, Tabla). Created brand identities, poster arts, and digital assets.",
       images: [
         "/images/experience/creative-1.jpeg",
         "/images/experience/creative-2.jpeg"
@@ -463,7 +482,7 @@ export const site = {
       place: "Notre Dame College, Dhaka",
       degree: "Higher Secondary Certificate (HSC) — Science Group",
       gpa: "GPA 5.00 (Expected)",
-      text: "Intermediate Science Student engaged in research, robotics projects, and national/international olympiads."
+      text: "Intermediate Science Student engaged in research, robotics projects, web development, and national/international olympiads."
     },
     {
       year: "2022 – 2024",
@@ -474,7 +493,7 @@ export const site = {
       text: "Achieved District 1st Rank with GPA 5.00 and Talentpool Scholarship in Science stream."
     },
     {
-      year: "2018",
+      year: "2018 – 2019",
       place: "Cambridge School and College, Barishal",
       degree: "Primary Education Completion (PEC)",
       gpa: "GPA 5.00",
@@ -493,16 +512,16 @@ export const site = {
   ],
 
   skills: {
-    "Research & Interests": ["Assistive Technology", "Biomedical Devices", "Environmental Research", "RF Energy Harvesting", "Technical Writing"],
-    "Robotics & Hardware": ["Arduino", "ESP32", "ESP8266", "Raspberry Pi", "MPU6050", "GSM/GPS", "Sensors & Actuators"],
-    "Programming": ["C/C++", "Python", "JavaScript", "TypeScript", "MATLAB"],
-    "Web Development": ["React", "Next.js", "Tailwind CSS", "Firebase"],
-    "Engineering & Leadership": ["IoT Systems", "Hardware Prototyping", "Embedded Firmware", "Git/GitHub", "Mentorship & Team Leadership"]
+    "Research & Biomedical": ["Assistive Technology", "Biomedical Devices", "RF Energy Harvesting", "Immune Water Purification", "MATLAB / Simulink", "ANSYS / COMSOL"],
+    "Robotics & Hardware": ["Arduino", "ESP32", "ESP8266", "Raspberry Pi", "MPU6050", "Sensors & Actuators", "IoT Protocols (ESP-NOW)"],
+    "Web Development": ["HTML / CSS", "JavaScript", "TypeScript", "React", "Next.js", "PHP", "SQL / DBMS", "Tailwind CSS"],
+    "Design & Creative": ["Adobe Photoshop", "Adobe Illustrator", "Premiere Pro", "UI/UX Wireframing", "Brand Identity"],
+    "Programming & Tools": ["C/C++", "Python", "Git / GitHub", "REST APIs", "Technical Writing"]
   },
 
   contact: {
     title: "Get In Touch.",
-    text: "Feel free to reach out for collaborations, research inquiries, or just a friendly chat.",
+    text: "Feel free to reach out for research collaborations, engineering projects, design inquiries, or just a friendly chat.",
     email: "debojitsahajit09@gmail.com",
     secondaryEmail: "debojitcare30@gmail.com",
     phone: "+880 1774074009",
