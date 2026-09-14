@@ -12,7 +12,7 @@ export default function BioPage() {
   return (
     <main className="wrap section" style={{ maxWidth: "860px", margin: "0 auto", padding: "2rem 1rem" }}>
       
-      {/* ----------------- CUSTOM SCROLL DOT ANIMATION CSS ----------------- */}
+      {/* ----------------- GLOBAL STYLES & ANIMATIONS ----------------- */}
       <style>{`
         @keyframes scrollDotFade {
           0% {
@@ -27,12 +27,16 @@ export default function BioPage() {
         .scroll-dot-anim {
           animation: scrollDotFade 1.6s infinite ease-in-out;
         }
+        .green-bold strong, strong {
+          color: #52A885;
+          font-weight: 700;
+        }
       `}</style>
 
       {/* ----------------- SECTION 1: HERO / HEADER ----------------- */}
       <div style={{ marginBottom: "2.5rem" }}>
         <p style={{ 
-          color: "#52a885", 
+          color: "#52A885", 
           fontSize: "0.8rem", 
           fontWeight: 700, 
           letterSpacing: "0.22em", 
@@ -43,28 +47,30 @@ export default function BioPage() {
           ABOUT ME
         </p>
         <h1 style={{ 
-          fontSize: "clamp(2.4rem, 5.5vw, 3.8rem)", 
-          fontWeight: 800, 
-          lineHeight: 1.05, 
+          fontSize: "clamp(2rem, 4.5vw, 3.2rem)", 
+          fontWeight: 700, 
+          lineHeight: 1.1, 
           margin: 0,
-          letterSpacing: "-0.04em",
+          letterSpacing: "-0.02em",
           color: "#0a0a0a",
-          fontFamily: "'Syne', 'Plus Jakarta Sans', sans-serif"
+          fontFamily: "'Plus Jakarta Sans', 'Inter', system-ui, sans-serif"
         }}>
           More than a portfolio.
         </h1>
       </div>
 
       {/* ----------------- INTRO PARAGRAPHS ----------------- */}
-      <p style={{ fontSize: "1.1rem", lineHeight: 1.7, opacity: 0.9, marginBottom: "1.5rem" }}>
-        I’m <strong>Debojit Saha Jit</strong>, an independent researcher, robotics innovator, and HSC Science student at <strong>Notre Dame College, Dhaka</strong>. My work bridges <strong>robotics & embedded hardware design, biomedical research, grassroots STEM mentorship, and full-stack engineering</strong>.
-      </p>
+      <div className="green-bold">
+        <p style={{ fontSize: "1.1rem", lineHeight: 1.7, opacity: 0.9, marginBottom: "1.5rem" }}>
+          I’m <strong>Debojit Saha Jit</strong>, an independent researcher, robotics innovator, and HSC Science student at <strong>Notre Dame College, Dhaka</strong>. My work bridges <strong>robotics & embedded hardware design, biomedical research, grassroots STEM mentorship, and full-stack engineering</strong>.
+        </p>
 
-      <p style={{ fontSize: "1rem", lineHeight: 1.7, opacity: 0.85, marginBottom: "2rem" }}>
-        As the <strong>Founder & Software Lead of Team C.A.R.E.</strong> and founder of the <strong>Rajbari Robotics Association</strong>, my core drive is twofold: engineering intelligent hardware systems to build real-world autonomy for disabled individuals, and expanding robotics education to mentor thousands of young innovators across Bangladesh.
-      </p>
+        <p style={{ fontSize: "1rem", lineHeight: 1.7, opacity: 0.85, marginBottom: "2rem" }}>
+          As the <strong>Founder & Software Lead of Team C.A.R.E.</strong> and founder of the <strong>Rajbari Robotics Association</strong>, my core drive is twofold: engineering intelligent hardware systems to build real-world autonomy for disabled individuals, and expanding robotics education to mentor thousands of young innovators across Bangladesh.
+        </p>
+      </div>
 
-      {/* ----------------- SCROLL ANIMATION ICON (PLACED DIRECTLY BELOW TEXT) ----------------- */}
+      {/* ----------------- SCROLL ANIMATION ICON ----------------- */}
       <div style={{ display: "flex", justifyContent: "center", margin: "2.5rem 0 3.5rem 0" }}>
         <div style={{ 
           width: "24px", 
@@ -93,7 +99,7 @@ export default function BioPage() {
           Core Philosophy & Purpose
         </h2>
         
-        <div style={{ 
+        <div className="green-bold" style={{ 
           padding: "1.5rem", 
           borderLeft: "3px solid #52A885", 
           background: "var(--card-bg, rgba(0,0,0,0.02))", 
@@ -163,7 +169,7 @@ export default function BioPage() {
           Areas of Focus & Expertise
         </h2>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        <div className="green-bold" style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
           
           {/* 01: Robotics & Hardware */}
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
@@ -197,7 +203,7 @@ export default function BioPage() {
           <div style={{ padding: "1.5rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "0.5rem" }}>
               <Users style={{ color: "#52A885" }} size={20} />
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, margin: 0 }}>03 — STEM Mentorship & Community Leadership</h3>
+              <h3 style={{ fontSize: "1.2rem", fontWeight 700, margin: 0 }}>03 — STEM Mentorship & Community Leadership</h3>
             </div>
             <p style={{ fontSize: "0.95rem", opacity: 0.85, lineHeight: 1.6, margin: "0 0 10px 0" }}>
               Founder of Rajbari Robotics Association and R&D President at Science Spark. Host free robotics bootcamps, train rural innovators, and manage events like NDITC Tech Fest 2026 for 4,000+ participants.
