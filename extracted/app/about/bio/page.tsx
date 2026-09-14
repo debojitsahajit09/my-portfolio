@@ -11,8 +11,8 @@ import {
 export default function BioPage() {
   return (
     <main className="section">
-      {/* maxWidth এবং margin: "0 auto" কন্টেন্টকে সেন্টারে রাখবে */}
-      <div className="wrap" style={{ maxWidth: "860px", margin: "0 auto", padding: "0 1rem" }}>
+      {/* maxWidth বাড়ানো হয়েছে এবং paddingRight কমানো হয়েছে যাতে টেক্সট ডানদিকে প্রসারিত হয় */}
+      <div className="wrap" style={{ maxWidth: "1100px", margin: "0", paddingLeft: "1rem", paddingRight: "1rem" }}>
 
         {/* ----------------- GLOBAL STYLES & ANIMATIONS ----------------- */}
         <style>{`
@@ -41,11 +41,11 @@ export default function BioPage() {
             ABOUT ME
           </div>
           
-          <h1 className="title" style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>
+          <h1 className="title" style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>
             More than a portfolio.
           </h1>
 
-          <p className="text" style={{ fontSize: "1rem", opacity: 0.85, marginBottom: "2rem" }}>
+          <p className="text" style={{ fontSize: "1.05rem", opacity: 0.85, marginBottom: "2rem" }}>
             Bridging robotics, biomedical research, STEM mentorship, and software engineering.
           </p>
         </div>
@@ -86,7 +86,7 @@ export default function BioPage() {
 
         {/* ----------------- SECTION 2: CORE PHILOSOPHY & PURPOSE ----------------- */}
         <div style={{ marginBottom: "3rem" }}>
-          <h2 className="title" style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
+          <h2 className="title" style={{ fontSize: "1.75rem", marginBottom: "1rem" }}>
             Core Philosophy & Purpose
           </h2>
           
@@ -110,11 +110,11 @@ export default function BioPage() {
 
         {/* ----------------- SECTION 3: CORE CAREER HIGHLIGHTS ----------------- */}
         <div style={{ marginBottom: "3.5rem" }}>
-          <h2 className="title" style={{ fontSize: "1.5rem", marginBottom: "1.5rem", display: "flex", alignItems: "center", gap: "10px" }}>
+          <h2 className="title" style={{ fontSize: "1.75rem", marginBottom: "1.5rem", display: "flex", alignItems: "center", gap: "10px" }}>
             <Award size={22} style={{ color: "#10b981" }} /> Key Accomplishments At a Glance
           </h2>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1.2rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1.2rem" }}>
             
             <div style={{ padding: "1.2rem", border: "1px solid var(--line, #e5e7eb)", borderRadius: "10px", background: "var(--card, transparent)" }}>
               <div style={{ fontSize: "2rem", fontWeight: 800, color: "#10b981" }}>3,000+</div>
@@ -153,7 +153,7 @@ export default function BioPage() {
 
         {/* ----------------- SECTION 4: AREAS OF FOCUS ----------------- */}
         <div style={{ marginBottom: "3.5rem" }}>
-          <h2 className="title" style={{ fontSize: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 className="title" style={{ fontSize: "1.75rem", marginBottom: "1.5rem" }}>
             Areas of Focus & Expertise
           </h2>
 
