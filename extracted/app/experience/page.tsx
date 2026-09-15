@@ -3,13 +3,9 @@
 import { site } from "@/data/site";
 import { useState } from "react";
 import { 
-  ChevronLeft, 
-  ChevronRight, 
   ChevronDown, 
   ChevronUp, 
-  ExternalLink,
-  Image as ImageIcon,
-  X
+  ExternalLink 
 } from "lucide-react";
 
 interface ExperienceItem {
@@ -26,29 +22,9 @@ interface ExperienceItem {
 
 export default function Experience() {
   const [expanded, setExpanded] = useState<{ [key: number]: boolean }>({});
-  const [activeGalleryIndex, setActiveGalleryIndex] = useState<number | null>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
   const toggleDetails = (index: number) => {
     setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
-  };
-
-  const openGallery = (expIndex: number) => {
-    setActiveGalleryIndex(expIndex);
-    setCurrentImageIndex(0);
-  };
-
-  const closeGallery = () => {
-    setActiveGalleryIndex(null);
-    setCurrentImageIndex(0);
-  };
-
-  const nextImage = (maxImages: number) => {
-    setCurrentImageIndex((prev) => (prev + 1) % maxImages);
-  };
-
-  const prevImage = (maxImages: number) => {
-    setCurrentImageIndex((prev) => (prev - 1 + maxImages) % maxImages);
   };
 
   const experiences = (site.experience || []) as ExperienceItem[];
@@ -67,6 +43,23 @@ export default function Experience() {
     { label: "Founder", count: getCategoryCount("Founder") },
     { label: "Entrepreneur", count: getCategoryCount("Entrepreneur") },
   ];
+
+  // Helper function to get organizational link dynamically
+  const getOrgLink = (e: ExperienceItem) => {
+    if (e.website) return e.website;
+    
+    const orgName = e.org.toLowerCase();
+    if (orgName.includes("team c.a.r.e")) {
+      return "https://care-wheelchair.vercel.app"; // C.A.R.E site/demo
+    }
+    if (orgName.includes("research")) {
+      return site.social?.orcid || "https://orcid.org";
+    }
+    if (orgName.includes("science spark")) {
+      return "https://facebook.com"; // Add Science Spark link or fallback
+    }
+    return site.social?.github || "https://github.com";
+  };
 
   return (
     <main className="section min-h-screen py-10 px-4 md:px-8 max-w-6xl mx-auto">
@@ -128,11 +121,12 @@ export default function Experience() {
         <div className="space-y-16 mt-12">
           {experiences.map((e, i) => {
             const hasImages = e.images && e.images.length > 0;
+            const targetLink = getOrgLink(e);
 
             return (
               <article key={i} className="border-b pb-12 last:border-b-0">
                 
-                {/* Serial matching Slashed/Dotted Zero font */}
+                {/* 1. Serial Number */}
                 <div className="mb-1 text-center">
                   <span className="text-4xl md:text-5xl font-black text-foreground font-mono [font-feature-settings:'zero']">
                     {String(i + 1).padStart(2, "0")}
@@ -140,12 +134,30 @@ export default function Experience() {
                   </span>
                 </div>
 
-                {/* Period Centered */}
+                {/* 2. Period / Timeline */}
                 <div className="text-emerald-500 font-semibold text-xs md:text-sm uppercase tracking-wider mb-6 text-center font-mono [font-feature-settings:'zero']">
                   {e.period || "2025 – Present"}
                 </div>
 
-                {/* Role & Org */}
+                {/* 3. Inline Pictures (সব ছবি এখন সরাসরি সামনাসামনি দেখাবে) */}
+                {hasImages && (
+                  <div className="my-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    {e.images!.map((imgUrl, imgIdx) => (
+                      <div 
+                        key={imgIdx} 
+                        className="relative h-48 md:h-56 rounded-2xl overflow-hidden border border-border bg-card shadow-sm hover:border-emerald-500 transition-all group"
+                      >
+                        <img
+                          src={imgUrl}
+                          alt={`${e.role} picture ${imgIdx + 1}`}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* 4. Role & Organization */}
                 <h2 className="text-2xl md:text-3xl font-bold mb-1">
                   {e.role}
                 </h2>
@@ -153,54 +165,40 @@ export default function Experience() {
                   {e.org}
                 </div>
 
-                {/* Short Summary Text */}
+                {/* 5. Summary Text */}
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6 max-w-4xl">
                   {e.summary || e.text}
                 </p>
 
-                {/* Action Buttons Container */}
+                {/* 6. Action Buttons (Explore & See Details) */}
                 <div className="flex flex-wrap items-center gap-3">
                   
-                  {/* 1. Explore Website Button */}
-                  {e.website && (
-                    <a
-                      href={e.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500 hover:text-black font-semibold text-sm transition-all flex items-center gap-2 shadow-sm"
-                    >
-                      Explore {e.org.split("—")[0].trim()} <ExternalLink size={15} />
-                    </a>
-                  )}
+                  {/* Explore Button */}
+                  <a
+                    href={targetLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500 hover:text-black font-semibold text-sm transition-all flex items-center gap-2 shadow-sm"
+                  >
+                    Explore {e.org.split(",")[0].split("—")[0].trim()} <ExternalLink size={15} />
+                  </a>
 
-                  {/* 2. See Pictures Button */}
-                  {hasImages && (
-                    <button
-                      type="button"
-                      onClick={() => openGallery(i)}
-                      className="px-4 py-2.5 rounded-xl border bg-card border-border hover:border-emerald-500 text-foreground hover:text-emerald-500 font-semibold text-sm transition-all flex items-center gap-2 shadow-sm"
-                    >
-                      <ImageIcon size={16} className="text-emerald-500" />
-                      See pictures ({e.images?.length})
-                    </button>
-                  )}
-
-                  {/* 3. See Details Accordion Button */}
+                  {/* See Details Accordion Button */}
                   {e.details && (
                     <button
                       type="button"
                       onClick={() => toggleDetails(i)}
-                      className="px-4 py-2.5 rounded-xl border bg-card border-border hover:border-emerald-500 text-emerald-500 font-semibold text-sm transition-all flex items-center gap-2 shadow-sm"
+                      className="px-5 py-2.5 rounded-xl border bg-card border-border hover:border-emerald-500 text-foreground hover:text-emerald-500 font-semibold text-sm transition-all flex items-center gap-2 shadow-sm"
                     >
                       {expanded[i] ? "Hide details" : "See details"}
-                      {expanded[i] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                      {expanded[i] ? <ChevronUp size={16} className="text-emerald-500" /> : <ChevronDown size={16} className="text-emerald-500" />}
                     </button>
                   )}
                 </div>
 
-                {/* Details Accordion Box */}
+                {/* Details Accordion Content Box */}
                 {expanded[i] && e.details && (
-                  <div className="mt-6 p-5 md:p-6 rounded-2xl bg-card border-l-4 border-emerald-500 text-card-foreground text-sm md:text-base leading-relaxed shadow-inner animate-in fade-in duration-200">
+                  <div className="mt-6 p-5 md:p-6 rounded-2xl bg-card border-l-4 border-emerald-500 text-card-foreground text-sm md:text-base leading-relaxed shadow-inner animate-in fade-in duration-200 whitespace-pre-line">
                     {e.details}
                   </div>
                 )}
@@ -211,56 +209,6 @@ export default function Experience() {
         </div>
 
       </div>
-
-      {/* Picture Gallery Lightbox Modal */}
-      {activeGalleryIndex !== null && experiences[activeGalleryIndex]?.images && (
-        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4">
-          
-          {/* Close Button */}
-          <button
-            type="button"
-            onClick={closeGallery}
-            className="absolute top-5 right-5 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-all"
-          >
-            <X size={24} />
-          </button>
-
-          {/* Main Image View */}
-          <div className="relative w-full max-w-4xl max-h-[75vh] flex items-center justify-center">
-            <img
-              src={experiences[activeGalleryIndex].images![currentImageIndex]}
-              alt="Showcase picture"
-              className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl border border-white/10"
-            />
-
-            {/* Carousel Prev/Next Buttons */}
-            {experiences[activeGalleryIndex].images!.length > 1 && (
-              <>
-                <button
-                  type="button"
-                  onClick={() => prevImage(experiences[activeGalleryIndex].images!.length)}
-                  className="absolute left-2 md:left-4 bg-black/60 hover:bg-emerald-500 text-white hover:text-black p-3 rounded-full transition-all"
-                >
-                  <ChevronLeft size={24} />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => nextImage(experiences[activeGalleryIndex].images!.length)}
-                  className="absolute right-2 md:right-4 bg-black/60 hover:bg-emerald-500 text-white hover:text-black p-3 rounded-full transition-all"
-                >
-                  <ChevronRight size={24} />
-                </button>
-              </>
-            )}
-          </div>
-
-          {/* Bottom Counter Indicator */}
-          <div className="mt-4 text-white/80 font-mono text-sm bg-white/10 px-4 py-1.5 rounded-full [font-feature-settings:'zero']">
-            {currentImageIndex + 1} / {experiences[activeGalleryIndex].images!.length}
-          </div>
-        </div>
-      )}
-
     </main>
   );
 }
