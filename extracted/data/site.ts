@@ -24,6 +24,7 @@ export const site = {
     { label: "Experience", href: "/experience" },
     { label: "Projects", href: "/projects" },
     { label: "Achievements", href: "/achievements" },
+    { label: "Gallery", href: "/gallery" },
     { label: "Publications", href: "/publications" },
     { label: "Certifications", href: "/certifications" },
     { label: "Contact", href: "/contact" }
@@ -85,6 +86,56 @@ export const site = {
       title: "International Competitions & Global Exposure",
       type: "Global Impact",
       text: "Representing Bangladesh internationally at APICTA, WICE, and GRIC while leading grassroots robotics and web projects."
+    }
+  ],
+
+  // Gallery Section Data
+  galleryCategories: [
+    "All",
+    "Academic",
+    "Graphics Design",
+    "Achievements",
+    "Project Memories",
+    "Website Making",
+    "Webapp Making"
+  ],
+
+  galleryImages: [
+    {
+      id: 1,
+      title: "WRO Gold Receive",
+      category: "Achievements",
+      src: "/images/gallery/wro-gold.jpg"
+    },
+    {
+      id: 2,
+      title: "Notre Dame College Science Seminar",
+      category: "Academic",
+      src: "/images/gallery/ndc-academic.jpg"
+    },
+    {
+      id: 3,
+      title: "C.A.R.E Wheelchair Prototype Build",
+      category: "Project Memories",
+      src: "/images/gallery/care-testing.jpg"
+    },
+    {
+      id: 4,
+      title: "Brand Identity & Banner Layout",
+      category: "Graphics Design",
+      src: "/images/gallery/brand-design.jpg"
+    },
+    {
+      id: 5,
+      title: "Blood4People Donor Portal Development",
+      category: "Website Making",
+      src: "/images/gallery/blood4people-dev.jpg"
+    },
+    {
+      id: 6,
+      title: "Custom DBMS Admin Dashboard",
+      category: "Webapp Making",
+      src: "/images/gallery/dbms-dashboard.jpg"
     }
   ],
 
