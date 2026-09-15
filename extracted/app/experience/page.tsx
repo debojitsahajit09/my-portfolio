@@ -3,6 +3,8 @@
 import { site } from "@/data/site";
 import { useState } from "react";
 import { 
+  ChevronLeft,
+  ChevronRight,
   ChevronDown, 
   ChevronUp, 
   ExternalLink 
@@ -22,9 +24,25 @@ interface ExperienceItem {
 
 export default function Experience() {
   const [expanded, setExpanded] = useState<{ [key: number]: boolean }>({});
+  // প্রতিটি এক্সপেরিয়েন্সের বর্তমান ছবির ইনডেক্স ট্র্যাক করার জন্য স্টেটস
+  const [activeImageIndexes, setActiveImageIndexes] = useState<{ [key: number]: number }>({});
 
   const toggleDetails = (index: number) => {
     setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
+  };
+
+  const nextImage = (expIndex: number, totalImages: number) => {
+    setActiveImageIndexes((prev) => ({
+      ...prev,
+      [expIndex]: ((prev[expIndex] || 0) + 1) % totalImages,
+    }));
+  };
+
+  const prevImage = (expIndex: number, totalImages: number) => {
+    setActiveImageIndexes((prev) => ({
+      ...prev,
+      [expIndex]: ((prev[expIndex] || 0) - 1 + totalImages) % totalImages,
+    }));
   };
 
   const experiences = (site.experience || []) as ExperienceItem[];
@@ -44,19 +62,19 @@ export default function Experience() {
     { label: "Entrepreneur", count: getCategoryCount("Entrepreneur") },
   ];
 
-  // Helper function to get organizational link dynamically
+  // ডায়নামিক লিঙ্ক সেটআপ
   const getOrgLink = (e: ExperienceItem) => {
     if (e.website) return e.website;
     
     const orgName = e.org.toLowerCase();
     if (orgName.includes("team c.a.r.e")) {
-      return "https://care-wheelchair.vercel.app"; // C.A.R.E site/demo
+      return "https://care-wheelchair.vercel.app";
     }
     if (orgName.includes("research")) {
       return site.social?.orcid || "https://orcid.org";
     }
     if (orgName.includes("science spark")) {
-      return "https://facebook.com"; // Add Science Spark link or fallback
+      return "https://facebook.com";
     }
     return site.social?.github || "https://github.com";
   };
@@ -122,6 +140,8 @@ export default function Experience() {
           {experiences.map((e, i) => {
             const hasImages = e.images && e.images.length > 0;
             const targetLink = getOrgLink(e);
+            const currentImgIndex = activeImageIndexes[i] || 0;
+            const totalImgs = e.images?.length || 0;
 
             return (
               <article key={i} className="border-b pb-12 last:border-b-0">
@@ -134,26 +154,50 @@ export default function Experience() {
                   </span>
                 </div>
 
-                {/* 2. Period / Timeline */}
+                {/* 2. Timeline / Period */}
                 <div className="text-emerald-500 font-semibold text-xs md:text-sm uppercase tracking-wider mb-6 text-center font-mono [font-feature-settings:'zero']">
                   {e.period || "2025 – Present"}
                 </div>
 
-                {/* 3. Inline Pictures (সব ছবি এখন সরাসরি সামনাসামনি দেখাবে) */}
+                {/* 3. Single Centered Image Display with Swipe Arrows */}
                 {hasImages && (
-                  <div className="my-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    {e.images!.map((imgUrl, imgIdx) => (
-                      <div 
-                        key={imgIdx} 
-                        className="relative h-48 md:h-56 rounded-2xl overflow-hidden border border-border bg-card shadow-sm hover:border-emerald-500 transition-all group"
-                      >
-                        <img
-                          src={imgUrl}
-                          alt={`${e.role} picture ${imgIdx + 1}`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                    ))}
+                  <div className="my-6 flex flex-col items-center justify-center">
+                    <div className="relative w-full max-w-2xl h-64 md:h-96 rounded-2xl overflow-hidden border border-border bg-card shadow-md flex items-center justify-center group">
+                      <img
+                        src={e.images![currentImgIndex]}
+                        alt={`${e.role} picture ${currentImgIndex + 1}`}
+                        className="w-full h-full object-cover transition-all duration-300"
+                      />
+
+                      {/* Swipe Prev/Next Buttons (যদি একাধিক ছবি থাকে) */}
+                      {totalImgs > 1 && (
+                        <>
+                          <button
+                            type="button"
+                            onClick={() => prevImage(i, totalImgs)}
+                            className="absolute left-3 p-2 md:p-3 rounded-full bg-black/50 hover:bg-emerald-500 text-white hover:text-black transition-all shadow-md backdrop-blur-sm"
+                            aria-label="Previous image"
+                          >
+                            <ChevronLeft size={20} />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => nextImage(i, totalImgs)}
+                            className="absolute right-3 p-2 md:p-3 rounded-full bg-black/50 hover:bg-emerald-500 text-white hover:text-black transition-all shadow-md backdrop-blur-sm"
+                            aria-label="Next image"
+                          >
+                            <ChevronRight size={20} />
+                          </button>
+                        </>
+                      )}
+
+                      {/* Image Count Indicator Pill */}
+                      {totalImgs > 1 && (
+                        <div className="absolute bottom-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-white/90 text-xs font-mono [font-feature-settings:'zero']">
+                          {currentImgIndex + 1} / {totalImgs}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
 
@@ -170,7 +214,7 @@ export default function Experience() {
                   {e.summary || e.text}
                 </p>
 
-                {/* 6. Action Buttons (Explore & See Details) */}
+                {/* 6. Action Buttons */}
                 <div className="flex flex-wrap items-center gap-3">
                   
                   {/* Explore Button */}
@@ -196,7 +240,7 @@ export default function Experience() {
                   )}
                 </div>
 
-                {/* Details Accordion Content Box */}
+                {/* Details Accordion Box */}
                 {expanded[i] && e.details && (
                   <div className="mt-6 p-5 md:p-6 rounded-2xl bg-card border-l-4 border-emerald-500 text-card-foreground text-sm md:text-base leading-relaxed shadow-inner animate-in fade-in duration-200 whitespace-pre-line">
                     {e.details}
