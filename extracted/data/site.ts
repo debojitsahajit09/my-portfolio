@@ -369,11 +369,12 @@ export const site = {
 
   experience: [
     {
-      period: "2025 – Present",
-      role: "Founder & Software Lead",
-      org: "Team C.A.R.E — Controlled Assistive Responsive Equipment",
-      summary: "Built low-cost AI/IoT smart wheelchair with gesture control & health monitor for disabled users; won national awards, ranked 6th at APICTA 2025.",
-      details: "Spearheaded hardware-software integration for assistive technology. Implemented offline AI voice processing, ESP-NOW micro-controller networking, multi-sensor gesture tracking, and real-time biometric IoT dashboards.",
+      period: "2024 – Present",
+      role: "Founder & Core Software Lead",
+      org: "Team C.A.R.E",
+      category: "Founder / Social Enterprise",
+      summary: "Founded and led the engineering team building affordable, AI/IoT-driven assistive technologies for individuals with disabilities. Spearheaded system architecture, hardware-software integration, and prototyping for internationally acclaimed assistive tools.",
+      details: "Developed the C.A.R.E. Wheelchair (V1 & V2), an IoT-enabled assistive device featuring gesture controls and real-time health monitoring systems.\n\nSecured 6th place internationally at the Asia Pacific ICT Alliance (APICTA) Awards 2025 in Taiwan among 32 projects across 16 countries.\n\nWon Champion at the Bangladesh ICT and Innovation Awards 2025 (outperforming 256 national teams) and National Champion at the 16th DRMC National Science Carnival 2025.",
       images: [
         "/images/experience/care-1.jpeg",
         "/images/experience/care-2.jpeg",
@@ -381,43 +382,32 @@ export const site = {
       ]
     },
     {
-      period: "2024 – Present",
-      role: "Independent Researcher",
-      org: "Assistive Tech & Water Solutions Research",
-      summary: "Applied research on RF-driven assistive tech & water solutions. Conducted lab testing & simulation in MATLAB/ANSYS; presented at SJWPBD.",
-      details: "Engineered low-cost micro-power RF harvesting systems for implantable medical devices and bio-inspired water purification systems.",
-      images: [
-        "/images/experience/research-1.jpeg",
-        "/images/experience/research-2.jpeg"
-      ]
-    },
-    {
       period: "2025 – Present",
-      role: "Independent Author",
-      org: "Independent Publishing",
-      summary: "Co-authored ISBN/DOI genetics book simplifying DNA for high schoolers; distributed 500+ copies, currently writing 2nd book on assistive robotics.",
-      details: "Authored and interactive-designed 'A Journey into the DNA, from Nitrogen to Grandson' registered on Zenodo (DOI). Managed distribution of 500+ print and digital copies.",
-      images: [
-        "/images/experience/publishing-1.jpeg",
-        "/images/experience/publishing-2.jpeg"
-      ]
-    },
-    {
-      period: "2025 – Present",
-      role: "President (R&D)",
+      role: "President (Research & Development)",
       org: "Science Spark",
-      summary: "Led R&D dept for 500+ members; mentored 60+ executives in STEM projects, organized 10+ research workshops & national science competitions.",
-      details: "Structured project incubation programs, trained youth developers in IoT micro-controllers, and evaluated STEM innovations.",
+      category: "Community Work / Volunteer / STEM Leadership",
+      summary: "Direct the R&D department of a student-led organization with over 500 members, focused on expanding hands-on STEM education and applied research across Bangladesh.",
+      details: "Mentored 60+ executive members in conducting applied science projects and research methodologies.\n\nOrganized 10+ research workshops, student STEM training programs, and national science competitions.\n\nEstablished nationwide volunteer training initiatives connecting high school students with emerging technologies.",
       images: [
         "/images/experience/sciencespark-1.jpeg"
       ]
     },
     {
-      period: "2023 – Present",
-      role: "Founder & Lead Mentor",
+      period: "2026 – Present",
+      role: "Core Member & District Coordinator",
+      org: "Science Spark Blood Net",
+      category: "Community Work / Volunteer",
+      summary: "Coordinate voluntary blood donation drives and rapid emergency response networks spanning all 64 districts in Bangladesh.",
+      details: "Facilitate real-time communication between blood donors and critical patients across the country.\n\nOversee digital blood donor registration, emergency outreach logistics, and community coordination.",
+      images: []
+    },
+    {
+      period: "2025 – Present",
+      role: "Founder & Lead Organizer",
       org: "Rajbari Robotics Association",
-      summary: "Pioneered grassroots STEM education in my district; hosted free robotics camps & trained 300+ rural students in hands-on robotics.",
-      details: "Established district-level STEM infrastructure in Rajbari. Organized free hands-on hardware training camps and ideathons to bridge technical gaps.",
+      category: "Founder / Volunteer / STEM Education",
+      summary: "Pioneered grassroots robotics and STEM education in Rajbari district to bridge the technology access gap for rural students.",
+      details: "Hosted free, hands-on robotics bootcamps and workshops for over 300 rural students.\n\nTaught core concepts in microcontrollers, sensor integration, circuit design, and basic programming.\n\nBuilt a community platform encouraging local youth to create practical hardware innovations.",
       images: [
         "/images/experience/rra-1.jpg",
         "/images/experience/rra-2.jpg"
@@ -425,50 +415,97 @@ export const site = {
     },
     {
       period: "2022 – Present",
-      role: "Executive Member & Trainer",
+      role: "Executive Member & Robotics Trainer",
       org: "Aryabhata Gonit Pathshala, Rajbari",
-      summary: "Trained 3,000+ students in WRO, IRO, & IMO over 4 yrs; organized regional STEM fests, mentored 50+ award-winning junior robotics projects.",
-      details: "Coached high school teams in algorithmic problem solving, mechanical assembly, line-following robotics, and mathematical Olympiads.",
+      category: "Volunteer / STEM Educator",
+      summary: "Instructed over 3,000 students in advanced STEM subjects, robotics engineering, and competitive olympiad mathematics across the district.",
+      details: "Trained junior students for prestigious national and international competitions including WRO, IRO, IMO, IPhO, and IChO.\n\nOrganized regional STEM festivals engaging over 1,000 students district-wide.\n\nMentored over 50 award-winning junior robotics and science projects.",
       images: [
         "/images/experience/aryabhata-1.jpeg"
       ]
     },
     {
-      period: "2024 – Present",
-      role: "Founder",
+      period: "2026 – Present",
+      role: "Founder & Managing Director",
       org: "Desh Techshop",
-      summary: "Founded tech store providing low-cost components to 500+ student innovators, bridging hardware access gaps in non-metro science clubs.",
-      details: "Sourced and distributed affordable microcontrollers, sensors, and electronic components for rural innovators.",
+      category: "Entrepreneur / Tech Startup",
+      summary: "Founded a student tech store to solve supply chain and access bottlenecks for robotics components and electronic modules in non-metropolitan regions.",
+      details: "Supplied essential hardware, sensors, and development boards to 500+ students and school science clubs.\n\nManaged procurement, inventory systems, and customer fulfillment tailored for student makers.",
       images: [
         "/images/experience/deshtechshop-1.jpeg"
       ]
     },
     {
-      period: "2023 – Present",
-      role: "Full-Stack Web & DBMS Developer",
-      org: "Family Shop & Freelance UI Design",
-      summary: "Built custom DBMS & e-commerce portal for father's shop (reduced inventory time by 40%); designed websites & branding for 10+ clubs.",
-      details: "Engineered responsive web applications, inventory management systems, and visual graphic branding for local businesses and clubs.",
+      period: "2024 – Present",
+      role: "Full-Stack Web Developer & Designer",
+      org: "Personal & Client Projects",
+      category: "Technology & Software",
+      summary: "Architected and deployed web applications, responsive user interfaces, custom database management systems, and e-commerce platforms.",
+      details: "Developed a custom Database Management System (DBMS) and e-commerce web platform for family business operations, cutting manual inventory tracking by 40% and increasing digital sales by 25%.\n\nBuilt platforms including Blood4People (responsive blood donor portal) and demo prototypes for NDITC.\n\nAwarded Champion in Web Design at the Pixel Contest 3.0 (2024).",
       images: [
         "/images/experience/familyshop-1.jpeg"
       ]
     },
     {
+      period: "2022 – Present",
+      role: "Student Researcher",
+      org: "Independent / Open Research",
+      category: "Research & Innovation",
+      summary: "Conduct independent applied research spanning assistive robotics, RF energy harvesting, and bio-inspired water purification systems.",
+      details: "RF Energy Harvesting Pacemaker System: Investigating ambient RF energy harvesting to reduce battery dependency in cardiac devices.\n\nAdaptive Solar Water Purification System: Modeling bio-inspired dynamic filtration using MATLAB and ANSYS.\n\nRecognized as a Citizen Scientist with the NASA GLOBE Program & Zooniverse, and completed NASA Open Science certifications.",
+      images: [
+        "/images/experience/research-1.jpeg",
+        "/images/experience/research-2.jpeg"
+      ]
+    },
+    {
       period: "2025 – Present",
-      role: "Organizer & IT Tech Volunteer",
-      org: "Notre Dame Information & Technology Club (NDITC)",
-      summary: "Co-managed NDITC Tech Fest 2026 serving 4,000+ participants; led IT logistics, hands-on tech sessions, and project evaluation rounds.",
-      details: "Managed event logistics, evaluated youth robotics display entries, and directed technical stage operations during national IT events.",
+      role: "Author & Educational Writer",
+      org: "Self-Published / International Publications",
+      category: "Research / Publishing",
+      summary: "Co-authored and published indexed genetics literature designed to simplify complex biological concepts for high school students.",
+      details: "Co-authored \"A Journey Into The DNA: from Nitrogen to Grandson\" (ISBN: 978-984-36-0202-2, DOI: 10.5281/zenodo.19597716).\n\nDistributed 500+ physical and digital copies to high schoolers and regional science libraries.\n\nCurrently authoring a second book focusing on practical assistive robotics engineering.",
+      images: [
+        "/images/experience/publishing-1.jpeg",
+        "/images/experience/publishing-2.jpeg"
+      ]
+    },
+    {
+      period: "2024 – 2026",
+      role: "Organizer & Volunteer",
+      org: "Notre Dame Information Technology Club, Dhaka",
+      category: "Volunteer / Club Leadership",
+      summary: "Co-managed event operations, IT infrastructure, and technical project evaluations for one of Bangladesh’s premier college IT clubs.",
+      details: "Co-managed NDITC Tech Fest 2026, hosting over 4,000 nationwide participants.\n\nLed IT logistics, hands-on workshop setups, and project evaluation rounds during annual festivals.",
       images: [
         "/images/experience/nditc-1.jpeg"
       ]
     },
     {
-      period: "2019 – Present",
-      role: "Graphic Designer & Classical Musician",
-      org: "Independent Creative & Performing Arts",
-      summary: "Designed pro-bono graphics & branding for 10+ emerging clubs; classical musician (Guitar, Harmonium, Tabla - 7+ yrs), won 5+ regional art awards.",
-      details: "Over 7 years of formal classical vocal and instrumental training (Guitar, Harmonium, Tabla). Created brand identities, poster arts, and digital assets.",
+      period: "2024 – 2026",
+      role: "General Member & Volunteer",
+      org: "Notre Dame English Club, Dhaka",
+      category: "Volunteer / Cultural",
+      summary: "Contributed to event planning, stage management, and volunteer logistics for major national language and literature carnivals.",
+      details: "Assisted in organizing large-scale college events, delegate hospitality, and venue logistics.\n\nParticipated actively in club communication workshops and public speaking sessions.",
+      images: []
+    },
+    {
+      period: "2022 – 2024",
+      role: "Executive Member (Robotics Department)",
+      org: "Atomic Quantum Alliance",
+      category: "Community Work / STEM Outreach",
+      summary: "Managed the robotics project wing within an academic student alliance serving over 600 members.",
+      details: "Guided junior students through basic circuit assembly and robotics project design.\n\nOrganized internal science showcases, project demonstrations, and peer mentoring sessions.",
+      images: []
+    },
+    {
+      period: "2022 – Present",
+      role: "Graphic Designer & Media Producer",
+      org: "Freelance & Club Media",
+      category: "Creative & Media",
+      summary: "Deliver pro-bono and professional visual identity design, digital artwork, and video editing for emerging student organizations and tech events.",
+      details: "Designed pro-bono visual branding, banners, and digital graphics for 10+ student clubs and non-profits.\n\nProficient in Adobe Photoshop, Illustrator, and Premiere Pro for visual content creation.\n\nWon 5+ regional art and design competitions.",
       images: [
         "/images/experience/creative-1.jpeg",
         "/images/experience/creative-2.jpeg"
