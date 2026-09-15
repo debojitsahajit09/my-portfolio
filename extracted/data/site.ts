@@ -94,50 +94,67 @@ export const site = {
     "All",
     "Academic",
     "Graphics Design",
-    "Achievements",
-    "Project Memories",
-    "Website Making",
-    "Webapp Making"
+    "Projects",
+    "Myself"
   ],
 
-  galleryImages: [
-    {
-      id: 1,
-      title: "WRO Gold Receive",
-      category: "Achievements",
-      src: "/images/gallery/wro-gold.jpg"
-    },
-    {
-      id: 2,
-      title: "Notre Dame College Science Seminar",
-      category: "Academic",
-      src: "/images/gallery/ndc-academic.jpg"
-    },
-    {
-      id: 3,
-      title: "C.A.R.E Wheelchair Prototype Build",
-      category: "Project Memories",
-      src: "/images/gallery/care-testing.jpg"
-    },
-    {
-      id: 4,
-      title: "Brand Identity & Banner Layout",
-      category: "Graphics Design",
-      src: "/images/gallery/brand-design.jpg"
-    },
-    {
-      id: 5,
-      title: "Blood4People Donor Portal Development",
-      category: "Website Making",
-      src: "/images/gallery/blood4people-dev.jpg"
-    },
-    {
-      id: 6,
-      title: "Custom DBMS Admin Dashboard",
-      category: "Webapp Making",
-      src: "/images/gallery/dbms-dashboard.jpg"
-    }
-  ],
+  galleryImages: {
+    ndc: [
+      { id: "ndc-1", title: "Notre Dame College Campus Life 1", category: "Academic", src: "/images/gallery/ndc-1.jpg" },
+      { id: "ndc-2", title: "Notre Dame College Campus Life 2", category: "Academic", src: "/images/gallery/ndc-2.jpg" },
+      { id: "ndc-3", title: "Science Seminar at NDC", category: "Academic", src: "/images/gallery/ndc-3.jpg" },
+      { id: "ndc-4", title: "NDC Club Activities", category: "Academic", src: "/images/gallery/ndc-4.jpg" },
+      { id: "ndc-5", title: "Classroom Moments at NDC", category: "Academic", src: "/images/gallery/ndc-5.jpg" },
+      { id: "ndc-6", title: "NDITC Event Operations", category: "Academic", src: "/images/gallery/ndc-6.jpg" },
+      { id: "ndc-7", title: "College Campus Gathering", category: "Academic", src: "/images/gallery/ndc-7.jpg" },
+      { id: "ndc-8", title: "Science Fair & Workshop", category: "Academic", src: "/images/gallery/ndc-8.jpg" },
+      { id: "ndc-9", title: "Practical Lab Sessions", category: "Academic", src: "/images/gallery/ndc-9.jpg" },
+      { id: "ndc-10", title: "Group Photo with Friends & Batchmates", category: "Academic", src: "/images/gallery/ndc-10.jpg" }
+    ],
+    rghs: [
+      { id: "rghs-1", title: "Rajbari Govt. High School Campus", category: "Academic", src: "/images/gallery/rghs-1.jpg" },
+      { id: "rghs-2", title: "SSC Batch Farewell & Program", category: "Academic", src: "/images/gallery/rghs-2.jpg" },
+      { id: "rghs-3", title: "District Talentpool Award Ceremony", category: "Academic", src: "/images/gallery/rghs-3.jpg" },
+      { id: "rghs-4", title: "School Science Fair Display", category: "Academic", src: "/images/gallery/rghs-4.jpg" },
+      { id: "rghs-5", title: "Classroom & Teachers Interaction", category: "Academic", src: "/images/gallery/rghs-5.jpg" }
+    ],
+    cambridge: [
+      { id: "cambridge-1", title: "Cambridge School Primary Graduation", category: "Academic", src: "/images/gallery/cambridge-1.jpg" },
+      { id: "cambridge-2", title: "Primary School Memories & Campus", category: "Academic", src: "/images/gallery/cambridge-2.jpg" }
+    ],
+    graphics: [
+      { id: "gfx-1", title: "Event Banner Design 1", category: "Graphics Design", src: "/images/gallery/gfx-1.jpg" },
+      { id: "gfx-2", title: "Event Banner Design 2", category: "Graphics Design", src: "/images/gallery/gfx-2.jpg" },
+      { id: "gfx-3", title: "Tech Fest Poster Art", category: "Graphics Design", src: "/images/gallery/gfx-3.jpg" },
+      { id: "gfx-4", title: "Branding & Identity Concept 1", category: "Graphics Design", src: "/images/gallery/gfx-4.jpg" },
+      { id: "gfx-5", title: "Branding & Identity Concept 2", category: "Graphics Design", src: "/images/gallery/gfx-5.jpg" },
+      { id: "gfx-6", title: "Social Media Banner Design", category: "Graphics Design", src: "/images/gallery/gfx-6.jpg" },
+      { id: "gfx-7", title: "Club Fest Artwork Design", category: "Graphics Design", src: "/images/gallery/gfx-7.jpg" },
+      { id: "gfx-8", title: "Digital Illustration & Layout", category: "Graphics Design", src: "/images/gallery/gfx-8.jpg" },
+      { id: "gfx-9", title: "Workshop & Bootcamp Poster", category: "Graphics Design", src: "/images/gallery/gfx-9.jpg" },
+      { id: "gfx-10", title: "Publication Cover Graphic Design", category: "Graphics Design", src: "/images/gallery/gfx-10.jpg" }
+    ],
+    projects: [
+      { id: "proj-1", title: "C.A.R.E Wheelchair Assembly", category: "Projects", src: "/images/gallery/proj-1.jpg" },
+      { id: "proj-2", title: "C.A.R.E Wheelchair Testing", category: "Projects", src: "/images/gallery/proj-2.jpg" },
+      { id: "proj-3", title: "3-in-1 Smart Helmet Prototype", category: "Projects", src: "/images/gallery/proj-3.jpg" },
+      { id: "proj-4", title: "ORION Voice Assistant Circuit", category: "Projects", src: "/images/gallery/proj-4.jpg" },
+      { id: "proj-5", title: "Blood4People Web Application UI", category: "Projects", src: "/images/gallery/proj-5.jpg" },
+      { id: "proj-6", title: "Custom DBMS Dashboard Coding", category: "Projects", src: "/images/gallery/proj-6.jpg" },
+      { id: "proj-7", title: "AeroVolt Energy Harvesting System", category: "Projects", src: "/images/gallery/proj-7.jpg" },
+      { id: "proj-8", title: "Solar Water Purification Prototype", category: "Projects", src: "/images/gallery/proj-8.jpg" },
+      { id: "proj-9", title: "PCB Designing & Microcontroller Setup", category: "Projects", src: "/images/gallery/proj-9.jpg" },
+      { id: "proj-10", title: "Sensor & Actuator Calibration", category: "Projects", src: "/images/gallery/proj-10.jpg" }
+    ],
+    myself: [
+      { id: "me-1", title: "Personal Portrait 1", category: "Myself", src: "/images/gallery/me-1.jpg" },
+      { id: "me-2", title: "Personal Portrait 2", category: "Myself", src: "/images/gallery/me-2.jpg" },
+      { id: "me-3", title: "Speaker & Presentation Session", category: "Myself", src: "/images/gallery/me-3.jpg" },
+      { id: "me-4", title: "Casual Moment", category: "Myself", src: "/images/gallery/me-4.jpg" },
+      { id: "me-5", title: "Working at Lab Desk", category: "Myself", src: "/images/gallery/me-5.jpg" },
+      { id: "me-6", title: "International Tour Moment", category: "Myself", src: "/images/gallery/me-6.jpg" }
+    ]
+  },
 
   projects: [
     {
