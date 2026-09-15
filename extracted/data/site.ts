@@ -214,7 +214,7 @@ export const site = {
       result: "Gold Medalist",
       year: "2026",
       org: "WRO Bangladesh",
-      image: "/images/wro-gold.jpeg",
+      image: "/images/wro-gold.jpg",
       certificate: "/documents/wro-cert.pdf",
       text: "Secured 1st place / Gold Medal in Future Innovator Senior Category at UIU; selected to represent Bangladesh globally."
     },
