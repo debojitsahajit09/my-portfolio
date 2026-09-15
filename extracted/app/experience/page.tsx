@@ -7,7 +7,9 @@ import {
   ChevronRight, 
   ChevronDown, 
   ChevronUp, 
-  ExternalLink 
+  ExternalLink,
+  Image as ImageIcon,
+  X
 } from "lucide-react";
 
 interface ExperienceItem {
@@ -24,29 +26,33 @@ interface ExperienceItem {
 
 export default function Experience() {
   const [expanded, setExpanded] = useState<{ [key: number]: boolean }>({});
-  const [imageIndices, setImageIndices] = useState<{ [key: number]: number }>({});
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState<number | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
   const toggleDetails = (index: number) => {
     setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
-  const nextImage = (expIndex: number, maxImages: number) => {
-    setImageIndices((prev) => ({
-      ...prev,
-      [expIndex]: ((prev[expIndex] || 0) + 1) % maxImages,
-    }));
+  const openGallery = (expIndex: number) => {
+    setActiveGalleryIndex(expIndex);
+    setCurrentImageIndex(0);
   };
 
-  const prevImage = (expIndex: number, maxImages: number) => {
-    setImageIndices((prev) => ({
-      ...prev,
-      [expIndex]: ((prev[expIndex] || 0) - 1 + maxImages) % maxImages,
-    }));
+  const closeGallery = () => {
+    setActiveGalleryIndex(null);
+    setCurrentImageIndex(0);
+  };
+
+  const nextImage = (maxImages: number) => {
+    setCurrentImageIndex((prev) => (prev + 1) % maxImages);
+  };
+
+  const prevImage = (maxImages: number) => {
+    setCurrentImageIndex((prev) => (prev - 1 + maxImages) % maxImages);
   };
 
   const experiences = (site.experience || []) as ExperienceItem[];
 
-  // Helper function to count items based on category
   const getCategoryCount = (label: string) => {
     const count = experiences.filter((e) => 
       e.category?.toLowerCase() === label.toLowerCase() || 
@@ -55,7 +61,6 @@ export default function Experience() {
     return count > 0 ? String(count).padStart(2, "0") : "01"; 
   };
 
-  // Top summary categories with counts (Icons removed)
   const categories = [
     { label: "Community Work", count: getCategoryCount("Community Work") },
     { label: "Volunteer", count: getCategoryCount("Volunteer") },
@@ -77,7 +82,7 @@ export default function Experience() {
           </h1>
         </div>
 
-        {/* 4 Compact Category Cards Grid (Centered text & count, no icons) */}
+        {/* 4 Compact Category Cards Grid */}
         <div className="w-full mb-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {categories.map((cat, idx) => (
@@ -85,7 +90,7 @@ export default function Experience() {
                 key={idx} 
                 className="py-3.5 px-3 rounded-2xl border bg-card text-card-foreground shadow-sm flex flex-col items-center justify-center gap-1 hover:border-emerald-500 transition-all"
               >
-                <span className="text-emerald-500 font-mono font-bold text-lg md:text-xl">
+                <span className="text-emerald-500 font-mono [font-feature-settings:'zero'] font-bold text-lg md:text-xl">
                   {cat.count}
                 </span>
                 <span className="font-semibold text-[11px] md:text-xs uppercase tracking-wider text-center">
@@ -96,14 +101,13 @@ export default function Experience() {
           </div>
         </div>
 
-        {/* Custom Mouse Scroll Animation (Fade up dot inside mouse) */}
+        {/* Custom Mouse Scroll Animation */}
         <div className="flex items-center justify-center my-10">
           <div className="w-6 h-10 border-2 border-emerald-500 rounded-full flex justify-center p-1 relative">
             <div className="w-1.5 h-2.5 bg-emerald-500 rounded-full animate-[fadeUp_1.5s_infinite]" />
           </div>
         </div>
 
-        {/* Tailwind Custom Keyframes Style for Bottom-to-Top Fade Animation */}
         <style jsx>{`
           @keyframes fadeUp {
             0% {
@@ -123,22 +127,21 @@ export default function Experience() {
         {/* Experience List */}
         <div className="space-y-16 mt-12">
           {experiences.map((e, i) => {
-            const currentImgIndex = imageIndices[i] || 0;
             const hasImages = e.images && e.images.length > 0;
 
             return (
               <article key={i} className="border-b pb-12 last:border-b-0">
                 
-                {/* Serial matching Achievements Page style centered */}
+                {/* Serial matching Slashed/Dotted Zero font */}
                 <div className="mb-1 text-center">
-                  <span className="text-4xl md:text-5xl font-black text-foreground font-mono">
+                  <span className="text-4xl md:text-5xl font-black text-foreground font-mono [font-feature-settings:'zero']">
                     {String(i + 1).padStart(2, "0")}
                     <span className="text-emerald-500">.</span>
                   </span>
                 </div>
 
                 {/* Period Centered */}
-                <div className="text-emerald-500 font-semibold text-xs md:text-sm uppercase tracking-wider mb-6 text-center">
+                <div className="text-emerald-500 font-semibold text-xs md:text-sm uppercase tracking-wider mb-6 text-center font-mono [font-feature-settings:'zero']">
                   {e.period || "2025 – Present"}
                 </div>
 
@@ -150,65 +153,44 @@ export default function Experience() {
                   {e.org}
                 </div>
 
-                {/* Image Carousel */}
-                {hasImages && e.images && (
-                  <div className="w-full flex justify-center mb-6">
-                    <div className="relative w-full max-w-3xl aspectRatio-[16/9] overflow-hidden rounded-2xl bg-black/40 border border-emerald-500/20 shadow-md">
-                      <img
-                        src={e.images[currentImgIndex]}
-                        alt={`${e.role} showcase`}
-                        className="w-full h-full object-cover block"
-                      />
-
-                      {/* Swiper Controls */}
-                      {e.images.length > 1 && (
-                        <>
-                          <button
-                            type="button"
-                            onClick={() => prevImage(i, e.images!.length)}
-                            className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 text-white p-2 rounded-full hover:bg-emerald-500 hover:text-black transition-all"
-                          >
-                            <ChevronLeft size={20} />
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => nextImage(i, e.images!.length)}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 text-white p-2 rounded-full hover:bg-emerald-500 hover:text-black transition-all"
-                          >
-                            <ChevronRight size={20} />
-                          </button>
-                          <div className="absolute bottom-3 right-3 bg-black/80 text-white text-xs px-3 py-1 rounded-full font-mono">
-                            {currentImgIndex + 1} / {e.images.length}
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                )}
-
                 {/* Short Summary Text */}
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6 max-w-4xl">
                   {e.summary || e.text}
                 </p>
 
-                {/* Action Buttons */}
-                <div className="flex flex-wrap items-center gap-4">
+                {/* Action Buttons Container */}
+                <div className="flex flex-wrap items-center gap-3">
+                  
+                  {/* 1. Explore Website Button */}
                   {e.website && (
                     <a
                       href={e.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500 hover:text-black font-medium text-sm transition-all flex items-center gap-2"
+                      className="px-4 py-2.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500 hover:text-black font-semibold text-sm transition-all flex items-center gap-2 shadow-sm"
                     >
-                      Explore {e.org.split("—")[0]} <ExternalLink size={14} />
+                      Explore {e.org.split("—")[0].trim()} <ExternalLink size={15} />
                     </a>
                   )}
 
+                  {/* 2. See Pictures Button */}
+                  {hasImages && (
+                    <button
+                      type="button"
+                      onClick={() => openGallery(i)}
+                      className="px-4 py-2.5 rounded-xl border bg-card border-border hover:border-emerald-500 text-foreground hover:text-emerald-500 font-semibold text-sm transition-all flex items-center gap-2 shadow-sm"
+                    >
+                      <ImageIcon size={16} className="text-emerald-500" />
+                      See pictures ({e.images?.length})
+                    </button>
+                  )}
+
+                  {/* 3. See Details Accordion Button */}
                   {e.details && (
                     <button
                       type="button"
                       onClick={() => toggleDetails(i)}
-                      className="px-4 py-2 rounded-lg border bg-card hover:border-emerald-500 text-emerald-500 font-semibold text-sm transition-all flex items-center gap-2"
+                      className="px-4 py-2.5 rounded-xl border bg-card border-border hover:border-emerald-500 text-emerald-500 font-semibold text-sm transition-all flex items-center gap-2 shadow-sm"
                     >
                       {expanded[i] ? "Hide details" : "See details"}
                       {expanded[i] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -216,9 +198,9 @@ export default function Experience() {
                   )}
                 </div>
 
-                {/* Details Accordion Content */}
+                {/* Details Accordion Box */}
                 {expanded[i] && e.details && (
-                  <div className="mt-4 p-5 md:p-6 rounded-xl bg-card border-l-4 border-emerald-500 text-card-foreground text-sm md:text-base leading-relaxed shadow-inner">
+                  <div className="mt-6 p-5 md:p-6 rounded-2xl bg-card border-l-4 border-emerald-500 text-card-foreground text-sm md:text-base leading-relaxed shadow-inner animate-in fade-in duration-200">
                     {e.details}
                   </div>
                 )}
@@ -229,6 +211,56 @@ export default function Experience() {
         </div>
 
       </div>
+
+      {/* Picture Gallery Lightbox Modal */}
+      {activeGalleryIndex !== null && experiences[activeGalleryIndex]?.images && (
+        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4">
+          
+          {/* Close Button */}
+          <button
+            type="button"
+            onClick={closeGallery}
+            className="absolute top-5 right-5 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-all"
+          >
+            <X size={24} />
+          </button>
+
+          {/* Main Image View */}
+          <div className="relative w-full max-w-4xl max-h-[75vh] flex items-center justify-center">
+            <img
+              src={experiences[activeGalleryIndex].images![currentImageIndex]}
+              alt="Showcase picture"
+              className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl border border-white/10"
+            />
+
+            {/* Carousel Prev/Next Buttons */}
+            {experiences[activeGalleryIndex].images!.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={() => prevImage(experiences[activeGalleryIndex].images!.length)}
+                  className="absolute left-2 md:left-4 bg-black/60 hover:bg-emerald-500 text-white hover:text-black p-3 rounded-full transition-all"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => nextImage(experiences[activeGalleryIndex].images!.length)}
+                  className="absolute right-2 md:right-4 bg-black/60 hover:bg-emerald-500 text-white hover:text-black p-3 rounded-full transition-all"
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </>
+            )}
+          </div>
+
+          {/* Bottom Counter Indicator */}
+          <div className="mt-4 text-white/80 font-mono text-sm bg-white/10 px-4 py-1.5 rounded-full [font-feature-settings:'zero']">
+            {currentImageIndex + 1} / {experiences[activeGalleryIndex].images!.length}
+          </div>
+        </div>
+      )}
+
     </main>
   );
 }
