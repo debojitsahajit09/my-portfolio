@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { X, ArrowUpRight } from "lucide-react";
+import { X, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function AwardCard({
   a,
@@ -11,11 +11,30 @@ export default function AwardCard({
     result: string;
     year: string;
     org: string;
-    image: string;
+    image?: string;
+    images?: string[];
     text: string;
   };
 }) {
   const [open, setOpen] = useState(false);
+  const [imgIndex, setImgIndex] = useState(0);
+
+  // ছবিগুলোর লিস্ট তৈরি (একাধিক images থাকলে সেটা নিবে, না থাকলে সিঙ্গেল image ব্যবহার করবে)
+  const imageList = a.images && a.images.length > 0 
+    ? a.images 
+    : a.image 
+      ? [a.image] 
+      : [];
+
+  const handleNextImg = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setImgIndex((prev) => (prev + 1) % imageList.length);
+  };
+
+  const handlePrevImg = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setImgIndex((prev) => (prev - 1 + imageList.length) % imageList.length);
+  };
 
   return (
     <article className="award flex flex-col gap-3 font-mono mb-12 bg-transparent p-0 border-0">
@@ -29,14 +48,45 @@ export default function AwardCard({
         Issued: {a.year}
       </div>
 
-      {/* ৩. পিকচার */}
-      {a.image && (
-        <div className="award-img my-2 overflow-hidden rounded-lg w-full max-h-[400px]">
-          <img src={a.image} alt={a.title} className="w-full h-full object-cover" />
+      {/* ৩. পিকচার (সোয়াইপ সুবিধাসহ ১টি করে প্রদর্শিত হবে) */}
+      {imageList.length > 0 && (
+        <div className="award-img my-2 relative overflow-hidden rounded-lg w-full max-h-[400px] group flex items-center justify-center bg-black/5">
+          <img 
+            src={imageList[imgIndex]} 
+            alt={`${a.title} - ${imgIndex + 1}`} 
+            className="w-full h-full object-cover transition-all duration-300" 
+          />
+
+          {/* একাধিক ছবি থাকলে Prev/Next সোয়াইপ বাটন */}
+          {imageList.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={handlePrevImg}
+                className="absolute left-2 p-2 rounded-full bg-black/60 text-white hover:bg-[#10b981] hover:text-black transition-all backdrop-blur-sm"
+                aria-label="Previous Image"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                type="button"
+                onClick={handleNextImg}
+                className="absolute right-2 p-2 rounded-full bg-black/60 text-white hover:bg-[#10b981] hover:text-black transition-all backdrop-blur-sm"
+                aria-label="Next Image"
+              >
+                <ChevronRight size={18} />
+              </button>
+              
+              {/* ছবি নম্বর কাউন্টার */}
+              <div className="absolute bottom-2 bg-black/60 backdrop-blur-sm text-white px-2.5 py-0.5 rounded-full text-xs">
+                {imgIndex + 1} / {imageList.length}
+              </div>
+            </>
+          )}
         </div>
       )}
 
-      {/* ৪. শিরোনাম: সাইজ বাড়ানো হয়েছে এবং লাইট মোডে কালো ও ডার্ক মোডে সাদা হবে */}
+      {/* ৪. শিরোনাম */}
       <h2 
         className="text-xl md:text-3xl font-extrabold leading-snug tracking-tight mt-1"
         style={{ color: "var(--fg, currentColor)" }}
@@ -65,7 +115,9 @@ export default function AwardCard({
             <X />
           </button>
           <div className="award-modal" onClick={(e) => e.stopPropagation()}>
-            {a.image && <img src={a.image} alt={a.title} />}
+            {imageList.length > 0 && (
+              <img src={imageList[imgIndex]} alt={a.title} />
+            )}
             <div className="text-3xl font-extrabold my-2" style={{ color: "var(--fg, currentColor)" }}>
               {a.n}<span className="text-[#10b981]">.</span>
             </div>
