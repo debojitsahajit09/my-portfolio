@@ -155,24 +155,49 @@ export const site = {
       { id: "me-6", title: "International Tour Moment", category: "Myself", src: "/images/gallery/me-6.jpg" }
     ]
   },
-
-  projects: [
+projects: [
     {
-      id: "care",
+      id: "care-v3",
       n: "01",
-      title: "C.A.R.E Wheelchair (V1 & V2)",
-      result: "Controlled Assistive Responsive Equipment",
+      title: "C.A.R.E. Wheelchair V3.0",
+      result: "Advanced Offline AI & Telemedicine Wheelchair",
       year: "2026",
-      type: "Robotics / Assistive Technology / IoT",
+      type: "Robotics / Assistive Technology / Edge AI",
       org: "Team C.A.R.E.",
-      image: "/images/care-wheelchair.jpg",
-      description: "Controlled Assistive Responsive Equipment — a smart, low-cost assistive mobility system.",
-      details: "Gesture-based mobility control, IoT health monitoring, emergency alerts, home automation, caregiver tracking, and an offline AI voice assistant.",
-      tags: ["ESP32", "ESP8266", "ESP-NOW", "MPU6050", "BTS7960", "IoT", "AI", "Next.js"]
+      image: "/images/care-v3.jpg",
+      description: "Next-gen autonomous assistive wheelchair featuring offline AI, integrated biometric sensors, and cloud telemedicine sync.",
+      details: "Upgraded motor control system, embedded Edge AI offline voice control (ORION integration), direct ECG & SpO2 health tracking, and real-time remote telemetry dashboard.",
+      tags: ["ESP32-S3", "Edge AI", "IoT", "FreeRTOS", "Next.js", "Telemedicine", "Bluetooth 5.0"]
+    },
+    {
+      id: "care-v2",
+      n: "02",
+      title: "C.A.R.E. Wheelchair V2.0",
+      result: "Gesture-Controlled Smart Mobility System",
+      year: "2025",
+      type: "Robotics / IoT / Embedded Systems",
+      org: "Team C.A.R.E.",
+      image: "/images/care-v2.jpg",
+      description: "Custom gesture-driven wheelchair tailored for individuals with severe mobility impairments.",
+      details: "Includes head & hand gesture navigation via MPU6050 IMU sensors, ESP-NOW direct wireless mesh communication, emergency SMS alerts with GPS coordinates, and obstacle avoidance.",
+      tags: ["ESP32", "ESP-NOW", "MPU6050", "BTS7960", "GSM/GPS", "IoT"]
+    },
+    {
+      id: "care-v1",
+      n: "03",
+      title: "C.A.R.E. Wheelchair V1.0",
+      result: "Low-Cost Assistive Prototype Base",
+      year: "2024",
+      type: "Robotics / Assistive Hardware",
+      org: "Team C.A.R.E.",
+      image: "/images/care-v1.jpg",
+      description: "Initial functional prototype aimed at providing low-cost motorized wheelchair accessibility.",
+      details: "Designed basic motor drive control with joystick input, simple relay-based directional control, and modular chassis modification for regional affordability.",
+      tags: ["Arduino Uno", "Motor Drivers", "Sensors", "Hardware Design", "Prototyping"]
     },
     {
       id: "orion",
-      n: "02",
+      n: "04",
       title: "ORION",
       result: "Offline Voice AI Assistant",
       year: "2026",
@@ -185,7 +210,7 @@ export const site = {
     },
     {
       id: "blood4people",
-      n: "03",
+      n: "05",
       title: "Blood4People & NDITC Website",
       result: "Responsive Web UI & Systems",
       year: "2025–2026",
@@ -198,7 +223,7 @@ export const site = {
     },
     {
       id: "aerovolt-piezopolis",
-      n: "04",
+      n: "06",
       title: "AeroVolt & Piezopolis Energy Systems",
       result: "RF & Piezoelectric Power Harvesting",
       year: "2024–2025",
@@ -211,7 +236,7 @@ export const site = {
     },
     {
       id: "smart-helmet",
-      n: "05",
+      n: "07",
       title: "3-in-1 Smart Helmet for Safety",
       result: "Rider Safety & Hazard Prevention System",
       year: "2023",
@@ -222,7 +247,7 @@ export const site = {
       details: "Integrates automatic alcohol-detection ignition lock, accident detection with instant location SMS alerts, and smart warning systems.",
       tags: ["Arduino", "GSM/GPS", "Alcohol Sensor", "Accelerometer", "RF Module"]
     }
-  ],
+  ]
 
   achievements: [
     {
