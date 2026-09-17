@@ -247,7 +247,7 @@ projects: [
       details: "Integrates automatic alcohol-detection ignition lock, accident detection with instant location SMS alerts, and smart warning systems.",
       tags: ["Arduino", "GSM/GPS", "Alcohol Sensor", "Accelerometer", "RF Module"]
     }
-  ]
+  ],
 
   achievements: [
     {
